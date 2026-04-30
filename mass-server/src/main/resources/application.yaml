@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: develop-server
+
+  profiles:
+    active: ${PROFILE:local}
+
+server:
+  port: 49090
+  servlet:
+    context-path: /
+    encoding:
+      enabled: true
+      charset: UTF-8
+      force: true
+
+springdoc:
+  api-docs:
+    enabled: true
+    path: /v3/api-docs
+  swagger-ui:
+    enabled: true
+    path: /swagger-ui
+  default-flat-param-object: true
+
+knife4j:
+  enable: true
+  setting:
+    language: zh_cn
