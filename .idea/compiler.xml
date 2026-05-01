@@ -19,11 +19,12 @@
         <module name="mass-module-system" />
         <module name="mass-module-erp" />
         <module name="mass-common" />
-        <module name="mass-module-mail" />
+        <module name="mass-spring-boot-starter-redis" />
         <module name="mass-server" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="mass-module-mail" target="17" />
       <module name="mass-ui" target="17" />
     </bytecodeTargetLevel>
   </component>

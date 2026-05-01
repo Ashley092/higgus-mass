@@ -6,34 +6,39 @@
 
     <groupId>io.higgus.lab</groupId>
     <artifactId>higgus-mass</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>${revision}</version>
     <packaging>pom</packaging>
     <modules>
+        <module>mass-dependencies</module>
+        <module>mass-framework</module>
         <module>mass-server</module>
         <module>mass-module-system</module>
         <module>mass-module-erp</module>
-        <module>mass-framework</module>
-        <module>mass-module-mail</module>
         <!--        <module>mass-ui</module>-->
 <!--        <module>mass-framework</module>-->
     </modules>
 
     <properties>
-        <maven.compiler.source>17</maven.compiler.source>
-        <maven.compiler.target>17</maven.compiler.target>
+        <revision>1.0-SNAPSHOT</revision>
+        <java.version>17</java.version>
+        <maven.compiler.source>${java.version}</maven.compiler.source>
+        <maven.compiler.target>${java.version}</maven.compiler.target>
         <maven-compiler-plugin.version>3.14.0</maven-compiler-plugin.version>
 
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <!-- 核心框架版本定义 -->
         <spring.boot.version>3.4.5</spring.boot.version>
+        <spring.cloud.alibaba.version>2023.0.3.3</spring.cloud.alibaba.version>
         <lombok.version>1.18.38</lombok.version>
+
     </properties>
 
     <dependencyManagement>
         <dependencies>
             <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-dependencies</artifactId>
-                <version>3.4.12</version>
+                <groupId>io.higgus.lab</groupId>
+                <artifactId>mass-dependencies</artifactId>
+                <version>${revision}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>

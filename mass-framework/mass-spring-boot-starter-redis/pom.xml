@@ -5,12 +5,11 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>io.higgus.lab</groupId>
-        <artifactId>higgus-mass</artifactId>
+        <artifactId>mass-framework</artifactId>
         <version>${revision}</version>
     </parent>
 
-    <name>${project.artifactId}</name>
-    <artifactId>mass-module-system</artifactId>
+    <artifactId>mass-spring-boot-starter-redis</artifactId>
     <packaging>jar</packaging>
 
     <properties>
@@ -19,25 +18,23 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
-
-
     <dependencies>
-
-        <dependency>
-            <groupId>com.github.xiaoymin</groupId>
-            <artifactId>knife4j-openapi3-jakarta-spring-boot-starter</artifactId>
-        </dependency>
         <dependency>
             <groupId>io.higgus.lab</groupId>
             <artifactId>mass-common</artifactId>
-            <version>${revision}</version>
         </dependency>
 
-        <!-- DB 相关 -->
         <dependency>
-            <groupId>io.higgus.lab</groupId>
-            <artifactId>mass-spring-boot-starter-redis</artifactId>
+            <groupId>org.redisson</groupId>
+            <artifactId>redisson-spring-boot-starter</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-cache</artifactId> <!-- 实现对 Caches 的自动化配置 -->
+        </dependency>
+
+
 
     </dependencies>
+
 </project>

@@ -9,6 +9,7 @@
     </option>
     <option name="ignoredFiles">
       <set>
+        <option value="$PROJECT_DIR$/mass-module-mail/pom.xml" />
         <option value="$PROJECT_DIR$/mass-ui/pom.xml" />
       </set>
     </option>

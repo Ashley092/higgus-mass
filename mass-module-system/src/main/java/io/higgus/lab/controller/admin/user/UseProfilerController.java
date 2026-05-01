@@ -17,8 +17,8 @@ public class UseProfilerController {
 
 
 
-    @GetMapping("/get-simple-profile")
-    public void getSimpleUserProfile(@RequestParam("id") Long id) {
-        return null;
-    }
+//    @GetMapping("/get-simple-profile")
+//    public void getSimpleUserProfile(@RequestParam("id") Long id) {
+//        return null;
+//    }
 }
