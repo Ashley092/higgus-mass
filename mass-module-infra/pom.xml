@@ -6,16 +6,21 @@
     <parent>
         <groupId>io.higgus.lab</groupId>
         <artifactId>higgus-mass</artifactId>
-        <version>${revision}</version>
+        <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>mass-framework</artifactId>
-    <packaging>pom</packaging>
+    <artifactId>mass-module-infra</artifactId>
 
-    <modules>
-        <module>mass-common</module>
-        <module>mass-spring-boot-starter-redis</module>
-        <module>mass-spring-boot-starter-web</module>
-    </modules>
+
+    <dependencies>
+
+        <!-- Web 相关 -->
+        <dependency>
+            <groupId>cn.iocoder.boot</groupId>
+            <artifactId>yudao-spring-boot-starter-security</artifactId>
+        </dependency>
+
+        
+    </dependencies>
 
 </project>

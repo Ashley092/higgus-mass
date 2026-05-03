@@ -11,16 +11,19 @@
     <modules>
         <module>mass-dependencies</module>
         <module>mass-framework</module>
-        <module>mass-server</module>
+        <module>mass-module-infra</module>
         <module>mass-module-system</module>
         <module>mass-module-erp</module>
+        <module>mass-server</module>
+        <module>mass-framework/mass-spring-boot-starter-security</module>
+
         <!--        <module>mass-ui</module>-->
 <!--        <module>mass-framework</module>-->
     </modules>
 
     <properties>
         <revision>1.0-SNAPSHOT</revision>
-        <java.version>17</java.version>
+        <java.version>21</java.version>
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
         <maven-compiler-plugin.version>3.14.0</maven-compiler-plugin.version>

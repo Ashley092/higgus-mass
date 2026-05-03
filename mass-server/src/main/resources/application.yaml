@@ -24,6 +24,6 @@ springdoc:
   default-flat-param-object: true
 
 knife4j:
-  enable: true
+  enable: false # 这个版本如果开启增强模式会导致报错
   setting:
     language: zh_cn

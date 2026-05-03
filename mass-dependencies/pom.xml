@@ -14,13 +14,12 @@
 
     <properties>
         <revision>1.0-SNAPSHOT</revision>
-        <java.version>17</java.version>
-        <maven.compiler.source>${java.version}</maven.compiler.source>
-        <maven.compiler.target>${java.version}</maven.compiler.target>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <flatten-maven-plugin.version>1.7.2</flatten-maven-plugin.version>
+
 
         <!-- ============= 核心框架版本 ============= -->
-        <spring.boot.version>3.4.5</spring.boot.version>
+        <spring.boot.version>3.5.5</spring.boot.version>
+        <spring.cloud.version>2025.0.0</spring.cloud.version>
         <spring.cloud.alibaba.version>2023.0.3.3</spring.cloud.alibaba.version>
 
         <!-- ============= API 文档相关 ============= -->
@@ -32,9 +31,17 @@
         <dynamic-datasource.version>4.3.1</dynamic-datasource.version>
         <redisson.version>3.51.0</redisson.version>
 
+        <mybatis.version>3.5.19</mybatis.version>
+        <mybatis-plus.version>3.5.14</mybatis-plus.version>
+        <mybatis-plus-join.version>1.5.4</mybatis-plus-join.version>
+
         <!-- ============= 工具类相关 ============= -->
         <lombok.version>1.18.38</lombok.version>
-        <lombok-mapstruct-binding.version>0.2.0</lombok-mapstruct-binding.version>
+        <mapstruct.version>1.6.3</mapstruct.version>
+        <hutool-5.version>5.8.40</hutool-5.version>
+        <hutool-6.version>6.0.0-M22</hutool-6.version>
+        <fastjson.version>1.2.83</fastjson.version>
+
     </properties>
 
     <!-- ============= 依赖版本管理 ============= -->
@@ -49,6 +56,14 @@
                 <scope>import</scope>
             </dependency>
 
+            <!-- Spring 核心 -->
+            <dependency>
+                <!-- 用于生成自定义的 Spring @ConfigurationProperties 配置类的说明文件 -->
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-configuration-processor</artifactId>
+                <version>${spring.boot.version}</version>
+            </dependency>
+
             <!-- ========= Spring Cloud Alibaba ========= -->
             <dependency>
                 <groupId>com.alibaba.cloud</groupId>
@@ -60,15 +75,20 @@
 
             <!-- ========= API 文档相关 ========= -->
             <dependency>
-                <groupId>org.springdoc</groupId>
-                <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
-                <version>${springdoc.version}</version>
-            </dependency>
-
-            <dependency>
                 <groupId>com.github.xiaoymin</groupId>
                 <artifactId>knife4j-openapi3-jakarta-spring-boot-starter</artifactId>
                 <version>${knife4j.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.springdoc</groupId>
+                        <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+            <dependency>
+                <groupId>org.springdoc</groupId>
+                <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+                <version>${springdoc.version}</version>
             </dependency>
 
             <!-- ========= 数据库相关 ========= -->
@@ -84,7 +104,32 @@
                 <version>${dynamic-datasource.version}</version>
             </dependency>
 
+            <dependency>
+                <groupId>io.higgus.lab</groupId>
+                <artifactId>mass-spring-boot-starter-redis</artifactId>
+                <version>${revision}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.redisson</groupId>
+                <artifactId>redisson-spring-boot-starter</artifactId>
+                <version>${redisson.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.springframework.boot</groupId>
+                        <artifactId>spring-boot-starter-actuator</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+
+
             <!-- ========= 工具类相关 ========= -->
+            <dependency>
+                <groupId>io.higgus.lab</groupId>
+                <artifactId>mass-common</artifactId>
+                <version>${revision}</version>
+            </dependency>
+
             <dependency>
                 <groupId>org.projectlombok</groupId>
                 <artifactId>lombok</artifactId>
@@ -98,11 +143,49 @@
             </dependency>
 
             <dependency>
-                <groupId>io.higgus.lab</groupId>
-                <artifactId>mass-spring-boot-starter-redis</artifactId>
-                <version>${revision}</version>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-all</artifactId>
+                <version>${hutool-5.version}</version>
             </dependency>
+            <dependency>
+                <groupId>org.dromara.hutool</groupId>
+                <artifactId>hutool-extra</artifactId>
+                <version>${hutool-6.version}</version>
+            </dependency>
+
+
         </dependencies>
     </dependencyManagement>
+
+    <build>
+        <plugins>
+            <!-- 统一 revision 版本 -->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>flatten-maven-plugin</artifactId>
+                <version>${flatten-maven-plugin.version}</version>
+                <configuration>
+                    <flattenMode>bom</flattenMode>
+                    <updatePomFile>true</updatePomFile>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>flatten</goal>
+                        </goals>
+                        <id>flatten</id>
+                        <phase>process-resources</phase>
+                    </execution>
+                    <execution>
+                        <goals>
+                            <goal>clean</goal>
+                        </goals>
+                        <id>flatten.clean</id>
+                        <phase>clean</phase>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>
