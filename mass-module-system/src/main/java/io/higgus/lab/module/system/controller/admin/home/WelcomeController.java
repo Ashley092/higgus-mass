@@ -1,4 +1,4 @@
-package io.higgus.lab.controller.admin.home;
+package io.higgus.lab.module.system.controller.admin.home;
 
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;

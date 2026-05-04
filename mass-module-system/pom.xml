@@ -16,13 +16,16 @@
 
     <dependencies>
 
-        <dependency>
-            <groupId>com.github.xiaoymin</groupId>
-            <artifactId>knife4j-openapi3-jakarta-spring-boot-starter</artifactId>
-        </dependency>
+
         <dependency>
             <groupId>io.higgus.lab</groupId>
             <artifactId>mass-common</artifactId>
+            <version>${revision}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.higgus.lab</groupId>
+            <artifactId>mass-module-infra</artifactId>
             <version>${revision}</version>
         </dependency>
 
@@ -31,12 +34,6 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
-        <!-- Web 相关 -->
-        <dependency>
-            <groupId>org.springdoc</groupId> <!-- 接口文档：使用最新版本的 Swagger 模型 -->
-            <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
-            <scope>provided</scope>
-        </dependency>
 
 
         <!-- DB 相关 -->
@@ -44,7 +41,6 @@
             <groupId>io.higgus.lab</groupId>
             <artifactId>mass-spring-boot-starter-redis</artifactId>
         </dependency>
-
 
     </dependencies>
 </project>

@@ -5,19 +5,45 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>io.higgus.lab</groupId>
-        <artifactId>higgus-mass</artifactId>
-        <version>1.0-SNAPSHOT</version>
-        <relativePath>../../pom.xml</relativePath>
+        <artifactId>mass-framework</artifactId>
+        <version>${revision}</version>
     </parent>
 
+
     <artifactId>mass-spring-boot-starter-security</artifactId>
+    <packaging>jar</packaging>
 
 
     <dependencies>
-    <dependency>
-        <groupId>cn.iocoder.boot</groupId>
-        <artifactId>yudao-common</artifactId>
-    </dependency>
+        <dependency>
+            <groupId>io.higgus.lab</groupId>
+            <artifactId>mass-common</artifactId>
+        </dependency>
+
+        <!-- Spring 核心 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-aop</artifactId>
+        </dependency>
+
+        <!-- Web 相关 -->
+        <dependency>
+            <groupId>io.higgus.lab</groupId>
+            <artifactId>mass-spring-boot-starter-web</artifactId>
+        </dependency>
+        <!-- spring boot 配置所需依赖 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-configuration-processor</artifactId>
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
+
+
     </dependencies>
 
 </project>

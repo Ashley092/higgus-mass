@@ -6,21 +6,34 @@
     <parent>
         <groupId>io.higgus.lab</groupId>
         <artifactId>higgus-mass</artifactId>
-        <version>1.0-SNAPSHOT</version>
+        <version>${revision}</version>
     </parent>
 
+    <packaging>jar</packaging>
     <artifactId>mass-module-infra</artifactId>
 
 
     <dependencies>
 
-        <!-- Web 相关 -->
+
+
+
         <dependency>
-            <groupId>cn.iocoder.boot</groupId>
-            <artifactId>yudao-spring-boot-starter-security</artifactId>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <!-- 注释开发相关 -->
+        <dependency>
+            <groupId>com.github.xiaoymin</groupId>
+            <artifactId>knife4j-openapi3-jakarta-spring-boot-starter</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springdoc</groupId>
+            <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
         </dependency>
 
-        
+
     </dependencies>
 
 </project>
