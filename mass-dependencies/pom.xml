@@ -34,6 +34,7 @@
         <mybatis.version>3.5.19</mybatis.version>
         <mybatis-plus.version>3.5.14</mybatis-plus.version>
         <mybatis-plus-join.version>1.5.4</mybatis-plus-join.version>
+        <easy-trans.version>3.0.6</easy-trans.version>
 
         <!-- ============= 工具类相关 ============= -->
         <lombok.version>1.18.38</lombok.version>
@@ -41,6 +42,9 @@
         <hutool-5.version>5.8.40</hutool-5.version>
         <hutool-6.version>6.0.0-M22</hutool-6.version>
         <fastjson.version>1.2.83</fastjson.version>
+
+        <netty.version>4.2.4.Final</netty.version>
+
 
     </properties>
 
@@ -73,6 +77,19 @@
                 <scope>import</scope>
             </dependency>
 
+            <!-- Web 相关 -->
+            <dependency>
+                <groupId>io.higgus.lab</groupId>
+                <artifactId>mass-spring-boot-starter-web</artifactId>
+                <version>${revision}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.higgus.lab</groupId>
+                <artifactId>mass-spring-boot-starter-security</artifactId>
+                <version>${revision}</version>
+            </dependency>
+
             <!-- ========= API 文档相关 ========= -->
             <dependency>
                 <groupId>com.github.xiaoymin</groupId>
@@ -91,17 +108,71 @@
                 <version>${springdoc.version}</version>
             </dependency>
 
+
+
             <!-- ========= 数据库相关 ========= -->
             <dependency>
+                <groupId>io.higgus.lab</groupId>
+                <artifactId>mass-spring-boot-starter-mybatis</artifactId>
+                <version>${revision}</version>
+            </dependency>
+            <dependency>
                 <groupId>com.alibaba</groupId>
-                <artifactId>druid-spring-boot-starter</artifactId>
+                <artifactId>druid-spring-boot-3-starter</artifactId>
                 <version>${druid.version}</version>
+            </dependency>
+            <dependency>
+                <!-- 注意：必须声明，避免 flowable 和 mybatis-plus 引入的 mybatis 版本不一致！！！ -->
+                <groupId>org.mybatis</groupId>
+                <artifactId>mybatis</artifactId>
+                <version>${mybatis.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-spring-boot3-starter</artifactId>
+                <version>${mybatis-plus.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-jsqlparser</artifactId>
+                <version>${mybatis-plus.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.github.yulichang</groupId>
+                <artifactId>mybatis-plus-join-boot-starter</artifactId> <!-- MyBatis 联表查询 -->
+                <version>${mybatis-plus-join.version}</version>
             </dependency>
 
             <dependency>
                 <groupId>com.baomidou</groupId>
-                <artifactId>dynamic-datasource-spring-boot-starter</artifactId>
+                <artifactId>dynamic-datasource-spring-boot3-starter</artifactId>
                 <version>${dynamic-datasource.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.fhs-opensource</groupId> <!-- VO 数据翻译 -->
+                <artifactId>easy-trans-spring-boot-starter</artifactId>
+                <version>${easy-trans.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.springframework</groupId>
+                        <artifactId>spring-context</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>org.springframework.cloud</groupId>
+                        <artifactId>spring-cloud-commons</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+            <dependency>
+                <groupId>com.fhs-opensource</groupId>
+                <artifactId>easy-trans-mybatis-plus-extend</artifactId>
+                <version>${easy-trans.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.fhs-opensource</groupId>
+                <artifactId>easy-trans-anno</artifactId>
+                <version>${easy-trans.version}</version>
             </dependency>
 
             <dependency>
@@ -137,9 +208,19 @@
             </dependency>
 
             <dependency>
-                <groupId>org.projectlombok</groupId>
-                <artifactId>lombok-mapstruct-binding</artifactId>
-                <version>${lombok-mapstruct-binding.version}</version>
+                <groupId>org.mapstruct</groupId>
+                <artifactId>mapstruct</artifactId> <!-- use mapstruct-jdk8 for Java 8 or higher -->
+                <version>${mapstruct.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.mapstruct</groupId>
+                <artifactId>mapstruct-jdk8</artifactId>
+                <version>${mapstruct.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.mapstruct</groupId>
+                <artifactId>mapstruct-processor</artifactId>
+                <version>${mapstruct.version}</version>
             </dependency>
 
             <dependency>

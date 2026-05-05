@@ -6,10 +6,11 @@
     <parent>
         <groupId>io.higgus.lab</groupId>
         <artifactId>higgus-mass</artifactId>
-        <version>1.0-SNAPSHOT</version>
+        <version>${revision}</version>
     </parent>
 
     <artifactId>mass-server</artifactId>
+    <name>${project.artifactId}</name>
 
 
     <dependencies>
@@ -23,6 +24,15 @@
              <artifactId>mass-spring-boot-starter-redis</artifactId>
          </dependency>
         <dependency>
+            <groupId>io.higgus.lab</groupId>
+            <artifactId>mass-spring-boot-starter-mybatis</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.higgus.lab</groupId>
+            <artifactId>mass-module-erp</artifactId>
+            <version>${revision}</version>
+        </dependency>
+        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
@@ -30,6 +40,27 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
+
     </dependencies>
+
+    <build>
+        <!-- 设置构建的 jar 包名 -->
+        <finalName>${project.artifactId}</finalName>
+        <plugins>
+            <!-- 打包 -->
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>${spring.boot.version}</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal> <!-- 将引入的 jar 打入其中 -->
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>
