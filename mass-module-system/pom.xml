@@ -37,9 +37,22 @@
 
 
         <!-- DB 相关 -->
+
+        <dependency>
+            <groupId>io.higgus.lab</groupId>
+            <artifactId>mass-spring-boot-starter-mybatis</artifactId>
+        </dependency>
+
         <dependency>
             <groupId>io.higgus.lab</groupId>
             <artifactId>mass-spring-boot-starter-redis</artifactId>
+        </dependency>
+
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <scope>provided</scope>
         </dependency>
 
     </dependencies>

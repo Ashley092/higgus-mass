@@ -18,7 +18,7 @@ public class MassRedisSingleProperties {
 //            "redis://106.54.232.126:26380",
 //            "redis://106.54.232.126:26381"
 //    ));
-    private String address = "redis://127.0.0.1:6380";
+    private String address = "redis://127.0.0.1:6379";
 
     private int database = 6;
 

@@ -16,8 +16,7 @@ mass:
   redis:
     single:
       enabled: true  # 这个必须设置为 true
-      address:
-        - redis://127.0.0.1:6380
+      address: "redis://127.0.0.1:6379"
       database: 6
       connect-timeout: 3000
       timeout: 3000

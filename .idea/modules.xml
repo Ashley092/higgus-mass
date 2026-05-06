@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/mass-spring-boot-starter-mybatis.iml" filepath="$PROJECT_DIR$/mass-spring-boot-starter-mybatis.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mass-spring-boot-starter-security.iml" filepath="$PROJECT_DIR$/mass-spring-boot-starter-security.iml" />
+    </modules>
+  </component>
+</project>

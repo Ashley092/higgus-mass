@@ -1,0 +1,9 @@
+GET http://localhost:49090/system/home/welcome/hello
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2026.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+<> 2026-05-03T164524.200.txt
+
+###
+
