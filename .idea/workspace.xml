@@ -4,17 +4,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="BeansEndpointTabSettings">
-    <option name="diagramMode" value="true" />
     <option name="showContexts" value="false" />
     <option name="showFiles" value="false" />
-    <option name="showLibraryBeans" value="false" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="603d025f-8c40-43ec-8171-0fdb136eec7c" name="更改" comment="fix：引入多数据源依赖包并整合，能够进行基础的 knife4j 接口调试，打通数据流查询。下一步作系统完善（用户授权管理设计）">
-      <change beforePath="$PROJECT_DIR$/mass-framework/mass-spring-boot-starter-mybatis/src/main/java/io/higgus/lab/framework/mybatis/core/mapper/BaseMapperX.java" beforeDir="false" afterPath="$PROJECT_DIR$/mass-framework/mass-spring-boot-starter-mybatis/src/main/java/io/higgus/lab/framework/mybatis/core/mapper/BaseMapperX.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mass-framework/mass-spring-boot-starter-redis/src/main/java/io/higgus/lab/config/MassRedisSingleProperties.java" beforeDir="false" afterPath="$PROJECT_DIR$/mass-framework/mass-spring-boot-starter-redis/src/main/java/io/higgus/lab/config/MassRedisSingleProperties.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mass-module-system/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mass-module-system/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mass-server/src/main/resources/application-local.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/mass-server/src/main/resources/application-local.yaml" afterDir="false" />
+    <list default="true" id="603d025f-8c40-43ec-8171-0fdb136eec7c" name="更改" comment="feat: 引入 Token 生成，由 login, auth, oauth2 三个模块。下一步是完善 Token 的设计，目前仅有 accessToken，引入 refreshToken ; 研究 yudao 用户体系设计。">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mass-dependencies/.flattened-pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mass-dependencies/.flattened-pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mass-dependencies/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mass-dependencies/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mass-framework/mass-common/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mass-framework/mass-common/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mass-framework/mass-spring-boot-starter-mybatis/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mass-framework/mass-spring-boot-starter-mybatis/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mass-framework/mass-spring-boot-starter-mybatis/src/main/java/io/higgus/lab/framework/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mass-framework/mass-spring-boot-starter-mybatis/src/main/java/io/higgus/lab/framework/mybatis/core/dataobject/BaseDO.java" beforeDir="false" afterPath="$PROJECT_DIR$/mass-framework/mass-spring-boot-starter-mybatis/src/main/java/io/higgus/lab/framework/mybatis/core/dataobject/BaseDO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mass-framework/mass-spring-boot-starter-security/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mass-framework/mass-spring-boot-starter-security/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mass-framework/mass-spring-boot-starter-security/src/main/java/io/higgus/lab/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mass-framework/mass-spring-boot-starter-security/src/main/java/io/higgus/lab/security/config/MassSecurityAutoConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/mass-framework/mass-spring-boot-starter-security/src/main/java/io/higgus/lab/security/config/MassSecurityAutoConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mass-framework/mass-spring-boot-starter-security/src/main/java/io/higgus/lab/security/config/SecurityProperties.java" beforeDir="false" afterPath="$PROJECT_DIR$/mass-framework/mass-spring-boot-starter-security/src/main/java/io/higgus/lab/security/config/SecurityProperties.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mass-framework/mass-spring-boot-starter-security/src/main/resources/META-INF/spring/org.springframework.boot.autoconfigure.AutoConfiguration.imports" beforeDir="false" afterPath="$PROJECT_DIR$/mass-framework/mass-spring-boot-starter-security/src/main/resources/META-INF/spring/org.springframework.boot.autoconfigure.AutoConfiguration.imports" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mass-framework/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mass-framework/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mass-module-system/src/main/java/io/higgus/lab/module/system/dal/dataobject/auth/AdminUserDO.java" beforeDir="false" afterPath="$PROJECT_DIR$/mass-module-system/src/main/java/io/higgus/lab/module/system/dal/dataobject/auth/AdminUserDO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mass-module-system/src/main/java/io/higgus/lab/module/system/service/user/AdminUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/mass-module-system/src/main/java/io/higgus/lab/module/system/service/user/AdminUserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mass-module-system/src/main/java/io/higgus/lab/module/system/service/user/AdminUserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/mass-module-system/src/main/java/io/higgus/lab/module/system/service/user/AdminUserServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,6 +43,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 5
@@ -44,54 +58,60 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;HTTP 请求.主启动类 | #1.executor&quot;: &quot;Run&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
-    &quot;Spring Boot.MassApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.主启动类.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.未命名.executor&quot;: &quot;Run&quot;,
-    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
-    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Users/86135/workspace/Mine/higgus-mass/mass-framework/mass-spring-boot-starter-security/src/main&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.stylelint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.stylelint&quot;: &quot;D:\\Users\\86135\\workspace\\Mine\\higgus-mass\\mass-ui\\node_modules\\stylelint&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;onboarding.tips.debug.path&quot;: &quot;D:/Users/86135/workspace/Mine/higgus-mass/mass-framework/mass-spring-boot-starter-mybatis/src/main/java/io/higgus/lab/Main.java&quot;,
-    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;D:\\Users\\86135\\workspace\\Mine\\higgus-mass\\mass-ui\\node_modules\\prettier&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;模块&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.21343146&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.projectsettings.compiler.javacompiler&quot;,
-    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
+    "HTTP 请求.主启动类 | #1.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "Spring Boot.MassApplication.executor": "Run",
+    "Spring Boot.主启动类.executor": "Run",
+    "Spring Boot.未命名.executor": "Run",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
+    "git-widget-placeholder": "main",
+    "junie.onboarding.icon.badge.shown": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "D:/Users/86135/workspace/Mine/higgus-mass/mass-framework/mass-spring-boot-starter-mybatis/src/main/resources",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.stylelint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.stylelint": "D:\\Users\\86135\\workspace\\Mine\\higgus-mass\\mass-ui\\node_modules\\stylelint",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "onboarding.tips.debug.path": "D:/Users/86135/workspace/Mine/higgus-mass/mass-framework/mass-spring-boot-starter-mybatis/src/main/java/io/higgus/lab/Main.java",
+    "prettierjs.PrettierConfiguration.Package": "D:\\Users\\86135\\workspace\\Mine\\higgus-mass\\mass-ui\\node_modules\\prettier",
+    "project.structure.last.edited": "模块",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.21343146",
+    "settings.editor.selected.configurable": "reference.settingsdialog.project.grazie",
+    "to.speed.mode.migration.done": "true",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
+    ]
   }
-}</component>
+}]]></component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Users\86135\workspace\Mine\higgus-mass\mass-framework\mass-spring-boot-starter-mybatis\src\main\resources" />
       <recent name="D:\Users\86135\workspace\Mine\higgus-mass\mass-framework\mass-spring-boot-starter-security\src\main" />
       <recent name="D:\Users\86135\workspace\Mine\higgus-mass\mass-framework\mass-spring-boot-starter-security\src\main\resources" />
       <recent name="D:\Users\86135\workspace\Mine\higgus-mass\mass-framework\mass-spring-boot-starter-security\src\main\java\io\higgus\lab" />
       <recent name="D:\Users\86135\workspace\Mine\higgus-mass\mass-framework\mass-spring-boot-starter-web\src\main\java\io\higgus\lab" />
-      <recent name="D:\Users\86135\workspace\higgus-mass\mass-framework\mass-spring-boot-starter-web" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -149,7 +169,12 @@
       <workItem from="1777954215298" duration="3907000" />
       <workItem from="1777969778648" duration="3457000" />
       <workItem from="1777973249238" duration="3501000" />
-      <workItem from="1778027466226" duration="15986000" />
+      <workItem from="1778027466226" duration="20190000" />
+      <workItem from="1778470897333" duration="13450000" />
+      <workItem from="1778545452175" duration="427000" />
+      <workItem from="1778548924833" duration="8513000" />
+      <workItem from="1778559029226" duration="4238000" />
+      <workItem from="1778574043352" duration="4721000" />
     </task>
     <task id="LOCAL-00001" summary="fix: 修复了 redisson 配置类的启动问题">
       <option name="closed" value="true" />
@@ -175,7 +200,15 @@
       <option name="project" value="LOCAL" />
       <updated>1777976479898</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="feat: 引入 Token 生成，由 login, auth, oauth2 三个模块。下一步是完善 Token 的设计，目前仅有 accessToken，引入 refreshToken ; 研究 yudao 用户体系设计。">
+      <option name="closed" value="true" />
+      <created>1778060599977</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1778060599977</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -185,7 +218,8 @@
     <MESSAGE value="fix: 修复了 redisson 配置类的启动问题" />
     <MESSAGE value="fix： erp 商城基础完善" />
     <MESSAGE value="fix：引入多数据源依赖包并整合，能够进行基础的 knife4j 接口调试，打通数据流查询。下一步作系统完善（用户授权管理设计）" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix：引入多数据源依赖包并整合，能够进行基础的 knife4j 接口调试，打通数据流查询。下一步作系统完善（用户授权管理设计）" />
+    <MESSAGE value="feat: 引入 Token 生成，由 login, auth, oauth2 三个模块。下一步是完善 Token 的设计，目前仅有 accessToken，引入 refreshToken ; 研究 yudao 用户体系设计。" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: 引入 Token 生成，由 login, auth, oauth2 三个模块。下一步是完善 Token 的设计，目前仅有 accessToken，引入 refreshToken ; 研究 yudao 用户体系设计。" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -194,11 +228,6 @@
           <url>file://$PROJECT_DIR$/mass-module-infra/src/main/java/io/higgus/lab/module/infra/Main.java</url>
           <line>13</line>
           <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/mass-framework/mass-spring-boot-starter-security/src/main/java/io/higgus/lab/Main.java</url>
-          <line>13</line>
-          <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/mass-server/src/main/java/io/higgus/lab/MassApplication.java</url>
@@ -215,16 +244,10 @@
           <line>53</line>
           <option name="timeStamp" value="8" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/mass-framework/mass-spring-boot-starter-mybatis/src/main/java/io/higgus/lab/framework/Main.java</url>
-          <line>13</line>
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/mass-module-erp/src/main/java/io/higgus/lab/module/erp/admin/controller/ProductController.java</url>
-          <line>27</line>
-          <option name="timeStamp" value="13" />
-        </line-breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.sql.SQLIntegrityConstraintViolationException" package="java.sql" />
+          <option name="timeStamp" value="14" />
+        </breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>

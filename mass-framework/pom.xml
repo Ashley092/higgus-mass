@@ -14,10 +14,10 @@
 
     <modules>
         <module>mass-common</module>
+        <module>mass-spring-boot-starter-security</module>
         <module>mass-spring-boot-starter-mybatis</module>
         <module>mass-spring-boot-starter-redis</module>
         <module>mass-spring-boot-starter-web</module>
-        <module>mass-spring-boot-starter-security</module>
 
     </modules>
 
