@@ -29,7 +29,7 @@ public class UserSaveReqVO {
     @Schema(description = "备注", example = "我是一个用户")
     private String remark;
 
-    @Schema(description = "部门编号", example = "部门")
+    @Schema(description = "部门编号", example = "1")
     private Long deptId;
 
     @Schema(description = "岗位编号数组", example = "1")

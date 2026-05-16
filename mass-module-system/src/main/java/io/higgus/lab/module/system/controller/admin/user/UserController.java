@@ -1,6 +1,7 @@
 package io.higgus.lab.module.system.controller.admin.user;
 
 
+import com.alibaba.fastjson.JSON;
 import io.higgus.lab.mass.framework.common.pojo.CommonResult;
 import io.higgus.lab.module.system.controller.admin.user.vo.UserSaveReqVO;
 import io.higgus.lab.module.system.service.user.AdminUserService;
@@ -9,6 +10,8 @@ import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.annotation.Resource;
 import jakarta.validation.Valid;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
@@ -20,6 +23,8 @@ import static io.higgus.lab.mass.framework.common.pojo.CommonResult.success;
 @Validated
 public class UserController {
 
+    final Logger logger = LoggerFactory.getLogger(UserController.class);
+
     @Resource
     AdminUserService userService;
 
@@ -28,6 +33,7 @@ public class UserController {
     public CommonResult<Long> addUser(@RequestBody @Valid UserSaveReqVO reqVO){
 
         Long id = userService.createUser(reqVO);
+
         return success(id);
     }
 
@@ -43,7 +49,7 @@ public class UserController {
     @Parameter(name = "id", description = "编号", required = true, example = "1024")
     public CommonResult<Boolean> deleteUser(@RequestParam Long id) {
 
-        userService.deleteUserById(id);
+        userService.deleteById(id);
         return success(true);
     }
 

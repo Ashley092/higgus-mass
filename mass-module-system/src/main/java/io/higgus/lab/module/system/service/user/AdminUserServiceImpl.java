@@ -10,6 +10,8 @@ import jakarta.annotation.Resource;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Objects;
+
 @Service
 public class AdminUserServiceImpl implements AdminUserService{
 
@@ -26,6 +28,8 @@ public class AdminUserServiceImpl implements AdminUserService{
     @Override
     public Long createUser(UserSaveReqVO reqVO) {
 
+//        validateForCreateOrUpdate(reqVO.getId(), reqVO.getUsername());
+
         AdminUserDO user = BeanUtil.toBean(reqVO, AdminUserDO.class);
 
         user.setStatus(1); // 默认开启
@@ -38,7 +42,10 @@ public class AdminUserServiceImpl implements AdminUserService{
     }
 
     @Override
-    public void deleteUserById(Long id) {
+    @Transactional(rollbackFor = Exception.class)
+    public void deleteById(Long id)
+    {
+
         userMapper.deleteById(id);
     }
 
@@ -49,5 +56,17 @@ public class AdminUserServiceImpl implements AdminUserService{
 
     }
 
+//
+//    private void validateForCreateOrUpdate(Long id, String username) {
+//        validateUserExists(id);
+//
+//    }
+
+//    private void validateUserExists(Long id) {
+//        AdminUserDO user = userMapper.selectById(id);
+//        if ( user == null ){
+//            throw exception();
+//        }
+//    }
 
 }

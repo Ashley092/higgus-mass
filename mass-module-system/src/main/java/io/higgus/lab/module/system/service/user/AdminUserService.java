@@ -9,7 +9,8 @@ public interface AdminUserService {
 
     public Long createUser(UserSaveReqVO userVO);
 
-    public void deleteUserById(Long id);
+    public void deleteById(Long id);
 
     public void updateUser(UserSaveReqVO reqVO);
+
 }

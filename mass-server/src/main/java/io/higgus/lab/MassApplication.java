@@ -17,12 +17,6 @@ public class MassApplication {
 
     public static void main(String[] args) {
         ConfigurableApplicationContext context = SpringApplication.run(MassApplication.class, args);
-        String[] factories = context.getBeanNamesForType(org.springframework.data.redis.connection.RedisConnectionFactory.class);
-        System.out.println("是否存在连接工厂 Bean: " + (factories.length > 0));
-        for (String f : factories) {
-            System.out.println("连接工厂名称: " + f);
-        }
-        System.out.println("=================================");
         System.out.print(
                 BRAND_BLUE +
                         "     (♥◠‿◠)ﾉﾞ        Mass 启动成功！        ლ(´ڡ`ლ)ﾞ\n" +
