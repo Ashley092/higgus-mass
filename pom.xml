@@ -13,7 +13,7 @@
         <module>mass-framework</module>
         <module>mass-module-infra</module>
         <module>mass-module-system</module>
-        <module>mass-module-erp</module>
+<!--        <module>mass-module-erp</module>-->
         <module>mass-server</module>
         <module>mass-module-bulong</module>
 

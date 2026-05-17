@@ -10,17 +10,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="603d025f-8c40-43ec-8171-0fdb136eec7c" name="更改" comment="feat: 完成 Spring Security 的模块引入。设置基础过滤链，目前配置为全部放行。下一步是先完善用户管理模块，能够和数据库进行闭环的增删改查操作，再继续过滤链的设计处理。">
-      <change afterPath="$PROJECT_DIR$/mass-module-bulong/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/data_source_mapping.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mass-module-system/src/main/java/io/higgus/lab/module/system/controller/admin/user/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/mass-module-system/src/main/java/io/higgus/lab/module/system/controller/admin/user/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mass-module-system/src/main/java/io/higgus/lab/module/system/controller/admin/user/vo/UserSaveReqVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/mass-module-system/src/main/java/io/higgus/lab/module/system/controller/admin/user/vo/UserSaveReqVO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mass-module-system/src/main/java/io/higgus/lab/module/system/service/user/AdminUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/mass-module-system/src/main/java/io/higgus/lab/module/system/service/user/AdminUserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mass-module-system/src/main/java/io/higgus/lab/module/system/service/user/AdminUserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/mass-module-system/src/main/java/io/higgus/lab/module/system/service/user/AdminUserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mass-server/src/main/java/io/higgus/lab/MassApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/mass-server/src/main/java/io/higgus/lab/MassApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mass-framework/mass-spring-boot-starter-mybatis/src/main/java/io/higgus/lab/framework/mybatis/config/MassMybatisAutoConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/mass-framework/mass-spring-boot-starter-mybatis/src/main/java/io/higgus/lab/framework/mybatis/config/MassMybatisAutoConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mass-server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mass-server/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sql/mysql/bulong.sql" beforeDir="false" afterPath="$PROJECT_DIR$/sql/mysql/bulong.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,51 +49,51 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
-    "HTTP 请求.主启动类 | #1.executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "Spring Boot.MassApplication.executor": "Run",
-    "Spring Boot.主启动类.executor": "Run",
-    "Spring Boot.未命名.executor": "Run",
-    "codeWithMe.voiceChat.enabledByDefault": "false",
-    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "junie.onboarding.icon.badge.shown": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/Users/86135/workspace/Mine/higgus-mass/mass-framework/mass-spring-boot-starter-mybatis/src/main/resources",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.stylelint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.stylelint": "D:\\Users\\86135\\workspace\\Mine\\higgus-mass\\mass-ui\\node_modules\\stylelint",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "onboarding.tips.debug.path": "D:/Users/86135/workspace/Mine/higgus-mass/mass-module-bulong/src/main/java/io/higgus/lab/Main.java",
-    "prettierjs.PrettierConfiguration.Package": "D:\\Users\\86135\\workspace\\Mine\\higgus-mass\\mass-ui\\node_modules\\prettier",
-    "project.structure.last.edited": "模块",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.21343146",
-    "settings.editor.selected.configurable": "reference.settingsdialog.project.grazie",
-    "to.speed.mode.migration.done": "true",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_MARK_IGNORED_FILES_AS_EXCLUDED&quot;: &quot;true&quot;,
+    &quot;HTTP 请求.主启动类 | #1.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;Spring Boot.MassApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.主启动类.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.未命名.executor&quot;: &quot;Run&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Users/86135/workspace/Mine/higgus-mass/mass-framework/mass-spring-boot-starter-mybatis/src/main/resources&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.stylelint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.stylelint&quot;: &quot;D:\\Users\\86135\\workspace\\Mine\\higgus-mass\\mass-ui\\node_modules\\stylelint&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;D:/Users/86135/workspace/Mine/higgus-mass/mass-module-bulong/src/main/java/io/higgus/lab/Main.java&quot;,
+    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;D:\\Users\\86135\\workspace\\Mine\\higgus-mass\\mass-ui\\node_modules\\prettier&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;模块&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.21343146&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.project.grazie&quot;,
+    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
   </component>
@@ -179,7 +174,8 @@
       <workItem from="1778838129905" duration="1506000" />
       <workItem from="1778839969837" duration="627000" />
       <workItem from="1778925954482" duration="119000" />
-      <workItem from="1778926165544" duration="1581000" />
+      <workItem from="1778926165544" duration="6282000" />
+      <workItem from="1778984341302" duration="3673000" />
     </task>
     <task id="LOCAL-00001" summary="fix: 修复了 redisson 配置类的启动问题">
       <option name="closed" value="true" />
@@ -221,11 +217,38 @@
       <option name="project" value="LOCAL" />
       <updated>1778580024740</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="feat: 完成 Spring Security 的模块引入。设置基础过滤链，目前配置为全部放行。下一步是先完善用户管理模块，能够和数据库进行闭环的增删改查操作，再继续过滤链的设计处理。">
+      <option name="closed" value="true" />
+      <created>1778928027630</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1778928027630</updated>
+    </task>
+    <task id="LOCAL-00007" summary="feat: 完成 Spring Security 的模块引入。设置基础过滤链，目前配置为全部放行。下一步是先完善用户管理模块，能够和数据库进行闭环的增删改查操作，再继续过滤链的设计处理。">
+      <option name="closed" value="true" />
+      <created>1778928034353</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1778928034353</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="fix: 修复了 redisson 配置类的启动问题" />

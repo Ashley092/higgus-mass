@@ -27,9 +27,14 @@
             <groupId>io.higgus.lab</groupId>
             <artifactId>mass-spring-boot-starter-mybatis</artifactId>
         </dependency>
+<!--        <dependency>-->
+<!--            <groupId>io.higgus.lab</groupId>-->
+<!--            <artifactId>mass-module-erp</artifactId>-->
+<!--            <version>${revision}</version>-->
+<!--        </dependency>-->
         <dependency>
             <groupId>io.higgus.lab</groupId>
-            <artifactId>mass-module-erp</artifactId>
+            <artifactId>mass-module-bulong</artifactId>
             <version>${revision}</version>
         </dependency>
         <dependency>

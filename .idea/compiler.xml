@@ -25,12 +25,13 @@
         <module name="mass-module-infra" />
         <module name="mass-module-system" />
         <module name="mass-spring-boot-starter-mybatis" />
-        <module name="mass-module-erp" />
         <module name="mass-spring-boot-starter-redis" />
         <module name="mass-server" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel target="21" />
+    <bytecodeTargetLevel target="21">
+      <module name="mass-module-erp" target="21" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
