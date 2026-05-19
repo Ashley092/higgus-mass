@@ -18,7 +18,9 @@
           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok-mapstruct-binding/0.2.0/lombok-mapstruct-binding-0.2.0.jar" />
           <entry name="$MAVEN_REPOSITORY$/org/mapstruct/mapstruct-processor/1.6.3/mapstruct-processor-1.6.3.jar" />
         </processorPath>
+        <module name="mass-module-ai" />
         <module name="mass-common" />
+        <module name="mass-module-data" />
         <module name="mass-module-bulong" />
         <module name="mass-spring-boot-starter-security" />
         <module name="mass-spring-boot-starter-web" />
@@ -38,7 +40,9 @@
       <module name="higgus-mass" options="-parameters" />
       <module name="mass-common" options="-parameters" />
       <module name="mass-framework" options="-parameters" />
+      <module name="mass-module-ai" options="-parameters" />
       <module name="mass-module-bulong" options="-parameters" />
+      <module name="mass-module-data" options="-parameters" />
       <module name="mass-module-erp" options="-parameters" />
       <module name="mass-module-infra" options="-parameters" />
       <module name="mass-module-system" options="-parameters" />

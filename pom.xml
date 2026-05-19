@@ -16,6 +16,8 @@
 <!--        <module>mass-module-erp</module>-->
         <module>mass-server</module>
         <module>mass-module-bulong</module>
+        <module>mass-module-ai</module>
+        <module>mass-module-data</module>
 
         <!--        <module>mass-ui</module>-->
 <!--        <module>mass-framework</module>-->
@@ -141,7 +143,18 @@
     </build>
 
     <!-- 使用 huawei / aliyun 的 Maven 源，提升下载速度 -->
+    <!-- 注意：Spring AI 的里程碑版本必须从 Spring 官方仓库下载，需要放在华为云之前 -->
     <repositories>
+        <!-- Spring AI 仓库（必须在前） -->
+        <repository>
+            <id>spring-ai-milestones</id>
+            <name>Spring AI Milestones</name>
+            <url>https://repo.spring.io/milestone</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+
         <repository>
             <id>huaweicloud</id>
             <name>huawei</name>

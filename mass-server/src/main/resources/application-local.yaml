@@ -12,6 +12,22 @@ spring:
       min-idle: 5          # 最小空闲连接数
       max-active: 20       # 最大活跃连接数
 
+  cache:
+    type: redis
+    redis:
+      time-to-live: 60000  # 默认缓存过期时间 60秒
+      cache-null-values: false
+      key-prefix: "myapp:"
+
+  # AI 配置
+  ai:
+    ollama:
+      base-url: http://localhost:11434
+      chat:
+        options:
+          model: qwen2.5:7b
+          temperature: 0.7
+
 mass:
   redis:
     single:
@@ -22,3 +38,10 @@ mass:
       timeout: 3000
       retry-attempts: 3
       retry-interval: 1500
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "conditions"

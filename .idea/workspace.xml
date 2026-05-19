@@ -9,13 +9,31 @@
     <option name="showLibraryBeans" value="false" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="603d025f-8c40-43ec-8171-0fdb136eec7c" name="更改" comment="feat: 完成 Spring Security 的模块引入。设置基础过滤链，目前配置为全部放行。下一步是先完善用户管理模块，能够和数据库进行闭环的增删改查操作，再继续过滤链的设计处理。">
+    <list default="true" id="603d025f-8c40-43ec-8171-0fdb136eec7c" name="更改" comment="fix: bl 模块基础增删改查功能模块完善。下一步引入测试缓存依赖。">
+      <change afterPath="$PROJECT_DIR$/mass-module-data/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mass-framework/mass-spring-boot-starter-mybatis/src/main/java/io/higgus/lab/framework/mybatis/config/MassMybatisAutoConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/mass-framework/mass-spring-boot-starter-mybatis/src/main/java/io/higgus/lab/framework/mybatis/config/MassMybatisAutoConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mass-dependencies/.flattened-pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mass-dependencies/.flattened-pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mass-dependencies/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mass-dependencies/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mass-framework/mass-spring-boot-starter-redis/src/main/resources/META-INF/spring/org.springframework.boot.autoconfigure.AutoConfiguration.imports" beforeDir="false" afterPath="$PROJECT_DIR$/mass-framework/mass-spring-boot-starter-redis/src/main/resources/META-INF/spring/org.springframework.boot.autoconfigure.AutoConfiguration.imports" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mass-module-bulong/src/main/java/io/higgus/lab/module/bulong/service/product/ProductServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/mass-module-bulong/src/main/java/io/higgus/lab/module/bulong/service/product/ProductServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mass-module-bulong/src/main/java/io/higgus/lab/module/bulong/service/production/ProductionRecordServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/mass-module-bulong/src/main/java/io/higgus/lab/module/bulong/service/production/ProductionRecordServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mass-module-erp/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mass-module-ai/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mass-module-erp/src/main/java/io/higgus/lab/module/erp/admin/controller/ProductController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mass-module-erp/src/main/java/io/higgus/lab/module/erp/admin/controller/vo/ProductRespVO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mass-module-erp/src/main/java/io/higgus/lab/module/erp/admin/convert/product/ProductConvert.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mass-module-erp/src/main/java/io/higgus/lab/module/erp/admin/dal/dataobject/product/ProductDO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mass-module-erp/src/main/java/io/higgus/lab/module/erp/admin/dal/mysql/product/ProductMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mass-module-erp/src/main/java/io/higgus/lab/module/erp/admin/service/ProductService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mass-module-erp/src/main/java/io/higgus/lab/module/erp/admin/service/ProductServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mass-module-erp/src/main/resources/application.yml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/mass-server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mass-server/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mass-server/src/main/resources/application-local.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/mass-server/src/main/resources/application-local.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mass-server/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/mass-server/src/main/resources/application.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sql/mysql/bulong.sql" beforeDir="false" afterPath="$PROJECT_DIR$/sql/mysql/bulong.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,8 +44,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="Class" />
         <option value="Exception" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -79,7 +97,7 @@
     &quot;node.js.selected.package.stylelint&quot;: &quot;D:\\Users\\86135\\workspace\\Mine\\higgus-mass\\mass-ui\\node_modules\\stylelint&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;onboarding.tips.debug.path&quot;: &quot;D:/Users/86135/workspace/Mine/higgus-mass/mass-module-bulong/src/main/java/io/higgus/lab/Main.java&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;D:/Users/86135/workspace/Mine/higgus-mass/mass-module-data/src/main/java/io/higgus/lab/Main.java&quot;,
     &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;D:\\Users\\86135\\workspace\\Mine\\higgus-mass\\mass-ui\\node_modules\\prettier&quot;,
     &quot;project.structure.last.edited&quot;: &quot;模块&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
@@ -175,7 +193,14 @@
       <workItem from="1778839969837" duration="627000" />
       <workItem from="1778925954482" duration="119000" />
       <workItem from="1778926165544" duration="6282000" />
-      <workItem from="1778984341302" duration="3673000" />
+      <workItem from="1778984341302" duration="5086000" />
+      <workItem from="1779069928865" duration="8393000" />
+      <workItem from="1779093982409" duration="3289000" />
+      <workItem from="1779151172856" duration="2567000" />
+      <workItem from="1779154074621" duration="1046000" />
+      <workItem from="1779155388989" duration="11757000" />
+      <workItem from="1779177642567" duration="1300000" />
+      <workItem from="1779178971272" duration="3069000" />
     </task>
     <task id="LOCAL-00001" summary="fix: 修复了 redisson 配置类的启动问题">
       <option name="closed" value="true" />
@@ -233,7 +258,15 @@
       <option name="project" value="LOCAL" />
       <updated>1778928034353</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="fix: bl 模块基础增删改查功能模块完善。下一步引入测试缓存依赖。">
+      <option name="closed" value="true" />
+      <created>1779007704885</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1779007704885</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -256,7 +289,8 @@
     <MESSAGE value="fix：引入多数据源依赖包并整合，能够进行基础的 knife4j 接口调试，打通数据流查询。下一步作系统完善（用户授权管理设计）" />
     <MESSAGE value="feat: 引入 Token 生成，由 login, auth, oauth2 三个模块。下一步是完善 Token 的设计，目前仅有 accessToken，引入 refreshToken ; 研究 yudao 用户体系设计。" />
     <MESSAGE value="feat: 完成 Spring Security 的模块引入。设置基础过滤链，目前配置为全部放行。下一步是先完善用户管理模块，能够和数据库进行闭环的增删改查操作，再继续过滤链的设计处理。" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: 完成 Spring Security 的模块引入。设置基础过滤链，目前配置为全部放行。下一步是先完善用户管理模块，能够和数据库进行闭环的增删改查操作，再继续过滤链的设计处理。" />
+    <MESSAGE value="fix: bl 模块基础增删改查功能模块完善。下一步引入测试缓存依赖。" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: bl 模块基础增删改查功能模块完善。下一步引入测试缓存依赖。" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -265,6 +299,11 @@
           <url>file://$PROJECT_DIR$/mass-module-infra/src/main/java/io/higgus/lab/module/infra/Main.java</url>
           <line>13</line>
           <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/mass-module-data/src/main/java/io/higgus/lab/Main.java</url>
+          <line>13</line>
+          <option name="timeStamp" value="15" />
         </line-breakpoint>
         <breakpoint enabled="true" type="java-exception">
           <properties class="java.sql.SQLIntegrityConstraintViolationException" package="java.sql" />

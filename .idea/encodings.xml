@@ -17,8 +17,12 @@
     <file url="file://$PROJECT_DIR$/mass-framework/mass-spring-boot-starter-web/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/mass-framework/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/mass-framework/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/mass-module-ai/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/mass-module-ai/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/mass-module-bulong/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/mass-module-bulong/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/mass-module-data/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/mass-module-data/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/mass-module-erp/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/mass-module-erp/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/mass-module-infra/src/main/java" charset="UTF-8" />
