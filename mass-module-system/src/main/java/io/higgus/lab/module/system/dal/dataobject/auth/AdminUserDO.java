@@ -5,7 +5,7 @@ import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.extension.handlers.JacksonTypeHandler;
-import io.higgus.lab.framework.mybatis.core.dataobject.BaseDO;
+import io.higgus.lab.framework.mybatis.mybatis.core.dataobject.BaseDO;
 import lombok.*;
 
 import java.time.LocalDateTime;

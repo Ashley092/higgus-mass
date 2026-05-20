@@ -22,6 +22,7 @@
         <module name="mass-common" />
         <module name="mass-module-data" />
         <module name="mass-module-bulong" />
+        <module name="mass-spring-boot-starter-mq" />
         <module name="mass-spring-boot-starter-security" />
         <module name="mass-spring-boot-starter-web" />
         <module name="mass-module-infra" />
@@ -47,6 +48,7 @@
       <module name="mass-module-infra" options="-parameters" />
       <module name="mass-module-system" options="-parameters" />
       <module name="mass-server" options="-parameters" />
+      <module name="mass-spring-boot-starter-mq" options="-parameters" />
       <module name="mass-spring-boot-starter-mybatis" options="-parameters" />
       <module name="mass-spring-boot-starter-redis" options="-parameters" />
       <module name="mass-spring-boot-starter-security" options="-parameters" />

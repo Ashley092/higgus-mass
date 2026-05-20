@@ -1,7 +1,7 @@
 package io.higgus.lab.module.bulong.dal.mysql.production;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
-import io.higgus.lab.framework.mybatis.core.mapper.BaseMapperX;
+import io.higgus.lab.framework.mybatis.mybatis.core.mapper.BaseMapperX;
 import io.higgus.lab.module.bulong.dal.dataobject.production.ProductionGbDetailDO;
 import org.apache.ibatis.annotations.Mapper;
 

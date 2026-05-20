@@ -1,0 +1,1 @@
+package io.higgus.lab.framework.mq;

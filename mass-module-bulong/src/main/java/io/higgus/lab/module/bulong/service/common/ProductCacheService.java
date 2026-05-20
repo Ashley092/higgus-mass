@@ -14,6 +14,11 @@ import java.util.concurrent.TimeUnit;
  *
  * 职责：封装产品相关的缓存操作
  * 优点：业务代码与 Redis 解耦，便于后续切换缓存实现
+ *
+ * 空值缓存策略说明：
+ * - 对于不存在的数据，也写入缓存（使用特殊标记）
+ * - 空值缓存 TTL 较短（默认 60 秒），防止数据真正存在时无法及时更新
+ * - 通过 "NULL:" 前缀区分空值和正常缓存
  */
 @Slf4j
 @Service
@@ -21,6 +26,14 @@ public class ProductCacheService {
 
     @Resource
     private RedisTemplate<String, Object> redisTemplate;
+
+    // ==================== 常量定义 ====================
+
+    /** 空值缓存前缀，区分空值和正常缓存 */
+    private static final String NULL_PREFIX = "NULL:";
+
+    /** 空值缓存默认 TTL：60 秒 */
+    private static final long DEFAULT_NULL_TTL = 60;
 
     // ==================== 单个产品缓存 ====================
 
@@ -90,19 +103,6 @@ public class ProductCacheService {
     }
 
     /**
-     * 判断产品缓存是否存在
-     */
-    public boolean exists(String productCode) {
-        String key = RedisKeys.getProductByCodeKey(productCode);
-        try {
-            return Boolean.TRUE.equals(redisTemplate.hasKey(key));
-        } catch (Exception e) {
-            log.warn("【缓存异常】检查产品缓存存在失败: {}", productCode, e);
-            return false;
-        }
-    }
-
-    /**
      * 获取产品缓存的剩余TTL
      *
      * @param productCode 产品编号
@@ -115,6 +115,79 @@ public class ProductCacheService {
         } catch (Exception e) {
             log.warn("【缓存异常】获取产品缓存TTL失败: {}", productCode, e);
             return -2L;
+        }
+    }
+
+    // ==================== 空值缓存（防止缓存穿透） ====================
+
+    /**
+     * 设置空值缓存（用于防止缓存穿透）
+     * <p>
+     * 当数据库中不存在某产品时，将空值写入缓存，避免重复查询数据库
+     *
+     * @param productCode 产品编号
+     */
+    public void setNullValue(String productCode) {
+        setNullValue(productCode, DEFAULT_NULL_TTL, TimeUnit.SECONDS);
+    }
+
+    /**
+     * 设置空值缓存（自定义 TTL）
+     *
+     * @param productCode 产品编号
+     * @param ttl 过期时间
+     * @param unit 时间单位
+     */
+    public void setNullValue(String productCode, long ttl, TimeUnit unit) {
+        if (productCode == null) {
+            return;
+        }
+        String key = RedisKeys.getProductByCodeKey(productCode);
+        try {
+            // 使用特殊前缀标记空值
+            redisTemplate.opsForValue().set(NULL_PREFIX + key, "", ttl, unit);
+            log.debug("【空值缓存】已写入: {}, TTL: {} {}", productCode, ttl, unit);
+        } catch (Exception e) {
+            log.warn("【空值缓存异常】写入失败: {}", productCode, e);
+        }
+    }
+
+    /**
+     * 检查是否为缓存的空值
+     *
+     * @param productCode 产品编号
+     * @return true=是空值缓存，false=正常缓存或不存在
+     */
+    public boolean isNullValue(String productCode) {
+        String key = RedisKeys.getProductByCodeKey(productCode);
+        try {
+            Object value = redisTemplate.opsForValue().get(NULL_PREFIX + key);
+            return value != null && "".equals(value.toString());
+        } catch (Exception e) {
+            log.warn("【空值检查异常】: {}", productCode, e);
+            return false;
+        }
+    }
+
+    /**
+     * 检查缓存是否存在（包括空值缓存）
+     *
+     * @param productCode 产品编号
+     * @return true=存在（可能是正常值或空值），false=不存在
+     */
+    public boolean exists(String productCode) {
+        String key = RedisKeys.getProductByCodeKey(productCode);
+        try {
+            // 检查正常缓存
+            Boolean hasKey = redisTemplate.hasKey(key);
+            if (Boolean.TRUE.equals(hasKey)) {
+                return true;
+            }
+            // 检查空值缓存
+            return Boolean.TRUE.equals(redisTemplate.hasKey(NULL_PREFIX + key));
+        } catch (Exception e) {
+            log.warn("【缓存检查异常】: {}", productCode, e);
+            return false;
         }
     }
 

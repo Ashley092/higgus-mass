@@ -2,7 +2,7 @@ package io.higgus.lab.module.bulong.dal.dataobject.production;
 
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
-import io.higgus.lab.framework.mybatis.core.dataobject.BaseDO;
+import io.higgus.lab.framework.mybatis.mybatis.core.dataobject.BaseDO;
 import lombok.*;
 
 /**

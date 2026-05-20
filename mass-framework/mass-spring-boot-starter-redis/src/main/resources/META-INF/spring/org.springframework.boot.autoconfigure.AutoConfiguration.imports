@@ -1,2 +1,2 @@
-io.higgus.lab.config.RedissonSingleConfig
-io.higgus.lab.config.RedisCacheConfig
+io.higgus.lab.framework.redis.config.RedissonSingleConfig
+io.higgus.lab.framework.redis.config.RedisCacheConfig

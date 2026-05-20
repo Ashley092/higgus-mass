@@ -1,6 +1,6 @@
 package io.higgus.lab.module.bulong.dal.mysql.product;
 
-import io.higgus.lab.framework.mybatis.core.mapper.BaseMapperX;
+import io.higgus.lab.framework.mybatis.mybatis.core.mapper.BaseMapperX;
 import io.higgus.lab.module.bulong.dal.dataobject.product.ProductDO;
 import org.apache.ibatis.annotations.Mapper;
 

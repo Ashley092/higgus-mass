@@ -87,21 +87,32 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public ProductRespVO getProductByCode(String productCode) {
-        // 【第一步】先查缓存
+        // ========== 第一步：查询缓存 ==========
         ProductDO cachedProduct = productCacheService.getByCode(productCode);
         if (cachedProduct != null) {
             log.info("【查询】产品编号: {} - 来源: 缓存", productCode);
             return productConvert.toProductRespVO(cachedProduct);
         }
 
-        // 【第二步】缓存未命中，查询数据库
+        // ========== 第二步：检查空值缓存（防止缓存穿透） ==========
+        if (productCacheService.isNullValue(productCode)) {
+            log.info("【查询】产品编号: {} - 来源: 空值缓存（快速返回）", productCode);
+            return null;
+        }
+
+        // ========== 第三步：缓存未命中，查询数据库 ==========
         log.info("【查询】产品编号: {} - 来源: 数据库", productCode);
         ProductDO productDO = productMapper.getByProductCode(productCode);
 
-        // 【第三步】写入缓存（如果数据存在）
+        // ========== 第四步：写入缓存（防止穿透） ==========
         if (productDO != null) {
+            // 正常数据，写入正常缓存
             productCacheService.setByCode(productDO);
             log.debug("【缓存】产品已写入缓存: {}", productCode);
+        } else {
+            // 数据不存在，写入空值缓存（短TTL，防止穿透）
+            productCacheService.setNullValue(productCode);
+            log.info("【缓存】空值已写入缓存，防止穿透: {}", productCode);
         }
 
         return productConvert.toProductRespVO(productDO);

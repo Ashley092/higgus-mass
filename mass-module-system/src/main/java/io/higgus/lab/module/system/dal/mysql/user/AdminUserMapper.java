@@ -1,7 +1,7 @@
 package io.higgus.lab.module.system.dal.mysql.user;
 
 
-import io.higgus.lab.framework.mybatis.core.mapper.BaseMapperX;
+import io.higgus.lab.framework.mybatis.mybatis.core.mapper.BaseMapperX;
 import io.higgus.lab.module.system.dal.dataobject.auth.AdminUserDO;
 import org.apache.ibatis.annotations.Mapper;
 

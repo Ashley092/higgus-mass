@@ -91,3 +91,15 @@ CREATE TABLE `bl_production_gb_detail` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='生产记录-梳栉工艺明细表';
 
 
+CREATE TABLE `bl_machine` (
+    `id` BIGINT AUTO_INCREMENT NOT NULL COMMENT '明细自增ID',
+    `machine_code` VARCHAR(32) NOT NULL COMMENT '机台编号',
+    PRIMARY KEY ('id'),
+    UNIQUE KEY (`machine_code`)
+);
+
+
+CREATE TABLE `bl_machine_produce_detail` (
+     `id` BIGINT AUTO_INCREMENT NOT NULL COMMENT '明细自增ID',
+
+);
