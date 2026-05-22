@@ -22,4 +22,11 @@ public class CommonResult<T> implements Serializable {
         return result;
     }
 
+    public static <T> CommonResult<T> error(int code, String msg) {
+        CommonResult<T> result = new CommonResult<>();
+        result.code = code;
+        result.msg = msg;
+        return result;
+    }
+
 }

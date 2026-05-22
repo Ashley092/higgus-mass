@@ -9,42 +9,18 @@
     <option name="showLibraryBeans" value="false" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="603d025f-8c40-43ec-8171-0fdb136eec7c" name="更改" comment="feat: 引入 AI 模块。使用 ollama 集成本地部署的模型。下一步是设计记忆模块的数据结构/RAG设计。但是在那之前，我还是比较想先把数据模型和 MQ 做好。">
-      <change afterPath="$PROJECT_DIR$/mass-framework/mass-spring-boot-starter-mq/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+    <list default="true" id="603d025f-8c40-43ec-8171-0fdb136eec7c" name="更改" comment="fix: 预重构数据表。">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/b3ab2b72-b6b7-46f9-b749-cecc866aa9a5.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/b3ab2b72-b6b7-46f9-b749-cecc866aa9a5.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mass-framework/mass-spring-boot-starter-mybatis/src/main/java/io/higgus/lab/framework/mybatis/config/MassMybatisAutoConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/mass-framework/mass-spring-boot-starter-mybatis/src/main/java/io/higgus/lab/framework/mybatis/mybatis/config/MassMybatisAutoConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mass-framework/mass-spring-boot-starter-mybatis/src/main/java/io/higgus/lab/framework/mybatis/core/dataobject/BaseDO.java" beforeDir="false" afterPath="$PROJECT_DIR$/mass-framework/mass-spring-boot-starter-mybatis/src/main/java/io/higgus/lab/framework/mybatis/mybatis/core/dataobject/BaseDO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mass-framework/mass-spring-boot-starter-mybatis/src/main/java/io/higgus/lab/framework/mybatis/core/handler/DefaultDBFieldHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/mass-framework/mass-spring-boot-starter-mybatis/src/main/java/io/higgus/lab/framework/mybatis/mybatis/core/handler/DefaultDBFieldHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mass-framework/mass-spring-boot-starter-mybatis/src/main/java/io/higgus/lab/framework/mybatis/core/mapper/BaseMapperX.java" beforeDir="false" afterPath="$PROJECT_DIR$/mass-framework/mass-spring-boot-starter-mybatis/src/main/java/io/higgus/lab/framework/mybatis/mybatis/core/mapper/BaseMapperX.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mass-framework/mass-spring-boot-starter-mybatis/src/main/resources/META-INF/spring/org.springframework.boot.autoconfigure.AutoConfiguration.imports" beforeDir="false" afterPath="$PROJECT_DIR$/mass-framework/mass-spring-boot-starter-mybatis/src/main/resources/META-INF/spring/org.springframework.boot.autoconfigure.AutoConfiguration.imports" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mass-framework/mass-spring-boot-starter-redis/src/main/java/io/higgus/lab/config/MassRedisSingleProperties.java" beforeDir="false" afterPath="$PROJECT_DIR$/mass-framework/mass-spring-boot-starter-redis/src/main/java/io/higgus/lab/framework/redis/config/MassRedisSingleProperties.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mass-framework/mass-spring-boot-starter-redis/src/main/java/io/higgus/lab/config/RedisCacheConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/mass-framework/mass-spring-boot-starter-redis/src/main/java/io/higgus/lab/framework/redis/config/RedisCacheConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mass-framework/mass-spring-boot-starter-redis/src/main/java/io/higgus/lab/config/RedissonSingleConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/mass-framework/mass-spring-boot-starter-redis/src/main/java/io/higgus/lab/framework/redis/config/RedissonSingleConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mass-framework/mass-spring-boot-starter-redis/src/main/java/io/higgus/lab/package-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/mass-framework/mass-spring-boot-starter-redis/src/main/java/io/higgus/lab/framework/redis/package-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mass-framework/mass-spring-boot-starter-redis/src/main/resources/META-INF/spring/org.springframework.boot.autoconfigure.AutoConfiguration.imports" beforeDir="false" afterPath="$PROJECT_DIR$/mass-framework/mass-spring-boot-starter-redis/src/main/resources/META-INF/spring/org.springframework.boot.autoconfigure.AutoConfiguration.imports" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mass-framework/mass-spring-boot-starter-security/src/main/java/io/higgus/lab/package-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/mass-framework/mass-spring-boot-starter-security/src/main/java/io/higgus/lab/framework/security/package-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mass-framework/mass-spring-boot-starter-security/src/main/java/io/higgus/lab/security/config/MassSecurityAutoConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/mass-framework/mass-spring-boot-starter-security/src/main/java/io/higgus/lab/framework/security/security/config/MassSecurityAutoConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mass-framework/mass-spring-boot-starter-security/src/main/java/io/higgus/lab/security/config/MassWebSecurityConfigurerAdaptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/mass-framework/mass-spring-boot-starter-security/src/main/java/io/higgus/lab/framework/security/security/config/MassWebSecurityConfigurerAdaptor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mass-framework/mass-spring-boot-starter-security/src/main/java/io/higgus/lab/security/config/SecurityProperties.java" beforeDir="false" afterPath="$PROJECT_DIR$/mass-framework/mass-spring-boot-starter-security/src/main/java/io/higgus/lab/framework/security/security/config/SecurityProperties.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mass-framework/mass-spring-boot-starter-security/src/main/java/io/higgus/lab/security/core/filter/TokenAuthenticationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/mass-framework/mass-spring-boot-starter-security/src/main/java/io/higgus/lab/framework/security/security/core/filter/TokenAuthenticationFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mass-framework/mass-spring-boot-starter-security/src/main/java/io/higgus/lab/security/core/service/SecurityFrameworkService.java" beforeDir="false" afterPath="$PROJECT_DIR$/mass-framework/mass-spring-boot-starter-security/src/main/java/io/higgus/lab/framework/security/security/core/service/SecurityFrameworkService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mass-framework/mass-spring-boot-starter-security/src/main/java/io/higgus/lab/security/core/service/SecurityFrameworkServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/mass-framework/mass-spring-boot-starter-security/src/main/java/io/higgus/lab/framework/security/security/core/service/SecurityFrameworkServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mass-framework/mass-spring-boot-starter-security/src/main/java/io/higgus/lab/security/core/util/SecurityFrameworkUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/mass-framework/mass-spring-boot-starter-security/src/main/java/io/higgus/lab/framework/security/security/core/util/SecurityFrameworkUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mass-framework/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mass-framework/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mass-module-bulong/src/main/java/io/higgus/lab/module/bulong/dal/dataobject/product/ProductDO.java" beforeDir="false" afterPath="$PROJECT_DIR$/mass-module-bulong/src/main/java/io/higgus/lab/module/bulong/dal/dataobject/product/ProductDO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mass-module-bulong/src/main/java/io/higgus/lab/module/bulong/dal/dataobject/production/ProductionGbDetailDO.java" beforeDir="false" afterPath="$PROJECT_DIR$/mass-module-bulong/src/main/java/io/higgus/lab/module/bulong/dal/dataobject/production/ProductionGbDetailDO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mass-module-bulong/src/main/java/io/higgus/lab/module/bulong/dal/dataobject/production/ProductionRecordDO.java" beforeDir="false" afterPath="$PROJECT_DIR$/mass-module-bulong/src/main/java/io/higgus/lab/module/bulong/dal/dataobject/production/ProductionRecordDO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mass-module-bulong/src/main/java/io/higgus/lab/module/bulong/dal/mysql/product/ProductMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/mass-module-bulong/src/main/java/io/higgus/lab/module/bulong/dal/mysql/product/ProductMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mass-module-bulong/src/main/java/io/higgus/lab/module/bulong/dal/mysql/production/ProductionGbDetailMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/mass-module-bulong/src/main/java/io/higgus/lab/module/bulong/dal/mysql/production/ProductionGbDetailMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mass-module-bulong/src/main/java/io/higgus/lab/module/bulong/dal/mysql/production/ProductionRecordMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/mass-module-bulong/src/main/java/io/higgus/lab/module/bulong/dal/mysql/production/ProductionRecordMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mass-module-bulong/src/main/java/io/higgus/lab/module/bulong/service/common/ProductCacheService.java" beforeDir="false" afterPath="$PROJECT_DIR$/mass-module-bulong/src/main/java/io/higgus/lab/module/bulong/service/common/ProductCacheService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mass-module-bulong/src/main/java/io/higgus/lab/module/bulong/service/product/ProductServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/mass-module-bulong/src/main/java/io/higgus/lab/module/bulong/service/product/ProductServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mass-module-system/src/main/java/io/higgus/lab/module/system/dal/dataobject/auth/AdminUserDO.java" beforeDir="false" afterPath="$PROJECT_DIR$/mass-module-system/src/main/java/io/higgus/lab/module/system/dal/dataobject/auth/AdminUserDO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mass-module-system/src/main/java/io/higgus/lab/module/system/dal/mysql/oauth2/OAuth2AccessTokenMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/mass-module-system/src/main/java/io/higgus/lab/module/system/dal/mysql/oauth2/OAuth2AccessTokenMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mass-module-system/src/main/java/io/higgus/lab/module/system/dal/mysql/user/AdminUserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/mass-module-system/src/main/java/io/higgus/lab/module/system/dal/mysql/user/AdminUserMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sql/mysql/bulong.sql" beforeDir="false" afterPath="$PROJECT_DIR$/sql/mysql/bulong.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mass-framework/mass-common/src/main/java/io/higgus/lab/mass/framework/common/pojo/CommonResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/mass-framework/mass-common/src/main/java/io/higgus/lab/mass/framework/common/pojo/CommonResult.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mass-framework/mass-spring-boot-starter-web/src/main/java/io/higgus/lab/framework/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/mass-framework/mass-spring-boot-starter-web/src/main/java/io/higgus/lab/framework/web/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mass-module-bulong/src/main/java/io/higgus/lab/module/bulong/enums/BulongErrorCodeConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/mass-module-bulong/src/main/java/io/higgus/lab/module/bulong/enums/BulongErrorCodeConstants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mass-module-data/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mass-module-data/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mass-module-data/src/main/java/io/higgus/lab/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mass-module-infra/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mass-module-infra/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mass-module-infra/src/main/java/io/higgus/lab/module/infra/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mass-server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mass-server/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,16 +30,25 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Exception" />
-        <option value="Class" />
         <option value="package-info" />
+        <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="JavaAutoRunManager">
+    <enabled-run-configurations>
+      <run-configuration type="JUnit" name="FileSpaceServiceImplTest" />
+    </enabled-run-configurations>
+  </component>
+  <component name="KubernetesApiPersistence"><![CDATA[{}]]></component>
+  <component name="KubernetesApiProvider"><![CDATA[{
+  "isMigrated": true
+}]]></component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
@@ -79,51 +64,54 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
-    "HTTP 请求.主启动类 | #1.executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "Spring Boot.MassApplication.executor": "Run",
-    "Spring Boot.主启动类.executor": "Run",
-    "Spring Boot.未命名.executor": "Run",
-    "codeWithMe.voiceChat.enabledByDefault": "false",
-    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "junie.onboarding.icon.badge.shown": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/Users/86135/workspace/Mine/higgus-mass/sql/mysql",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.stylelint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.stylelint": "D:\\Users\\86135\\workspace\\Mine\\higgus-mass\\mass-ui\\node_modules\\stylelint",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "onboarding.tips.debug.path": "D:/Users/86135/workspace/Mine/higgus-mass/mass-module-data/src/main/java/io/higgus/lab/Main.java",
-    "prettierjs.PrettierConfiguration.Package": "D:\\Users\\86135\\workspace\\Mine\\higgus-mass\\mass-ui\\node_modules\\prettier",
-    "project.structure.last.edited": "模块",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.21343146",
-    "settings.editor.selected.configurable": "reference.settingsdialog.project.grazie",
-    "to.speed.mode.migration.done": "true",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_MARK_IGNORED_FILES_AS_EXCLUDED&quot;: &quot;true&quot;,
+    &quot;HTTP 请求.主启动类 | #1.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.FileSpaceServiceImplTest.calculateMd5_shouldReturnConsistentHash.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.FileSpaceServiceImplTest.executor&quot;: &quot;Debug&quot;,
+    &quot;JUnit.FileUploadFacadeImplTest.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;Spring Boot.MassApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.主启动类.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.未命名.executor&quot;: &quot;Run&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Users/86135/workspace/Mine/higgus-mass/sql/mysql&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.stylelint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.stylelint&quot;: &quot;D:\\Users\\86135\\workspace\\Mine\\higgus-mass\\mass-ui\\node_modules\\stylelint&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;D:/Users/86135/workspace/Mine/higgus-mass/mass-module-data/src/main/java/io/higgus/lab/Main.java&quot;,
+    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;D:\\Users\\86135\\workspace\\Mine\\higgus-mass\\mass-ui\\node_modules\\prettier&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;模块&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.21343146&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.project.grazie&quot;,
+    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
   </component>
@@ -150,8 +138,59 @@
     </option>
   </component>
   <component name="RunManager" selected="Spring Boot.主启动类">
+    <configuration name="fileSpace.sql" type="DatabaseScript" editBeforeRun="true" temporary="true" nameIsGenerated="true">
+      <script-file value="$PROJECT_DIR$/sql/mysql/fileSpace.sql" />
+      <script-mode>FILE</script-mode>
+      <method v="2" />
+    </configuration>
     <configuration name="主启动类 | #1" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/主启动类.http" executionIdentifier="#1" runType="运行单个请求">
       <method v="2" />
+    </configuration>
+    <configuration name="FileSpaceServiceImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="mass-module-infra" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.higgus.lab.module.infra.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="io.higgus.lab.module.infra.service" />
+      <option name="MAIN_CLASS_NAME" value="io.higgus.lab.module.infra.service.FileSpaceServiceImplTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FileSpaceServiceImplTest.calculateMd5_shouldReturnConsistentHash" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="mass-module-infra" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.higgus.lab.module.infra.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="io.higgus.lab.module.infra.service" />
+      <option name="MAIN_CLASS_NAME" value="io.higgus.lab.module.infra.service.FileSpaceServiceImplTest" />
+      <option name="METHOD_NAME" value="calculateMd5_shouldReturnConsistentHash" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FileUploadFacadeImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="mass-module-infra" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.higgus.lab.module.infra.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="io.higgus.lab.module.infra.service" />
+      <option name="MAIN_CLASS_NAME" value="io.higgus.lab.module.infra.service.FileUploadFacadeImplTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration name="主启动类" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <option name="ALTERNATIVE_JRE_PATH" value="21" />
@@ -164,10 +203,18 @@
     </configuration>
     <list>
       <item itemvalue="HTTP 请求.主启动类 | #1" />
+      <item itemvalue="JUnit.FileSpaceServiceImplTest" />
+      <item itemvalue="JUnit.FileSpaceServiceImplTest.calculateMd5_shouldReturnConsistentHash" />
+      <item itemvalue="JUnit.FileUploadFacadeImplTest" />
       <item itemvalue="Spring Boot.主启动类" />
+      <item itemvalue="数据库脚本.fileSpace.sql" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="数据库脚本.fileSpace.sql" />
+        <item itemvalue="JUnit.FileSpaceServiceImplTest" />
+        <item itemvalue="JUnit.FileUploadFacadeImplTest" />
+        <item itemvalue="JUnit.FileSpaceServiceImplTest.calculateMd5_shouldReturnConsistentHash" />
         <item itemvalue="HTTP 请求.主启动类 | #1" />
       </list>
     </recent_temporary>
@@ -214,7 +261,12 @@
       <workItem from="1779177642567" duration="1300000" />
       <workItem from="1779178971272" duration="4312000" />
       <workItem from="1779238090631" duration="8000" />
-      <workItem from="1779241411466" duration="6454000" />
+      <workItem from="1779241411466" duration="9071000" />
+      <workItem from="1779323827431" duration="349000" />
+      <workItem from="1779410580021" duration="3063000" />
+      <workItem from="1779413810492" duration="4429000" />
+      <workItem from="1779421720832" duration="1426000" />
+      <workItem from="1779435089850" duration="6363000" />
     </task>
     <task id="LOCAL-00001" summary="fix: 修复了 redisson 配置类的启动问题">
       <option name="closed" value="true" />
@@ -288,7 +340,15 @@
       <option name="project" value="LOCAL" />
       <updated>1779186938746</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="fix: 预重构数据表。">
+      <option name="closed" value="true" />
+      <created>1779264500232</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1779264500232</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -313,25 +373,31 @@
     <MESSAGE value="feat: 完成 Spring Security 的模块引入。设置基础过滤链，目前配置为全部放行。下一步是先完善用户管理模块，能够和数据库进行闭环的增删改查操作，再继续过滤链的设计处理。" />
     <MESSAGE value="fix: bl 模块基础增删改查功能模块完善。下一步引入测试缓存依赖。" />
     <MESSAGE value="feat: 引入 AI 模块。使用 ollama 集成本地部署的模型。下一步是设计记忆模块的数据结构/RAG设计。但是在那之前，我还是比较想先把数据模型和 MQ 做好。" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: 引入 AI 模块。使用 ollama 集成本地部署的模型。下一步是设计记忆模块的数据结构/RAG设计。但是在那之前，我还是比较想先把数据模型和 MQ 做好。" />
+    <MESSAGE value="fix: 预重构数据表。" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: 预重构数据表。" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/mass-module-infra/src/main/java/io/higgus/lab/module/infra/Main.java</url>
-          <line>13</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/mass-module-data/src/main/java/io/higgus/lab/Main.java</url>
-          <line>13</line>
-          <option name="timeStamp" value="15" />
-        </line-breakpoint>
         <breakpoint enabled="true" type="java-exception">
           <properties class="java.sql.SQLIntegrityConstraintViolationException" package="java.sql" />
           <option name="timeStamp" value="14" />
         </breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/mass-module-infra/src/test/java/io/higgus/lab/module/infra/service/FileSpaceServiceImplTest.java</url>
+          <line>59</line>
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/mass-module-infra/src/test/java/io/higgus/lab/module/infra/service/FileSpaceServiceImplTest.java</url>
+          <line>76</line>
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/mass-module-infra/src/test/java/io/higgus/lab/module/infra/service/FileSpaceServiceImplTest.java</url>
+          <line>94</line>
+          <option name="timeStamp" value="19" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>

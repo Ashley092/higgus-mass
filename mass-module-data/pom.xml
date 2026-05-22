@@ -11,11 +11,74 @@
     </parent>
 
     <name>${project.artifactId}</name>
+    <description>数据接入模块 - 协议适配层与消息队列</description>
     <artifactId>mass-module-data</artifactId>
     <packaging>jar</packaging>
 
-    <!-- 这个模块是我用于处理的 data 的 -->
+    <dependencies>
+        <!-- 通用模块 -->
+        <dependency>
+            <groupId>io.higgus.lab</groupId>
+            <artifactId>mass-common</artifactId>
+        </dependency>
 
+        <!-- Web 支持 -->
+        <dependency>
+            <groupId>io.higgus.lab</groupId>
+            <artifactId>mass-spring-boot-starter-web</artifactId>
+        </dependency>
 
+        <!-- Spring AMQP (RabbitMQ) -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-amqp</artifactId>
+        </dependency>
+
+        <!-- Netty (用于 TCP/自定义协议) -->
+        <dependency>
+            <groupId>io.netty</groupId>
+            <artifactId>netty-all</artifactId>
+        </dependency>
+
+        <!-- Redis (用于消息幂等性、去重) -->
+        <dependency>
+            <groupId>io.higgus.lab</groupId>
+            <artifactId>mass-spring-boot-starter-redis</artifactId>
+        </dependency>
+
+        <!-- JSON 处理 -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+        </dependency>
+
+<!--        &lt;!&ndash; 串口通信 (RS232) &ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>org.bidib.jbidib</groupId>-->
+<!--            <artifactId>org.apache.commons</artifactId>-->
+<!--            <version>3.12.0</version>-->
+<!--        </dependency>-->
+
+        <!-- 配置处理 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-configuration-processor</artifactId>
+            <optional>true</optional>
+        </dependency>
+
+        <!-- Lombok -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- 测试 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
 
 </project>

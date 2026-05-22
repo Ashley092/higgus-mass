@@ -1,0 +1,138 @@
+# 数据接入模块 (mass-module-data) 配置
+
+# ==================== 应用配置 ====================
+spring:
+  application:
+    name: mass-module-data
+
+  # ==================== RabbitMQ 配置 ====================
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+    virtual-host: /
+    # 连接池配置
+    connection-timeout: 10000
+    # 消息确认配置
+    publisher-confirm-type: correlated
+    publisher-returns: true
+    template:
+      mandatory: true
+
+  # ==================== Redis 配置 ====================
+  data:
+    redis:
+      host: localhost
+      port: 6379
+      password:
+      database: 0
+      timeout: 3000ms
+      lettuce:
+        pool:
+          max-active: 8
+          max-idle: 8
+          min-idle: 2
+          max-wait: -1ms
+
+# ==================== 服务器配置 ====================
+server:
+  port: 8081
+
+# ==================== 数据接入模块专用配置 ====================
+data:
+  # ==================== 协议适配配置 ====================
+  gateway:
+    # HTTP 协议配置
+    http:
+      enabled: true
+      port: 8081
+      context-path: /data
+    # TCP 协议配置
+    tcp:
+      enabled: false
+      port: 9000
+    # MQTT 协议配置
+    mqtt:
+      enabled: false
+      broker-url: tcp://localhost:1883
+      client-id: data-module
+      topics:
+        - device/data/+
+    # RS232 串口配置
+    serial:
+      enabled: false
+      port-name: COM1
+      baud-rate: 115200
+      data-bits: 8
+      stop-bits: 1
+      parity: 0
+
+  # ==================== 消息队列配置 ====================
+  mq:
+    # 交换机配置
+    exchange:
+      collection: data.collection.exchange
+      status: data.status.exchange
+      alarm: data.alarm.exchange
+    # 队列配置
+    queue:
+      collection: data.collection.queue
+      status: data.status.queue
+      alarm: data.alarm.queue
+    # 路由键配置
+    routing-key:
+      collection: data.collection.#
+      status: data.status.#
+      alarm: data.alarm.#
+
+  # ==================== 消费者配置 ====================
+  consumer:
+    # 采集数据消费者
+    collection:
+      enabled: true
+      concurrency: 3
+      max-concurrency: 10
+      prefetch-count: 10
+      retry-times: 3
+      retry-interval: 1000
+    # 状态变更消费者
+    status:
+      enabled: true
+      concurrency: 2
+      max-concurrency: 5
+    # 告警消费者
+    alarm:
+      enabled: true
+      concurrency: 2
+      max-concurrency: 5
+      # 告警通知配置
+      notification:
+        enabled: false
+        webhook-url: http://localhost:8080/admin/bulong/alarm/notify
+
+  # ==================== 限流配置 ====================
+  rate-limit:
+    # 启用限流
+    enabled: true
+    # 全局限流值（条/秒）
+    global-limit: 1000
+    # 单机台限流值（条/秒）
+    per-device-limit: 10
+    # 滑动窗口大小（秒）
+    window-size: 1
+
+  # ==================== 幂等性配置 ====================
+  idempotent:
+    # 启用幂等性
+    enabled: true
+    # 幂等性key过期时间（秒）
+    key-expire-seconds: 300
+    # 幂等性key前缀
+    key-prefix: data:idempotent:
+
+# ==================== 日志配置 ====================
+logging:
+  level:
+    io.higgus.lab.module.data: DEBUG
+    org.springframework.amqp: INFO
