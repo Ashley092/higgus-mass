@@ -18,6 +18,7 @@
         <module>mass-module-bulong</module>
         <module>mass-module-ai</module>
         <module>mass-module-data</module>
+        <module>mass-module-storage</module>
 
         <!--        <module>mass-ui</module>-->
 <!--        <module>mass-framework</module>-->

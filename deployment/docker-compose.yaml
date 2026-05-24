@@ -1,0 +1,24 @@
+version: '3.1'
+services:
+  rabbitmq:
+    image: rabbitmq:4.3.0
+    container_name: rabbitmq_4_3
+    restart: always
+    hostname: rabbitserver
+    environment:
+      RABBITMQ_DEFAULT_VHOST: admin_vhost
+      RABBITMQ_DEFAULT_USER: root
+      RABBITMQ_DEFAULT_PASS: devops666
+      RABBITMQ_PLUGIN_DIR: '/plugins:/myplugins'
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    volumes:
+      - ./data:/var/lib/rabbitmq
+      - ./myplugins:/myplugins
+    networks:
+      - devopsnetwork
+
+  networks:
+    devopsnetwork:
+      external: true

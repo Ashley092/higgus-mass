@@ -9,18 +9,20 @@
     <option name="showLibraryBeans" value="false" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="603d025f-8c40-43ec-8171-0fdb136eec7c" name="更改" comment="fix: 预重构数据表。">
+    <list default="true" id="603d025f-8c40-43ec-8171-0fdb136eec7c" name="更改" comment="">
+      <change afterPath="$PROJECT_DIR$/mass-module-storage/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/b3ab2b72-b6b7-46f9-b749-cecc866aa9a5.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/b3ab2b72-b6b7-46f9-b749-cecc866aa9a5.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mass-framework/mass-common/src/main/java/io/higgus/lab/mass/framework/common/pojo/CommonResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/mass-framework/mass-common/src/main/java/io/higgus/lab/mass/framework/common/pojo/CommonResult.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mass-framework/mass-spring-boot-starter-web/src/main/java/io/higgus/lab/framework/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/mass-framework/mass-spring-boot-starter-web/src/main/java/io/higgus/lab/framework/web/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mass-module-bulong/src/main/java/io/higgus/lab/module/bulong/enums/BulongErrorCodeConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/mass-module-bulong/src/main/java/io/higgus/lab/module/bulong/enums/BulongErrorCodeConstants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mass-module-data/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mass-module-data/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mass-module-data/src/main/java/io/higgus/lab/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mass-module-infra/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mass-module-infra/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mass-module-infra/src/main/java/io/higgus/lab/module/infra/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mass-framework/mass-spring-boot-starter-mybatis/src/main/java/io/higgus/lab/framework/mybatis/mybatis/core/mapper/BaseMapperX.java" beforeDir="false" afterPath="$PROJECT_DIR$/mass-framework/mass-spring-boot-starter-mybatis/src/main/java/io/higgus/lab/framework/mybatis/mybatis/core/mapper/BaseMapperX.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mass-module-infra/src/main/java/io/higgus/lab/module/infra/controller/FileUploadController.java" beforeDir="false" afterPath="$PROJECT_DIR$/mass-module-infra/src/main/java/io/higgus/lab/module/infra/controller/FileUploadController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mass-module-infra/src/main/java/io/higgus/lab/module/infra/dal/mysql/FileIndexMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/mass-module-infra/src/main/java/io/higgus/lab/module/infra/dal/mysql/FileIndexMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mass-module-infra/src/main/java/io/higgus/lab/module/infra/service/FileSpaceService.java" beforeDir="false" afterPath="$PROJECT_DIR$/mass-module-infra/src/main/java/io/higgus/lab/module/infra/service/FileSpaceService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mass-module-infra/src/main/java/io/higgus/lab/module/infra/service/FileSpaceServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/mass-module-infra/src/main/java/io/higgus/lab/module/infra/service/FileSpaceServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mass-server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mass-server/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,8 +34,8 @@
       <list>
         <option value="Exception" />
         <option value="package-info" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -45,10 +47,10 @@
       <run-configuration type="JUnit" name="FileSpaceServiceImplTest" />
     </enabled-run-configurations>
   </component>
-  <component name="KubernetesApiPersistence"><![CDATA[{}]]></component>
-  <component name="KubernetesApiProvider"><![CDATA[{
-  "isMigrated": true
-}]]></component>
+  <component name="KubernetesApiPersistence">{}</component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
@@ -266,7 +268,9 @@
       <workItem from="1779410580021" duration="3063000" />
       <workItem from="1779413810492" duration="4429000" />
       <workItem from="1779421720832" duration="1426000" />
-      <workItem from="1779435089850" duration="6363000" />
+      <workItem from="1779435089850" duration="8559000" />
+      <workItem from="1779518891438" duration="1889000" />
+      <workItem from="1779605001845" duration="8910000" />
     </task>
     <task id="LOCAL-00001" summary="fix: 修复了 redisson 配置类的启动问题">
       <option name="closed" value="true" />
@@ -348,7 +352,15 @@
       <option name="project" value="LOCAL" />
       <updated>1779264500232</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="feat: 初步定义网关接口，可接受多协议数据，为未来的机台串口 RS232 数据预留处理空间；建立文件空间模块，建表、作上传逻辑定义，下一步完善文件相关内容，并引入嵌套文件夹逻辑。">
+      <option name="closed" value="true" />
+      <created>1779443702589</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1779443702589</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -374,7 +386,8 @@
     <MESSAGE value="fix: bl 模块基础增删改查功能模块完善。下一步引入测试缓存依赖。" />
     <MESSAGE value="feat: 引入 AI 模块。使用 ollama 集成本地部署的模型。下一步是设计记忆模块的数据结构/RAG设计。但是在那之前，我还是比较想先把数据模型和 MQ 做好。" />
     <MESSAGE value="fix: 预重构数据表。" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: 预重构数据表。" />
+    <MESSAGE value="feat: 初步定义网关接口，可接受多协议数据，为未来的机台串口 RS232 数据预留处理空间；建立文件空间模块，建表、作上传逻辑定义，下一步完善文件相关内容，并引入嵌套文件夹逻辑。" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: 初步定义网关接口，可接受多协议数据，为未来的机台串口 RS232 数据预留处理空间；建立文件空间模块，建表、作上传逻辑定义，下一步完善文件相关内容，并引入嵌套文件夹逻辑。" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
