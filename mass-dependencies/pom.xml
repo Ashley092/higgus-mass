@@ -49,7 +49,8 @@
         <netty.version>4.2.4.Final</netty.version>
         <guava.version>33.4.8-jre</guava.version>
 
-
+        <!-- 三方云服务相关 -->
+        <awssdk.version>2.30.14</awssdk.version>
     </properties>
 
     <!-- ============= 依赖版本管理 ============= -->
@@ -251,6 +252,12 @@
                 <version>${guava.version}</version>
             </dependency>
 
+            <!-- 三方云服务相关 -->
+            <dependency>
+                <groupId>software.amazon.awssdk</groupId>
+                <artifactId>s3</artifactId>
+                <version>${awssdk.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 

@@ -16,6 +16,7 @@
     <mybatis-plus-join.version>1.5.4</mybatis-plus-join.version>
     <hutool-5.version>5.8.40</hutool-5.version>
     <revision>1.0-SNAPSHOT</revision>
+    <awssdk.version>2.30.14</awssdk.version>
     <dynamic-datasource.version>4.3.1</dynamic-datasource.version>
     <redisson.version>3.51.0</redisson.version>
     <netty.version>4.2.4.Final</netty.version>
@@ -199,6 +200,11 @@
         <groupId>com.google.guava</groupId>
         <artifactId>guava</artifactId>
         <version>${guava.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>software.amazon.awssdk</groupId>
+        <artifactId>s3</artifactId>
+        <version>${awssdk.version}</version>
       </dependency>
     </dependencies>
   </dependencyManagement>

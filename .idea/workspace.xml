@@ -9,20 +9,17 @@
     <option name="showLibraryBeans" value="false" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="603d025f-8c40-43ec-8171-0fdb136eec7c" name="更改" comment="">
-      <change afterPath="$PROJECT_DIR$/mass-module-storage/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+    <list default="true" id="603d025f-8c40-43ec-8171-0fdb136eec7c" name="更改" comment="feat: 将文件空间模块单独移出。重新设计上传文件的逻辑。启用并发控制、设计 WAF 日志中。明天继续完善 WAF、锁机制、事务 的协调工作……">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mass-framework/mass-spring-boot-starter-mybatis/src/main/java/io/higgus/lab/framework/mybatis/mybatis/core/mapper/BaseMapperX.java" beforeDir="false" afterPath="$PROJECT_DIR$/mass-framework/mass-spring-boot-starter-mybatis/src/main/java/io/higgus/lab/framework/mybatis/mybatis/core/mapper/BaseMapperX.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mass-module-infra/src/main/java/io/higgus/lab/module/infra/controller/FileUploadController.java" beforeDir="false" afterPath="$PROJECT_DIR$/mass-module-infra/src/main/java/io/higgus/lab/module/infra/controller/FileUploadController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mass-module-infra/src/main/java/io/higgus/lab/module/infra/dal/mysql/FileIndexMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/mass-module-infra/src/main/java/io/higgus/lab/module/infra/dal/mysql/FileIndexMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mass-module-infra/src/main/java/io/higgus/lab/module/infra/service/FileSpaceService.java" beforeDir="false" afterPath="$PROJECT_DIR$/mass-module-infra/src/main/java/io/higgus/lab/module/infra/service/FileSpaceService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mass-module-infra/src/main/java/io/higgus/lab/module/infra/service/FileSpaceServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/mass-module-infra/src/main/java/io/higgus/lab/module/infra/service/FileSpaceServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mass-server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mass-server/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mass-dependencies/.flattened-pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mass-dependencies/.flattened-pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mass-dependencies/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mass-dependencies/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mass-module-infra/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mass-module-infra/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/controller/FileSpaceController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/dal/mysql/DirectoryDetailMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/dal/mysql/DirectoryDetailMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/dal/mysql/FileDetailMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/dal/mysql/FileDetailMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/service/FileSpaceService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/service/FileSpaceServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mass-server/src/main/resources/application-local.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/mass-server/src/main/resources/application-local.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -270,7 +267,8 @@
       <workItem from="1779421720832" duration="1426000" />
       <workItem from="1779435089850" duration="8559000" />
       <workItem from="1779518891438" duration="1889000" />
-      <workItem from="1779605001845" duration="8910000" />
+      <workItem from="1779605001845" duration="9285000" />
+      <workItem from="1779671874745" duration="12322000" />
     </task>
     <task id="LOCAL-00001" summary="fix: 修复了 redisson 配置类的启动问题">
       <option name="closed" value="true" />
@@ -360,7 +358,15 @@
       <option name="project" value="LOCAL" />
       <updated>1779443702589</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="feat: 将文件空间模块单独移出。重新设计上传文件的逻辑。启用并发控制、设计 WAF 日志中。明天继续完善 WAF、锁机制、事务 的协调工作……">
+      <option name="closed" value="true" />
+      <created>1779617181087</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1779617181087</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -387,7 +393,8 @@
     <MESSAGE value="feat: 引入 AI 模块。使用 ollama 集成本地部署的模型。下一步是设计记忆模块的数据结构/RAG设计。但是在那之前，我还是比较想先把数据模型和 MQ 做好。" />
     <MESSAGE value="fix: 预重构数据表。" />
     <MESSAGE value="feat: 初步定义网关接口，可接受多协议数据，为未来的机台串口 RS232 数据预留处理空间；建立文件空间模块，建表、作上传逻辑定义，下一步完善文件相关内容，并引入嵌套文件夹逻辑。" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: 初步定义网关接口，可接受多协议数据，为未来的机台串口 RS232 数据预留处理空间；建立文件空间模块，建表、作上传逻辑定义，下一步完善文件相关内容，并引入嵌套文件夹逻辑。" />
+    <MESSAGE value="feat: 将文件空间模块单独移出。重新设计上传文件的逻辑。启用并发控制、设计 WAF 日志中。明天继续完善 WAF、锁机制、事务 的协调工作……" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: 将文件空间模块单独移出。重新设计上传文件的逻辑。启用并发控制、设计 WAF 日志中。明天继续完善 WAF、锁机制、事务 的协调工作……" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
