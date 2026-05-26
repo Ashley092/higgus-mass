@@ -1,0 +1,51 @@
+# ============================================
+# Mass 数据接入模块 Dockerfile
+# ============================================
+
+# 阶段1：构建阶段
+FROM maven:3.9-eclipse-temurin-21-alpine AS builder
+
+WORKDIR /app
+
+# 复制 pom.xml 和依赖文件
+COPY pom.xml .
+COPY mass-dependencies/pom.xml mass-dependencies/
+COPY mass-framework/pom.xml mass-framework/
+COPY mass-framework/mass-spring-boot-starter-redis/pom.xml mass-framework/mass-spring-boot-starter-redis/
+COPY mass-framework/mass-spring-boot-starter-web/pom.xml mass-framework/mass-spring-boot-starter-web/
+COPY mass-framework/mass-spring-boot-starter-mq/pom.xml mass-framework/mass-spring-boot-starter-mq/
+COPY mass-framework/mass-common/pom.xml mass-framework/mass-common/
+COPY mass-module-data/pom.xml mass-module-data/
+
+# 下载依赖
+RUN mvn dependency:go-offline -B || true
+
+# 复制源代码
+COPY mass-framework mass-framework
+COPY mass-module-data mass-module-data
+
+# 构建项目
+RUN mvn clean package -DskipTests -pl mass-module-data -am
+
+# 阶段2：运行环境
+FROM eclipse-temurin:21-jre-alpine
+
+RUN apk add --no-cache curl tzdata
+
+ENV TZ=Asia/Shanghai
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo '$TZ' > /etc/timezone
+
+WORKDIR /app
+
+COPY --from=builder /app/mass-module-data/target/*.jar app.jar
+
+RUN mkdir -p /app/logs
+
+ENV JAVA_OPTS="-Xms256m -Xmx512m -XX:+UseG1GC"
+
+EXPOSE 8081
+
+HEALTHCHECK --interval=30s --timeout=10s --retries=3 \
+    CMD curl -f http://localhost:8081/actuator/health || exit 1
+
+ENTRYPOINT ["sh", "-c", "java $JAVA_OPTS -jar app.jar"]

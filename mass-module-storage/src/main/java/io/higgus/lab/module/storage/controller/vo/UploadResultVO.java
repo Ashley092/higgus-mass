@@ -1,4 +1,4 @@
-package io.higgus.lab.module.storage.vo;
+package io.higgus.lab.module.storage.controller.vo;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.AllArgsConstructor;

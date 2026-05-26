@@ -54,6 +54,20 @@ public class FileStorageServiceImpl implements FileStorageService {
     }
 
     @Override
+    public String upload(byte[] data, String storageKey) {
+        PutObjectRequest request = PutObjectRequest.builder()
+                .bucket(bucketName)
+                .key(storageKey)
+                .contentType("application/vnd.openxmlformats-officedocument.spreadsheetml.sheet")
+                .contentLength((long) data.length)
+                .build();
+
+        s3Client.putObject(request, RequestBody.fromBytes(data));
+        log.info("字节数组上传成功, storageKey={}, size={}", storageKey, data.length);
+        return storageKey;
+    }
+
+    @Override
     public void delete(String storageKey) {
         try {
             DeleteObjectRequest request = DeleteObjectRequest.builder()
@@ -74,6 +88,17 @@ public class FileStorageServiceImpl implements FileStorageService {
                 .key(storageKey)
                 .build();
         return s3Client.getObject(request);
+    }
+
+    @Override
+    public byte[] downloadAsBytes(String storageKey) {
+        ResponseInputStream<GetObjectResponse> response = download(storageKey);
+        try {
+            return response.readAllBytes();
+        } catch (IOException e) {
+            log.error("读取文件字节失败, storageKey={}", storageKey, e);
+            throw new RuntimeException("读取文件失败: " + storageKey, e);
+        }
     }
 
     @Override

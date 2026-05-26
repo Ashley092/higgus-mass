@@ -3,6 +3,7 @@ package io.higgus.lab.module.storage.dal.dataobject;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
+import com.baomidou.mybatisplus.annotation.IdType;
 import lombok.*;
 
 import java.time.LocalDateTime;
@@ -14,7 +15,7 @@ import java.time.LocalDateTime;
 @Builder
 public class ContentMetadataDO {
 
-    @TableId("id")
+    @TableId(value = "id", type = IdType.AUTO)
     private Long id;
 
     private Long itemId;

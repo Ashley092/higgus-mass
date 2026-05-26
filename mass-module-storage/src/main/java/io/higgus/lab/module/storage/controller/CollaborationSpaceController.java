@@ -2,9 +2,9 @@ package io.higgus.lab.module.storage.controller;
 
 import io.higgus.lab.mass.framework.common.pojo.CommonResult;
 import io.higgus.lab.module.storage.service.impl.CollaborationSpaceServiceImpl;
-import io.higgus.lab.module.storage.vo.CollaborationSpaceCreateReqVO;
-import io.higgus.lab.module.storage.vo.CollaborationSpaceRespVO;
-import io.higgus.lab.module.storage.vo.CollaborationSpaceUpdateReqVO;
+import io.higgus.lab.module.storage.controller.vo.CollaborationSpaceCreateReqVO;
+import io.higgus.lab.module.storage.controller.vo.CollaborationSpaceRespVO;
+import io.higgus.lab.module.storage.controller.vo.CollaborationSpaceUpdateReqVO;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.tags.Tag;

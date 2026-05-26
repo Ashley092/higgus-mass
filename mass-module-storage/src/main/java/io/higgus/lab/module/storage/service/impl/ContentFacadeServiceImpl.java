@@ -1,20 +1,20 @@
 package io.higgus.lab.module.storage.service.impl;
 
 import cn.hutool.core.util.IdUtil;
+import io.higgus.lab.module.storage.controller.vo.ContentMetadataCreateReqVO;
 import io.higgus.lab.module.storage.dal.dataobject.ContentMetadataDO;
 import io.higgus.lab.module.storage.service.ContentFacadeService;
 import io.higgus.lab.module.storage.service.ContentMetadataService;
 import io.higgus.lab.module.storage.service.FileStorageService;
-import io.higgus.lab.module.storage.vo.ContentMetadataCreateReqVO;
-import io.higgus.lab.module.storage.vo.ContentUploadReqVO;
-import io.higgus.lab.module.storage.vo.UploadResultVO;
+import io.higgus.lab.module.storage.controller.vo.ContentUploadReqVO;
+import io.higgus.lab.module.storage.controller.vo.UploadResultVO;
 import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
-import java.util.UUID;
+
 
 /**
  * 内容门面服务实现 - 编排元数据和文件存储
@@ -40,33 +40,44 @@ public class ContentFacadeServiceImpl implements ContentFacadeService {
         String md5 = fileStorageService.calculateMd5(file);
         log.info("计算文件MD5完成, md5={}", md5);
 
-        // 2. 秒传检查 - MD5 已存在则直接返回
+        // 2. 先查一次（快速返回，避免不必要的锁竞争）
         ContentMetadataDO existing = contentMetadataService.findByMd5(md5);
         if (existing != null) {
-            log.info("秒传成功，直接返回已有记录, id={}, md5={}", existing.getId(), md5);
+            log.info("秒传成功，直接返回已有记录");
             return UploadResultVO.skip(existing.getId(), existing.getStorageKey(), md5);
         }
 
-        // 3. 上传到 MinIO
-        String uuid = IdUtil.simpleUUID();
-        String storageKey = fileStorageService.upload(file, uuid);
-        log.info("文件上传到MinIO完成, storageKey={}", storageKey);
+        // 3. 使用 synchronized 关键字（JVM 级别锁，最简单）
+        // .intern() 找到相同字符串的对象
+        synchronized (md5.intern()) {
+            // 4. 双重检查（锁内再查一次，防止等待锁的线程重复上传）
+            ContentMetadataDO existingInLock = contentMetadataService.findByMd5(md5);
+            if (existingInLock != null) {
+                log.info("双重检查命中秒传");
+                return UploadResultVO.skip(existingInLock.getId(), existingInLock.getStorageKey(), md5);
+            }
 
-        // 4. 创建元数据
-        ContentMetadataCreateReqVO createReqVO = ContentMetadataCreateReqVO.builder()
-                .itemId(reqVO.getItemId())
-                .title(reqVO.getTitle() != null ? reqVO.getTitle() : file.getOriginalFilename())
-                .contentType(reqVO.getContentType())
-                .storageKey(storageKey)
-                .fileSize(file.getSize())
-                .fileExtension(getFileExtension(file.getOriginalFilename()))
-                .fileMd5(md5)
-                .build();
+            // 5. 上传到 MinIO（现在只有获得锁的线程会执行）
+            String uuid = IdUtil.simpleUUID();
+            String storageKey = fileStorageService.upload(file, uuid);
+            log.info("文件上传到MinIO完成, storageKey={}", storageKey);
 
-        Long contentId = contentMetadataService.create(createReqVO, creator);
-        log.info("内容元数据创建完成, id={}", contentId);
+            // 6. 创建元数据
+            ContentMetadataCreateReqVO createReqVO = ContentMetadataCreateReqVO.builder()
+                    .itemId(reqVO.getItemId())
+                    .title(reqVO.getTitle() != null ? reqVO.getTitle() : file.getOriginalFilename())
+                    .contentType(reqVO.getContentType())
+                    .storageKey(storageKey)
+                    .fileSize(file.getSize())
+                    .fileExtension(getFileExtension(file.getOriginalFilename()))
+                    .fileMd5(md5)
+                    .build();
 
-        return UploadResultVO.newUpload(contentId, storageKey, md5);
+            Long contentId = contentMetadataService.create(createReqVO, creator);
+            log.info("内容元数据创建完成, id={}", contentId);
+
+            return UploadResultVO.newUpload(contentId, storageKey, md5);
+        }
     }
 
     @Override

@@ -1,9 +1,9 @@
 package io.higgus.lab.module.storage.service;
 
 import io.higgus.lab.module.storage.dal.dataobject.ContentMetadataDO;
-import io.higgus.lab.module.storage.vo.ContentMetadataCreateReqVO;
-import io.higgus.lab.module.storage.vo.ContentMetadataRespVO;
-import io.higgus.lab.module.storage.vo.ContentMetadataUpdateReqVO;
+import io.higgus.lab.module.storage.controller.vo.ContentMetadataCreateReqVO;
+import io.higgus.lab.module.storage.controller.vo.ContentMetadataRespVO;
+import io.higgus.lab.module.storage.controller.vo.ContentMetadataUpdateReqVO;
 
 import java.util.List;
 

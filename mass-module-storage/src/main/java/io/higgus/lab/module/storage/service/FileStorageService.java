@@ -23,6 +23,15 @@ public interface FileStorageService {
     String upload(MultipartFile file) throws IOException;
 
     /**
+     * 上传字节数组到 MinIO（用于覆盖 Excel 文件）
+     *
+     * @param data       字节数据
+     * @param storageKey 存储键
+     * @return 实际存储的 key
+     */
+    String upload(byte[] data, String storageKey);
+
+    /**
      * 删除文件
      *
      * @param storageKey 存储键
@@ -36,6 +45,14 @@ public interface FileStorageService {
      * @return 文件流
      */
     ResponseInputStream<GetObjectResponse> download(String storageKey);
+
+    /**
+     * 下载文件为字节数组
+     *
+     * @param storageKey 存储键
+     * @return 文件字节数据
+     */
+    byte[] downloadAsBytes(String storageKey);
 
     /**
      * 检查文件是否存在
