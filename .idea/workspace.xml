@@ -9,46 +9,12 @@
     <option name="showLibraryBeans" value="false" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="603d025f-8c40-43ec-8171-0fdb136eec7c" name="更改" comment="feat: 协作空间模块 连接配置了与 MinIO 的基础交互，能够进行简单的上传、更新、删除操作。基本闭环。下一步的问题在于整理逻辑，实现基本并发控制。">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="603d025f-8c40-43ec-8171-0fdb136eec7c" name="更改" comment="feat: 实现了一个简单的 Excel 在线编辑功能。使用 POI 第三方库组件。并引入一个简单的粗粒度乐观锁逻辑。仅仅是逻辑上暂时搭建好了。它还需要深度考究其生命周期管理范围和可能的空窗期缺漏分析。明天继续。">
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mass-framework/mass-spring-boot-starter-web/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mass-framework/mass-spring-boot-starter-web/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mass-dependencies/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mass-dependencies/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mass-module-storage/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mass-module-storage/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/controller/CollaborationItemController.java" beforeDir="false" afterPath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/controller/CollaborationItemController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/controller/CollaborationSpaceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/controller/CollaborationSpaceController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/controller/ContentMetadataController.java" beforeDir="false" afterPath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/controller/ContentMetadataController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/controller/ExcelController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/controller/vo/CollaborationItemCreateReqVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/controller/vo/CollaborationItemCreateReqVO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/controller/vo/CollaborationItemRespVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/controller/vo/CollaborationItemRespVO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/controller/vo/CollaborationItemUpdateReqVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/controller/vo/CollaborationItemUpdateReqVO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/controller/vo/CollaborationSpaceCreateReqVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/controller/vo/CollaborationSpaceCreateReqVO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/controller/vo/CollaborationSpaceRespVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/controller/vo/CollaborationSpaceRespVO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/controller/vo/CollaborationSpaceUpdateReqVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/controller/vo/CollaborationSpaceUpdateReqVO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/controller/vo/ContentMetadataCreateReqVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/controller/vo/ContentMetadataCreateReqVO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/controller/vo/ContentMetadataRespVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/controller/vo/ContentMetadataRespVO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/controller/vo/ContentMetadataUpdateReqVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/controller/vo/ContentMetadataUpdateReqVO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/dal/dataobject/ContentMetadataDO.java" beforeDir="false" afterPath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/dal/dataobject/ContentMetadataDO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/service/ContentFacadeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/service/ContentFacadeService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/service/ContentMetadataService.java" beforeDir="false" afterPath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/service/ContentMetadataService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/service/ExcelStorageService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/service/FileStorageService.java" beforeDir="false" afterPath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/service/FileStorageService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/service/impl/CollaborationItemServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/service/impl/CollaborationItemServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/service/impl/CollaborationSpaceServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/service/impl/CollaborationSpaceServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/service/impl/ContentFacadeServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/service/impl/ContentFacadeServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/service/impl/ContentMetadataServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/service/impl/ContentMetadataServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/service/impl/FileStorageServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/service/impl/FileStorageServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/vo/CollaborationItemCreateReqVO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/vo/CollaborationItemRespVO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/vo/CollaborationItemUpdateReqVO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/vo/CollaborationSpaceCreateReqVO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/vo/CollaborationSpaceRespVO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/vo/CollaborationSpaceUpdateReqVO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/vo/ContentMetadataCreateReqVO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/vo/ContentMetadataRespVO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/vo/ContentMetadataUpdateReqVO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/vo/ContentUploadReqVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/controller/vo/ContentUploadReqVO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/vo/UploadResultVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/controller/vo/UploadResultVO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sql/mysql/userInintial.sql" beforeDir="false" afterPath="$PROJECT_DIR$/sql/mysql/userInintial.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/service/HiExcel/HiExcelServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/service/HiExcel/HiExcelServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,8 +26,8 @@
       <list>
         <option value="Exception" />
         <option value="package-info" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -102,8 +68,8 @@
     &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
     &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
     &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;767&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;767&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
@@ -303,7 +269,17 @@
       <workItem from="1779671874745" duration="16208000" />
       <workItem from="1779756031141" duration="5558000" />
       <workItem from="1779769370096" duration="238000" />
-      <workItem from="1779781874850" duration="7179000" />
+      <workItem from="1779781874850" duration="10598000" />
+      <workItem from="1779869517894" duration="1358000" />
+      <workItem from="1780207623856" duration="6613000" />
+      <workItem from="1780379241249" duration="1866000" />
+      <workItem from="1780838481198" duration="16000" />
+      <workItem from="1781083058160" duration="7311000" />
+      <workItem from="1781433238031" duration="113000" />
+      <workItem from="1781777037437" duration="35000" />
+      <workItem from="1782388944332" duration="1279000" />
+      <workItem from="1782390346152" duration="7633000" />
+      <workItem from="1782574248211" duration="214000" />
     </task>
     <task id="LOCAL-00001" summary="fix: 修复了 redisson 配置类的启动问题">
       <option name="closed" value="true" />
@@ -409,7 +385,15 @@
       <option name="project" value="LOCAL" />
       <updated>1779700779859</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="feat: 实现了一个简单的 Excel 在线编辑功能。使用 POI 第三方库组件。并引入一个简单的粗粒度乐观锁逻辑。仅仅是逻辑上暂时搭建好了。它还需要深度考究其生命周期管理范围和可能的空窗期缺漏分析。明天继续。">
+      <option name="closed" value="true" />
+      <created>1779790389892</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1779790389892</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -438,7 +422,8 @@
     <MESSAGE value="feat: 初步定义网关接口，可接受多协议数据，为未来的机台串口 RS232 数据预留处理空间；建立文件空间模块，建表、作上传逻辑定义，下一步完善文件相关内容，并引入嵌套文件夹逻辑。" />
     <MESSAGE value="feat: 将文件空间模块单独移出。重新设计上传文件的逻辑。启用并发控制、设计 WAF 日志中。明天继续完善 WAF、锁机制、事务 的协调工作……" />
     <MESSAGE value="feat: 协作空间模块 连接配置了与 MinIO 的基础交互，能够进行简单的上传、更新、删除操作。基本闭环。下一步的问题在于整理逻辑，实现基本并发控制。" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: 协作空间模块 连接配置了与 MinIO 的基础交互，能够进行简单的上传、更新、删除操作。基本闭环。下一步的问题在于整理逻辑，实现基本并发控制。" />
+    <MESSAGE value="feat: 实现了一个简单的 Excel 在线编辑功能。使用 POI 第三方库组件。并引入一个简单的粗粒度乐观锁逻辑。仅仅是逻辑上暂时搭建好了。它还需要深度考究其生命周期管理范围和可能的空窗期缺漏分析。明天继续。" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: 实现了一个简单的 Excel 在线编辑功能。使用 POI 第三方库组件。并引入一个简单的粗粒度乐观锁逻辑。仅仅是逻辑上暂时搭建好了。它还需要深度考究其生命周期管理范围和可能的空窗期缺漏分析。明天继续。" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

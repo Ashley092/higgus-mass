@@ -26,6 +26,12 @@ public class HiExcelServiceImpl implements HiExcelService {
     @Resource
     private FileStorageService fileStorageService;
 
+
+    /**
+     * 使用乐观锁进行并发控制。
+     * @param reqVO 变更请求（行号、列号从 0 开始）
+     * @return
+     */
     @Override
     public HiExcelSaveRespVO saveExcel(HiExcelSaveReqVO reqVO) {
         Long contentId = reqVO.getContentId();
