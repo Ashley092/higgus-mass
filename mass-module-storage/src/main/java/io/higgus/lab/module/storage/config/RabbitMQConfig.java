@@ -10,10 +10,15 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class RabbitMQConfig {
 
-    public static final String LOG_EXCHANGE = "collab.log.exchange";
-    public static final String QUEUE_REDIS = "collab.log.queue.redis";
-    public static final String QUEUE_MYSQL = "collab.log.queue.mysql";
-    public static final String QUEUE_MINIO = "collab.log.queue.minio";
+    // 实时层
+    public static final String EX_REALTIME = "collab.ex.realtime";
+    public static final String Q_REDIS = "collab.q.redis";
+    public static final String KEY_REALTIME = "collab.key.realtime";
+
+    // 持久化层
+    public static final String EX_PERSIST = "collab.ex.persist";
+    public static final String Q_MYSQL = "collab.q.mysql";
+    public static final String Q_MINIO = "collab.q.minio";
 
     // 声明消息序列化及反序列化处理
     @Bean
@@ -21,36 +26,40 @@ public class RabbitMQConfig {
         return new Jackson2JsonMessageConverter();
     }
 
-    // 声明队列
+    // 声明实时阶段组件
+    @Bean
+    public DirectExchange realtimeExchange() {
+        return new DirectExchange(EX_REALTIME, true, false);
+    }
     @Bean
     public Queue redisQueue() {
-        return new Queue(QUEUE_REDIS, true);
+        return new Queue(Q_REDIS, true); // durable = true 队列持久化
+    }
+    @Bean
+    public Binding bindRedis(Queue redisQueue, DirectExchange realtimeExchange) {
+        return BindingBuilder.bind(redisQueue).to(realtimeExchange).with(KEY_REALTIME);
+    }
+
+    // 声明持久化部分组件
+    @Bean
+    public FanoutExchange persistExchange() {
+        return new FanoutExchange(EX_PERSIST, true, false);
     }
     @Bean
     public Queue mysqlQueue() {
-        return new Queue(QUEUE_MYSQL, true);
+        return new Queue(Q_MYSQL, true);
     }
     @Bean
     public Queue minioQueue() {
-        return new Queue(QUEUE_MINIO, true);
+        return new Queue(Q_MINIO, true);
+    }
+    @Bean
+    public Binding bindMysql(Queue mysqlQueue, FanoutExchange persistExchange) {
+        return BindingBuilder.bind(mysqlQueue).to(persistExchange);
+    }
+    @Bean
+    public Binding bindMinio(Queue minioQueue, FanoutExchange persistExchange) {
+        return BindingBuilder.bind(minioQueue).to(persistExchange);
     }
 
-    // 声明交换机
-    @Bean
-    public FanoutExchange logExchange() {
-        return new FanoutExchange(LOG_EXCHANGE, true, false);
-    }
-    // 声明绑定关系
-    @Bean
-    public Binding bindRedis(Queue redisQueue, FanoutExchange logExchange) {
-        return BindingBuilder.bind(redisQueue).to(logExchange);
-    }
-    @Bean
-    public Binding bindMysql(Queue mysqlQueue, FanoutExchange logExchange) {
-        return BindingBuilder.bind(mysqlQueue).to(logExchange);
-    }
-    @Bean
-    public Binding bindMinio(Queue minioQueue, FanoutExchange logExchange) {
-        return BindingBuilder.bind(minioQueue).to(logExchange);
-    }
 }

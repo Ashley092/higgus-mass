@@ -9,12 +9,15 @@
     <option name="showLibraryBeans" value="false" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="603d025f-8c40-43ec-8171-0fdb136eec7c" name="更改" comment="feat: 实现了一个简单的 Excel 在线编辑功能。使用 POI 第三方库组件。并引入一个简单的粗粒度乐观锁逻辑。仅仅是逻辑上暂时搭建好了。它还需要深度考究其生命周期管理范围和可能的空窗期缺漏分析。明天继续。">
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+    <list default="true" id="603d025f-8c40-43ec-8171-0fdb136eec7c" name="更改" comment="feat: 初始化 MQ 中的队列和简单拓扑。先构造结构。">
+      <change afterPath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/mq/listener/CollabEditChainListener.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mass-dependencies/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mass-dependencies/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mass-module-storage/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mass-module-storage/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/service/HiExcel/HiExcelServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/service/HiExcel/HiExcelServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/config/RabbitMQConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/config/RabbitMQConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/mq/listener/QueueMessageListener.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/service/CellMessagingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/service/CollabMessagingService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/service/impl/GeneralServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/service/impl/GeneralServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/service/poi/PoiManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/service/poi/PoiService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/service/poi/PoiManagerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/service/poi/PoiServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,6 +41,11 @@
     <enabled-run-configurations>
       <run-configuration type="JUnit" name="FileSpaceServiceImplTest" />
     </enabled-run-configurations>
+  </component>
+  <component name="JsbtTreeLayoutManager">
+    <layout place="tools.popupGrunt">
+      <scroll-view-position x="0" y="0" />
+    </layout>
   </component>
   <component name="KubernetesApiPersistence">{}</component>
   <component name="KubernetesApiProvider">{
@@ -217,7 +225,7 @@
     </recent_temporary>
   </component>
   <component name="StructureViewState">
-    <option name="selectedTab" value="逻辑" />
+    <option name="selectedTab" value="实体" />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="默认任务">
@@ -279,7 +287,7 @@
       <workItem from="1781777037437" duration="35000" />
       <workItem from="1782388944332" duration="1279000" />
       <workItem from="1782390346152" duration="7633000" />
-      <workItem from="1782574248211" duration="214000" />
+      <workItem from="1782574248211" duration="16589000" />
     </task>
     <task id="LOCAL-00001" summary="fix: 修复了 redisson 配置类的启动问题">
       <option name="closed" value="true" />
@@ -393,7 +401,15 @@
       <option name="project" value="LOCAL" />
       <updated>1779790389892</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="feat: 初始化 MQ 中的队列和简单拓扑。先构造结构。">
+      <option name="closed" value="true" />
+      <created>1782574635412</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1782574635412</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -423,7 +439,8 @@
     <MESSAGE value="feat: 将文件空间模块单独移出。重新设计上传文件的逻辑。启用并发控制、设计 WAF 日志中。明天继续完善 WAF、锁机制、事务 的协调工作……" />
     <MESSAGE value="feat: 协作空间模块 连接配置了与 MinIO 的基础交互，能够进行简单的上传、更新、删除操作。基本闭环。下一步的问题在于整理逻辑，实现基本并发控制。" />
     <MESSAGE value="feat: 实现了一个简单的 Excel 在线编辑功能。使用 POI 第三方库组件。并引入一个简单的粗粒度乐观锁逻辑。仅仅是逻辑上暂时搭建好了。它还需要深度考究其生命周期管理范围和可能的空窗期缺漏分析。明天继续。" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: 实现了一个简单的 Excel 在线编辑功能。使用 POI 第三方库组件。并引入一个简单的粗粒度乐观锁逻辑。仅仅是逻辑上暂时搭建好了。它还需要深度考究其生命周期管理范围和可能的空窗期缺漏分析。明天继续。" />
+    <MESSAGE value="feat: 初始化 MQ 中的队列和简单拓扑。先构造结构。" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: 初始化 MQ 中的队列和简单拓扑。先构造结构。" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

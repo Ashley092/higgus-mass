@@ -1,7 +1,7 @@
 package io.higgus.lab.module.storage.service.impl;
 
 import io.higgus.lab.module.storage.controller.vo.CellUpdateReqVO;
-import io.higgus.lab.module.storage.service.CellMessagingService;
+import io.higgus.lab.module.storage.service.CollabMessagingService;
 import io.higgus.lab.module.storage.service.GeneralService;
 import org.springframework.stereotype.Service;
 
@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class GeneralServiceImpl implements GeneralService {
 
-    CellMessagingService mqService;
+    CollabMessagingService mqService;
 
     public void editCell(CellUpdateReqVO reqVO) {
 
