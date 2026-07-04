@@ -1,4 +1,4 @@
-package io.higgus.lab.module.storage.mq.listener;
+package io.higgus.lab.module.storage.mq;
 
 
 import io.higgus.lab.module.storage.config.RabbitMQConfig;
@@ -13,7 +13,7 @@ import org.springframework.stereotype.Component;
 import static com.baomidou.mybatisplus.extension.ddl.DdlScriptErrorHandler.PrintlnLogErrorHandler.log;
 
 @Component
-public class CollabEditChainListener {
+public class CollaborationEditChainListener {
 
     private final RabbitTemplate rabbitTemplate;
 
@@ -22,7 +22,7 @@ public class CollabEditChainListener {
     @Resource
     CollabRedisService redisService;
 
-    public CollabEditChainListener(RabbitTemplate rabbitTemplate) {
+    public CollaborationEditChainListener(RabbitTemplate rabbitTemplate) {
         this.rabbitTemplate = rabbitTemplate;
     }
 
@@ -44,6 +44,11 @@ public class CollabEditChainListener {
             log.error("某一部实时传输阶段的工作失败了，拒绝发送 ACK ……");
             throw e;
         }
+    }
+
+    @RabbitListener(queues = RabbitMQConfig.EX_PERSIST)
+    public void handlePersistLog() {
+
     }
 
 }

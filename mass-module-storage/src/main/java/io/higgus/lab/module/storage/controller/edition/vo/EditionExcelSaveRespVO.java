@@ -1,11 +1,11 @@
-package io.higgus.lab.module.storage.controller.HiExcel.vo;
+package io.higgus.lab.module.storage.controller.edition.vo;
 
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 @Data
-public class HiExcelSaveRespVO {
+public class EditionExcelSaveRespVO {
 
     private Boolean success;
 
@@ -22,16 +22,16 @@ public class HiExcelSaveRespVO {
         UNKNOWN_ERROR
     }
 
-    public static HiExcelSaveRespVO success(Integer newVersion) {
-        HiExcelSaveRespVO resp = new HiExcelSaveRespVO();
+    public static EditionExcelSaveRespVO success(Integer newVersion) {
+        EditionExcelSaveRespVO resp = new EditionExcelSaveRespVO();
         resp.setSuccess(true);
         resp.setNewVersion(newVersion);
         resp.setErrorType(ErrorType.SUCCESS);
         return resp;
     }
 
-    public static HiExcelSaveRespVO fail(String message, ErrorType errorType) {
-        HiExcelSaveRespVO resp = new HiExcelSaveRespVO();
+    public static EditionExcelSaveRespVO fail(String message, ErrorType errorType) {
+        EditionExcelSaveRespVO resp = new EditionExcelSaveRespVO();
         resp.setSuccess(false);
         resp.setErrorMessage(message);
         resp.setErrorType(errorType);

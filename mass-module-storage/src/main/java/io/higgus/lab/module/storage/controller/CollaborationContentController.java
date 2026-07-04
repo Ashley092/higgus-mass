@@ -2,7 +2,7 @@ package io.higgus.lab.module.storage.controller;
 
 import io.higgus.lab.mass.framework.common.pojo.CommonResult;
 import io.higgus.lab.module.storage.controller.vo.ContentMetadataUpdateReqVO;
-import io.higgus.lab.module.storage.service.ContentFacadeService;
+import io.higgus.lab.module.storage.service.CollaborationContentFacadeService;
 import io.higgus.lab.module.storage.service.ContentMetadataService;
 import io.higgus.lab.module.storage.service.FileStorageService;
 import io.higgus.lab.module.storage.controller.vo.ContentMetadataRespVO;
@@ -30,14 +30,14 @@ import java.util.List;
 @Tag(name = "内容元数据管理")
 @Slf4j
 @RestController
-@RequestMapping("/content/metadata")
-public class ContentMetadataController {
+@RequestMapping("/collaboration/content")
+public class CollaborationContentController {
 
     @Resource
     private ContentMetadataService contentMetadataService;
 
     @Resource
-    private ContentFacadeService contentFacadeService;
+    private CollaborationContentFacadeService collaborationContentFacadeService;
 
     @Resource
     private FileStorageService fileStorageService;
@@ -49,7 +49,7 @@ public class ContentMetadataController {
             @Valid ContentUploadReqVO reqVO,
             @Parameter(description = "创建者") @RequestParam(value = "creator", defaultValue = "0") Long creator) throws Exception {
         log.info("文件上传请求, filename={}, size={}, itemId={}", file.getOriginalFilename(), file.getSize(), reqVO.getItemId());
-        return CommonResult.success(contentFacadeService.uploadFile(file, reqVO, creator));
+        return CommonResult.success(collaborationContentFacadeService.uploadFile(file, reqVO, creator));
     }
 
 //    @Operation(summary = "创建内容元数据（纯数据，不上传文件）")
@@ -75,7 +75,7 @@ public class ContentMetadataController {
     @DeleteMapping("/delete")
     public CommonResult<Boolean> deleteContent(@Parameter(description = "内容ID") @RequestParam("id") Long id) {
         log.info("删除内容, id={}", id);
-        contentFacadeService.deleteContent(id);
+        collaborationContentFacadeService.deleteContent(id);
         return CommonResult.success(true);
     }
 

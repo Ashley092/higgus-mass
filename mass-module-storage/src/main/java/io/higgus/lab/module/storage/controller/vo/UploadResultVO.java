@@ -14,7 +14,7 @@ import lombok.NoArgsConstructor;
 public class UploadResultVO {
 
     @Schema(description = "内容ID")
-    private Long contentId;
+    private String contentId;
 
     @Schema(description = "是否秒传成功（文件已存在）")
     private Boolean skipUpload;
@@ -25,7 +25,7 @@ public class UploadResultVO {
     @Schema(description = "文件MD5")
     private String fileMd5;
 
-    public static UploadResultVO skip(Long contentId, String storageKey, String fileMd5) {
+    public static UploadResultVO skip(String contentId, String storageKey, String fileMd5) {
         return UploadResultVO.builder()
                 .contentId(contentId)
                 .skipUpload(true)
@@ -34,7 +34,7 @@ public class UploadResultVO {
                 .build();
     }
 
-    public static UploadResultVO newUpload(Long contentId, String storageKey, String fileMd5) {
+    public static UploadResultVO newUpload(String contentId, String storageKey, String fileMd5) {
         return UploadResultVO.builder()
                 .contentId(contentId)
                 .skipUpload(false)

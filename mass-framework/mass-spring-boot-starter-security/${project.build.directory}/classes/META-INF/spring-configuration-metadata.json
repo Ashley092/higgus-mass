@@ -1,0 +1,25 @@
+{
+  "groups": [
+    {
+      "name": "mass.security",
+      "type": "io.higgus.lab.framework.security.security.config.SecurityProperties",
+      "sourceType": "io.higgus.lab.framework.security.security.config.SecurityProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "mass.security.token-header",
+      "type": "java.lang.String",
+      "sourceType": "io.higgus.lab.framework.security.security.config.SecurityProperties"
+    },
+    {
+      "name": "mass.security.token-parameter",
+      "type": "java.lang.String",
+      "sourceType": "io.higgus.lab.framework.security.security.config.SecurityProperties"
+    }
+  ],
+  "hints": [],
+  "ignored": {
+    "properties": []
+  }
+}

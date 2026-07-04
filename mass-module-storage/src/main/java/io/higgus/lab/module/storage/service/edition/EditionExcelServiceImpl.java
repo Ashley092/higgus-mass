@@ -1,9 +1,9 @@
-package io.higgus.lab.module.storage.service.HiExcel;
+package io.higgus.lab.module.storage.service.edition;
 
 import com.baomidou.mybatisplus.core.conditions.update.LambdaUpdateWrapper;
-import io.higgus.lab.module.storage.controller.HiExcel.vo.HiExcelSaveReqVO;
-import io.higgus.lab.module.storage.controller.HiExcel.vo.HiExcelSaveRespVO;
-import io.higgus.lab.module.storage.dal.dataobject.ContentMetadataDO;
+import io.higgus.lab.module.storage.controller.edition.vo.EditionExcelSaveReqVO;
+import io.higgus.lab.module.storage.controller.edition.vo.EditionExcelSaveRespVO;
+import io.higgus.lab.module.storage.dal.dataobject.CollaborationContentDO;
 import io.higgus.lab.module.storage.dal.mysql.ContentMetadataMapper;
 import io.higgus.lab.module.storage.service.FileStorageService;
 import jakarta.annotation.Resource;
@@ -16,7 +16,7 @@ import java.io.ByteArrayOutputStream;
 
 @Slf4j
 @Service
-public class HiExcelServiceImpl implements HiExcelService {
+public class EditionExcelServiceImpl implements EditionExcelService {
 
     private static final int MAX_RETRY = 3;
 
@@ -33,9 +33,9 @@ public class HiExcelServiceImpl implements HiExcelService {
      * @return
      */
     @Override
-    public HiExcelSaveRespVO saveExcel(HiExcelSaveReqVO reqVO) {
+    public EditionExcelSaveRespVO saveExcel(EditionExcelSaveReqVO reqVO) {
         Long contentId = reqVO.getContentId();
-        Integer reqVersion = reqVO.getVersion();
+        Integer reqVersion = reqVO.getReversion();
         int rowIndex = reqVO.getRow();
         int colIndex = reqVO.getCol();
         String newContent = reqVO.getNewContent();
@@ -50,25 +50,25 @@ public class HiExcelServiceImpl implements HiExcelService {
             } catch (VersionConflictException e) {
                 log.warn("版本冲突，重试第 {} 次", i + 1);
                 if (i == MAX_RETRY - 1) {
-                    return HiExcelSaveRespVO.fail("文件已被他人修改，请刷新后重试",
-                            HiExcelSaveRespVO.ErrorType.VERSION_CONFLICT);
+                    return EditionExcelSaveRespVO.fail("文件已被他人修改，请刷新后重试",
+                            EditionExcelSaveRespVO.ErrorType.VERSION_CONFLICT);
                 }
             } catch (Exception e) {
                 log.error("保存 Excel 失败", e);
-                return HiExcelSaveRespVO.fail("保存失败: " + e.getMessage(),
-                        HiExcelSaveRespVO.ErrorType.UNKNOWN_ERROR);
+                return EditionExcelSaveRespVO.fail("保存失败: " + e.getMessage(),
+                        EditionExcelSaveRespVO.ErrorType.UNKNOWN_ERROR);
             }
         }
 
-        return HiExcelSaveRespVO.fail("未知错误", HiExcelSaveRespVO.ErrorType.UNKNOWN_ERROR);
+        return EditionExcelSaveRespVO.fail("未知错误", EditionExcelSaveRespVO.ErrorType.UNKNOWN_ERROR);
     }
 
-    private HiExcelSaveRespVO doSave(Long contentId, Integer reqVersion,
-                                     int rowIndex, int colIndex, String newContent) throws Exception {
+    private EditionExcelSaveRespVO doSave(Long contentId, Integer reqVersion,
+                                          int rowIndex, int colIndex, String newContent) throws Exception {
         // 1. 查询元数据
-        ContentMetadataDO meta = contentMetadataMapper.selectById(contentId);
+        CollaborationContentDO meta = contentMetadataMapper.selectById(contentId);
         if (meta == null) {
-            return HiExcelSaveRespVO.fail("文件不存在", HiExcelSaveRespVO.ErrorType.FILE_NOT_FOUND);
+            return EditionExcelSaveRespVO.fail("文件不存在", EditionExcelSaveRespVO.ErrorType.FILE_NOT_FOUND);
         }
 
         String storageKey = meta.getStorageKey();
@@ -114,11 +114,11 @@ public class HiExcelServiceImpl implements HiExcelService {
         fileStorageService.upload(newExcelBytes, storageKey);
 
         // 7. 更新 version（乐观锁更新）
-        LambdaUpdateWrapper<ContentMetadataDO> updateWrapper = new LambdaUpdateWrapper<>();
-        updateWrapper.eq(ContentMetadataDO::getId, contentId)
-                .eq(ContentMetadataDO::getVersion, reqVersion)
-                .set(ContentMetadataDO::getVersion, reqVersion + 1)
-                .set(ContentMetadataDO::getUpdater, 0L); // TODO: 获取真实用户
+        LambdaUpdateWrapper<CollaborationContentDO> updateWrapper = new LambdaUpdateWrapper<>();
+        updateWrapper.eq(CollaborationContentDO::getId, contentId)
+                .eq(CollaborationContentDO::getVersion, reqVersion)
+                .set(CollaborationContentDO::getVersion, reqVersion + 1)
+                .set(CollaborationContentDO::getUpdater, 0L); // TODO: 获取真实用户
 
         int rows = contentMetadataMapper.update(null, updateWrapper);
         if (rows == 0) {
@@ -126,7 +126,7 @@ public class HiExcelServiceImpl implements HiExcelService {
         }
 
         log.info("Excel 保存成功, contentId={}, newVersion={}", contentId, reqVersion + 1);
-        return HiExcelSaveRespVO.success(reqVersion + 1);
+        return EditionExcelSaveRespVO.success(reqVersion + 1);
     }
 
     /**

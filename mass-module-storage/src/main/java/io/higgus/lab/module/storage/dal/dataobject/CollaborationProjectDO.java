@@ -12,7 +12,7 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class CollaborationItemDO extends BaseDO {
+public class CollaborationProjectDO extends BaseDO {
 
     @TableId("id")
     private Long id;

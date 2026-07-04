@@ -1,8 +1,8 @@
 package io.higgus.lab.module.storage.service.impl;
 
-import io.higgus.lab.module.storage.dal.dataobject.ContentMetadataDO;
+import io.higgus.lab.module.storage.dal.dataobject.CollaborationContentDO;
 import io.higgus.lab.module.storage.dal.mysql.ContentMetadataMapper;
-import io.higgus.lab.module.storage.service.ContentMetadataService;
+import io.higgus.lab.module.storage.service.CollaborationContentService;
 import io.higgus.lab.module.storage.controller.vo.ContentMetadataCreateReqVO;
 import io.higgus.lab.module.storage.controller.vo.ContentMetadataRespVO;
 import io.higgus.lab.module.storage.controller.vo.ContentMetadataUpdateReqVO;
@@ -19,14 +19,14 @@ import java.util.List;
  */
 @Slf4j
 @Service
-public class ContentMetadataServiceImpl implements ContentMetadataService {
+public class CollaborationContentServiceImpl implements CollaborationContentService {
 
     @Resource
     private ContentMetadataMapper contentMetadataMapper;
 
     @Override
     public Long create(ContentMetadataCreateReqVO createReqVO, Long creator) {
-        ContentMetadataDO content = ContentMetadataDO.builder()
+        CollaborationContentDO content = CollaborationContentDO.builder()
                 .itemId(createReqVO.getItemId())
                 .title(createReqVO.getTitle())
                 .contentType(createReqVO.getContentType())
@@ -48,7 +48,7 @@ public class ContentMetadataServiceImpl implements ContentMetadataService {
 
     @Override
     public void update(ContentMetadataUpdateReqVO updateReqVO, Long updater) {
-        ContentMetadataDO content = ContentMetadataDO.builder()
+        CollaborationContentDO content = CollaborationContentDO.builder()
                 .id(updateReqVO.getId())
                 .itemId(updateReqVO.getItemId())
                 .title(updateReqVO.getTitle())
@@ -72,20 +72,20 @@ public class ContentMetadataServiceImpl implements ContentMetadataService {
 
     @Override
     public ContentMetadataRespVO get(Long id) {
-        ContentMetadataDO content = contentMetadataMapper.selectById(id);
+        CollaborationContentDO content = contentMetadataMapper.selectById(id);
         return convertToRespVO(content);
     }
 
     @Override
-    public ContentMetadataDO getDO(Long id) {
+    public CollaborationContentDO getDO(Long id) {
         return contentMetadataMapper.selectById(id);
     }
 
     @Override
     public List<ContentMetadataRespVO> getListByItemId(Long itemId) {
-        LambdaQueryWrapper<ContentMetadataDO> wrapper = new LambdaQueryWrapper<>();
-        wrapper.eq(ContentMetadataDO::getItemId, itemId)
-               .eq(ContentMetadataDO::getDeleted, false);
+        LambdaQueryWrapper<CollaborationContentDO> wrapper = new LambdaQueryWrapper<>();
+        wrapper.eq(CollaborationContentDO::getItemId, itemId)
+               .eq(CollaborationContentDO::getDeleted, false);
         return contentMetadataMapper.selectList(wrapper)
                 .stream()
                 .map(this::convertToRespVO)
@@ -94,10 +94,10 @@ public class ContentMetadataServiceImpl implements ContentMetadataService {
 
     @Override
     public List<ContentMetadataRespVO> getListByItemIdAndType(Long itemId, Integer contentType) {
-        LambdaQueryWrapper<ContentMetadataDO> wrapper = new LambdaQueryWrapper<>();
-        wrapper.eq(ContentMetadataDO::getItemId, itemId)
-               .eq(ContentMetadataDO::getContentType, contentType)
-               .eq(ContentMetadataDO::getDeleted, false);
+        LambdaQueryWrapper<CollaborationContentDO> wrapper = new LambdaQueryWrapper<>();
+        wrapper.eq(CollaborationContentDO::getItemId, itemId)
+               .eq(CollaborationContentDO::getContentType, contentType)
+               .eq(CollaborationContentDO::getDeleted, false);
         return contentMetadataMapper.selectList(wrapper)
                 .stream()
                 .map(this::convertToRespVO)
@@ -105,24 +105,24 @@ public class ContentMetadataServiceImpl implements ContentMetadataService {
     }
 
     @Override
-    public ContentMetadataDO findByMd5(String fileMd5) {
-        LambdaQueryWrapper<ContentMetadataDO> wrapper = new LambdaQueryWrapper<>();
-        wrapper.eq(ContentMetadataDO::getFileMd5, fileMd5)
-               .eq(ContentMetadataDO::getDeleted, false);
+    public CollaborationContentDO findByMd5(String fileMd5) {
+        LambdaQueryWrapper<CollaborationContentDO> wrapper = new LambdaQueryWrapper<>();
+        wrapper.eq(CollaborationContentDO::getFileMd5, fileMd5)
+               .eq(CollaborationContentDO::getDeleted, false);
         return contentMetadataMapper.selectOne(wrapper);
     }
 
     @Override
     public List<ContentMetadataRespVO> getList() {
-        LambdaQueryWrapper<ContentMetadataDO> wrapper = new LambdaQueryWrapper<>();
-        wrapper.eq(ContentMetadataDO::getDeleted, false);
+        LambdaQueryWrapper<CollaborationContentDO> wrapper = new LambdaQueryWrapper<>();
+        wrapper.eq(CollaborationContentDO::getDeleted, false);
         return contentMetadataMapper.selectList(wrapper)
                 .stream()
                 .map(this::convertToRespVO)
                 .toList();
     }
 
-    private ContentMetadataRespVO convertToRespVO(ContentMetadataDO content) {
+    private ContentMetadataRespVO convertToRespVO(CollaborationContentDO content) {
         if (content == null) {
             return null;
         }

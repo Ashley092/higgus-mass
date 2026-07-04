@@ -19,7 +19,7 @@ import java.util.List;
 @Slf4j
 @RestController
 @RequestMapping("/collaboration/item")
-public class CollaborationItemController {
+public class CollaborationProjectController {
 
     @Resource
     private CollaborationItemServiceImpl collaborationItemService;

@@ -2,8 +2,8 @@ package io.higgus.lab.module.storage.service.impl;
 
 import cn.hutool.core.util.IdUtil;
 import io.higgus.lab.module.storage.controller.vo.ContentMetadataCreateReqVO;
-import io.higgus.lab.module.storage.dal.dataobject.ContentMetadataDO;
-import io.higgus.lab.module.storage.service.ContentFacadeService;
+import io.higgus.lab.module.storage.dal.dataobject.CollaborationContentDO;
+import io.higgus.lab.module.storage.service.CollaborationContentFacadeService;
 import io.higgus.lab.module.storage.service.ContentMetadataService;
 import io.higgus.lab.module.storage.service.FileStorageService;
 import io.higgus.lab.module.storage.controller.vo.ContentUploadReqVO;
@@ -21,7 +21,7 @@ import java.io.IOException;
  */
 @Slf4j
 @Service
-public class ContentFacadeServiceImpl implements ContentFacadeService {
+public class CollaborationContentFacadeServiceImpl implements CollaborationContentFacadeService {
 
     @Resource
     private FileStorageService fileStorageService;
@@ -41,20 +41,20 @@ public class ContentFacadeServiceImpl implements ContentFacadeService {
         log.info("计算文件MD5完成, md5={}", md5);
 
         // 2. 先查一次（快速返回，避免不必要的锁竞争）
-        ContentMetadataDO existing = contentMetadataService.findByMd5(md5);
+        CollaborationContentDO existing = contentMetadataService.findByMd5(md5);
         if (existing != null) {
             log.info("秒传成功，直接返回已有记录");
-            return UploadResultVO.skip(existing.getId(), existing.getStorageKey(), md5);
+            return UploadResultVO.skip(String.valueOf(existing.getId()), existing.getStorageKey(), md5);
         }
 
         // 3. 使用 synchronized 关键字（JVM 级别锁，最简单）
         // .intern() 找到相同字符串的对象
         synchronized (md5.intern()) {
             // 4. 双重检查（锁内再查一次，防止等待锁的线程重复上传）
-            ContentMetadataDO existingInLock = contentMetadataService.findByMd5(md5);
+            CollaborationContentDO existingInLock = contentMetadataService.findByMd5(md5);
             if (existingInLock != null) {
                 log.info("双重检查命中秒传");
-                return UploadResultVO.skip(existingInLock.getId(), existingInLock.getStorageKey(), md5);
+                return UploadResultVO.skip(String.valueOf(existingInLock.getId()), existingInLock.getStorageKey(), md5);
             }
 
             // 5. 上传到 MinIO（现在只有获得锁的线程会执行）
@@ -76,14 +76,14 @@ public class ContentFacadeServiceImpl implements ContentFacadeService {
             Long contentId = contentMetadataService.create(createReqVO, creator);
             log.info("内容元数据创建完成, id={}", contentId);
 
-            return UploadResultVO.newUpload(contentId, storageKey, md5);
+            return UploadResultVO.newUpload(String.valueOf(contentId), storageKey, md5);
         }
     }
 
     @Override
     public void deleteContent(Long contentId) {
         // 1. 获取元数据
-        ContentMetadataDO content = contentMetadataService.getDO(contentId);
+        CollaborationContentDO content = contentMetadataService.getDO(contentId);
         if (content == null) {
             log.warn("内容不存在, id={}", contentId);
             return;

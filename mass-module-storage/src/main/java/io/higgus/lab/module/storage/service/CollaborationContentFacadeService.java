@@ -9,7 +9,7 @@ import java.io.IOException;
 /**
  * 内容门面服务 - 编排元数据和文件存储
  */
-public interface ContentFacadeService {
+public interface CollaborationContentFacadeService {
 
     /**
      * 上传文件（后端计算MD5，支持秒传）

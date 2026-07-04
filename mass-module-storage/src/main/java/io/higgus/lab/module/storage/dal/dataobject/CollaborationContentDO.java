@@ -13,7 +13,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class ContentMetadataDO {
+public class CollaborationContentDO {
 
     @TableId(value = "id", type = IdType.AUTO)
     private Long id;

@@ -2,13 +2,16 @@ package io.higgus.lab.module.storage.service;
 
 
 import io.higgus.lab.module.storage.service.common.CollabRedisKey;
-import io.higgus.lab.module.storage.service.common.FileService;
-import io.higgus.lab.module.storage.service.excel.ExcelService;
+import io.higgus.lab.module.storage.service.common.FileServiceImpl;
 import jakarta.annotation.Resource;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.ss.usermodel.WorkbookFactory;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
+
+import java.io.ByteArrayInputStream;
+import java.io.IOException;
 
 import static com.baomidou.mybatisplus.extension.ddl.DdlScriptErrorHandler.PrintlnLogErrorHandler.log;
 
@@ -18,9 +21,7 @@ public class CollabRedisService {
     @Resource
     private RedisTemplate<String, Object> redisTemplate;
     @Resource
-    private ExcelService excelService;
-    @Resource
-    private FileService fileService;
+    private FileServiceImpl fileServiceImpl;
 
 
 
@@ -49,8 +50,8 @@ public class CollabRedisService {
 
     }
 
-
-    public void trySaveCompleteFile(String fileId) {
+    // 把整个文件解析后的内容加载进 Redis
+    public void trySaveCompleteFile(String fileId) throws IOException {
         try {
             String key = CollabRedisKey.FILE_SNAPSHOT + fileId;
             // 一般来说，就是获取最新的快照
@@ -64,10 +65,14 @@ public class CollabRedisService {
             // 如果没有该文件
             // 缓存管理器中有吗？
             // [默认 Redis 管理对象的情况下] 先加载读取这个文件
-            String storageKey = fileService.matchStorageKey(fileId);
-            byte[] excelBytes = fileService.downloadAsBytes(storageKey);
+            String storageKey = fileServiceImpl.matchStorageKey(fileId);
+            byte[] excelBytes = fileServiceImpl.downloadAsBytes(storageKey);
             // 获得了这个 byte 形式的文件
+            try (ByteArrayInputStream bais = new ByteArrayInputStream(excelBytes);
+                 Workbook workbook = WorkbookFactory.create(bais);
+            ) {
 
+            }
 
 
 

@@ -15,7 +15,7 @@ public class GeneralServiceImpl implements GeneralService {
 
         // 先不考虑幂等性的逻辑。先写完这个分发
         // 先更新 Redis 内的内容
-        mqService.sendRedisUpdateMessage();
+//        mqService.sendRedisUpdateMessage();
 
 
 

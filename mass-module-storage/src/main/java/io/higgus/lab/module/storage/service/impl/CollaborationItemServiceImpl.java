@@ -3,8 +3,8 @@ package io.higgus.lab.module.storage.service.impl;
 import io.higgus.lab.module.storage.controller.vo.CollaborationItemCreateReqVO;
 import io.higgus.lab.module.storage.controller.vo.CollaborationItemRespVO;
 import io.higgus.lab.module.storage.controller.vo.CollaborationItemUpdateReqVO;
-import io.higgus.lab.module.storage.dal.dataobject.CollaborationItemDO;
-import io.higgus.lab.module.storage.dal.mysql.CollaborationItemMapper;
+import io.higgus.lab.module.storage.dal.dataobject.CollaborationProjectDO;
+import io.higgus.lab.module.storage.dal.mysql.CollaborationProjectMapper;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
@@ -17,10 +17,10 @@ import java.util.List;
 public class CollaborationItemServiceImpl {
 
     @Resource
-    private CollaborationItemMapper collaborationItemMapper;
+    private CollaborationProjectMapper collaborationProjectMapper;
 
     public Long createItem(CollaborationItemCreateReqVO createReqVO, String creator) {
-        CollaborationItemDO item = CollaborationItemDO.builder()
+        CollaborationProjectDO item = CollaborationProjectDO.builder()
                 .spaceId(createReqVO.getSpaceId())
                 .name(createReqVO.getName())
                 .type(createReqVO.getType())
@@ -28,49 +28,49 @@ public class CollaborationItemServiceImpl {
                 .updater(creator)
                 .deleted(false)
                 .build();
-        collaborationItemMapper.insert(item);
+        collaborationProjectMapper.insert(item);
         log.info("创建项目/渠道成功, id={}, name={}, type={}", item.getId(), item.getName(), item.getType());
         return item.getId();
     }
 
     public void updateItem(CollaborationItemUpdateReqVO updateReqVO, String updater) {
-        CollaborationItemDO item = CollaborationItemDO.builder()
+        CollaborationProjectDO item = CollaborationProjectDO.builder()
                 .id(updateReqVO.getId())
                 .spaceId(updateReqVO.getSpaceId())
                 .name(updateReqVO.getName())
                 .type(updateReqVO.getType())
                 .updater(updater)
                 .build();
-        collaborationItemMapper.updateById(item);
+        collaborationProjectMapper.updateById(item);
         log.info("更新项目/渠道成功, id={}", updateReqVO.getId());
     }
 
     public void deleteItem(Long id) {
-        collaborationItemMapper.deleteById(id);
+        collaborationProjectMapper.deleteById(id);
         log.info("删除项目/渠道成功, id={}", id);
     }
 
     public CollaborationItemRespVO getItem(Long id) {
-        CollaborationItemDO item = collaborationItemMapper.selectById(id);
+        CollaborationProjectDO item = collaborationProjectMapper.selectById(id);
         return convertToRespVO(item);
     }
 
     public List<CollaborationItemRespVO> getItemListBySpaceId(Long spaceId) {
-        LambdaQueryWrapper<CollaborationItemDO> wrapper = new LambdaQueryWrapper<>();
-        wrapper.eq(CollaborationItemDO::getSpaceId, spaceId)
-               .eq(CollaborationItemDO::getDeleted, false);
-        List<CollaborationItemDO> list = collaborationItemMapper.selectList(wrapper);
+        LambdaQueryWrapper<CollaborationProjectDO> wrapper = new LambdaQueryWrapper<>();
+        wrapper.eq(CollaborationProjectDO::getSpaceId, spaceId)
+               .eq(CollaborationProjectDO::getDeleted, false);
+        List<CollaborationProjectDO> list = collaborationProjectMapper.selectList(wrapper);
         return list.stream().map(this::convertToRespVO).toList();
     }
 
     public List<CollaborationItemRespVO> getItemList() {
-        LambdaQueryWrapper<CollaborationItemDO> wrapper = new LambdaQueryWrapper<>();
-        wrapper.eq(CollaborationItemDO::getDeleted, false);
-        List<CollaborationItemDO> list = collaborationItemMapper.selectList(wrapper);
+        LambdaQueryWrapper<CollaborationProjectDO> wrapper = new LambdaQueryWrapper<>();
+        wrapper.eq(CollaborationProjectDO::getDeleted, false);
+        List<CollaborationProjectDO> list = collaborationProjectMapper.selectList(wrapper);
         return list.stream().map(this::convertToRespVO).toList();
     }
 
-    private CollaborationItemRespVO convertToRespVO(CollaborationItemDO item) {
+    private CollaborationItemRespVO convertToRespVO(CollaborationProjectDO item) {
         if (item == null) {
             return null;
         }

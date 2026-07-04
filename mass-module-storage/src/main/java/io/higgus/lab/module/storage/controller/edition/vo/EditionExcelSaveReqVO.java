@@ -1,4 +1,4 @@
-package io.higgus.lab.module.storage.controller.HiExcel.vo;
+package io.higgus.lab.module.storage.controller.edition.vo;
 
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
@@ -10,10 +10,10 @@ import lombok.extern.slf4j.Slf4j;
  */
 @Slf4j
 @Data
-public class HiExcelSaveReqVO {
+public class EditionExcelSaveReqVO {
 
     /** 内容 ID（对应 content_metadata 表） */
-    private Long contentId;
+    private String contentId;
 
     /** 行号（数组索引，从 0 开始） */
     private Integer row;
@@ -25,7 +25,7 @@ public class HiExcelSaveReqVO {
     private String newContent;
 
     /** 当前版本号（乐观锁） */
-    private Integer version;
+    private Integer reversion;
 
     /** 更新人 */
     private Long updater;
