@@ -2,7 +2,7 @@ package io.higgus.lab.module.storage.controller;
 
 import io.higgus.lab.mass.framework.common.pojo.CommonResult;
 import io.higgus.lab.module.storage.controller.vo.ContentMetadataUpdateReqVO;
-import io.higgus.lab.module.storage.service.CollaborationContentFacadeService;
+import io.higgus.lab.module.storage.service.collab.CollaborationContentFacadeService;
 import io.higgus.lab.module.storage.service.ContentMetadataService;
 import io.higgus.lab.module.storage.service.FileStorageService;
 import io.higgus.lab.module.storage.controller.vo.ContentMetadataRespVO;

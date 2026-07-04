@@ -1,7 +1,7 @@
 package io.higgus.lab.module.storage.controller;
 
 import io.higgus.lab.mass.framework.common.pojo.CommonResult;
-import io.higgus.lab.module.storage.service.impl.CollaborationItemServiceImpl;
+import io.higgus.lab.module.storage.service.collab.impl.CollaborationProjectServiceImpl;
 import io.higgus.lab.module.storage.controller.vo.CollaborationItemCreateReqVO;
 import io.higgus.lab.module.storage.controller.vo.CollaborationItemRespVO;
 import io.higgus.lab.module.storage.controller.vo.CollaborationItemUpdateReqVO;
@@ -22,7 +22,7 @@ import java.util.List;
 public class CollaborationProjectController {
 
     @Resource
-    private CollaborationItemServiceImpl collaborationItemService;
+    private CollaborationProjectServiceImpl collaborationItemService;
 
     @Operation(summary = "创建项目/渠道")
     @PostMapping("/create")

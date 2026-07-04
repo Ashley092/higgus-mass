@@ -1,7 +1,7 @@
-package io.higgus.lab.module.storage.service.impl;
+package io.higgus.lab.module.storage.service.collab.impl;
 
 import io.higgus.lab.module.storage.controller.vo.CellUpdateReqVO;
-import io.higgus.lab.module.storage.service.CollabMessagingService;
+import io.higgus.lab.module.storage.service.mq.CollabMessagingService;
 import io.higgus.lab.module.storage.service.GeneralService;
 import org.springframework.stereotype.Service;
 

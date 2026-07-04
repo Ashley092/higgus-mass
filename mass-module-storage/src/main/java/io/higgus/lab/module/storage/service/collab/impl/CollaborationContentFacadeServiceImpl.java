@@ -1,9 +1,9 @@
-package io.higgus.lab.module.storage.service.impl;
+package io.higgus.lab.module.storage.service.collab.impl;
 
 import cn.hutool.core.util.IdUtil;
 import io.higgus.lab.module.storage.controller.vo.ContentMetadataCreateReqVO;
 import io.higgus.lab.module.storage.dal.dataobject.CollaborationContentDO;
-import io.higgus.lab.module.storage.service.CollaborationContentFacadeService;
+import io.higgus.lab.module.storage.service.collab.CollaborationContentFacadeService;
 import io.higgus.lab.module.storage.service.ContentMetadataService;
 import io.higgus.lab.module.storage.service.FileStorageService;
 import io.higgus.lab.module.storage.controller.vo.ContentUploadReqVO;

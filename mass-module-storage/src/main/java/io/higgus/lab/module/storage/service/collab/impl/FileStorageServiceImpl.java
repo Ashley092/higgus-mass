@@ -1,4 +1,4 @@
-package io.higgus.lab.module.storage.service.impl;
+package io.higgus.lab.module.storage.service.collab.impl;
 
 import io.higgus.lab.module.storage.service.FileStorageService;
 import jakarta.annotation.Resource;

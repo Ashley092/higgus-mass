@@ -1,4 +1,4 @@
-package io.higgus.lab.module.storage.service.edition;
+package io.higgus.lab.module.storage.service.editionOld;
 
 import com.baomidou.mybatisplus.core.conditions.update.LambdaUpdateWrapper;
 import io.higgus.lab.module.storage.controller.edition.vo.EditionExcelSaveReqVO;

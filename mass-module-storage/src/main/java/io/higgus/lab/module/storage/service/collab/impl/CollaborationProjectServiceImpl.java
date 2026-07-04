@@ -1,4 +1,4 @@
-package io.higgus.lab.module.storage.service.impl;
+package io.higgus.lab.module.storage.service.collab.impl;
 
 import io.higgus.lab.module.storage.controller.vo.CollaborationItemCreateReqVO;
 import io.higgus.lab.module.storage.controller.vo.CollaborationItemRespVO;
@@ -6,6 +6,7 @@ import io.higgus.lab.module.storage.controller.vo.CollaborationItemUpdateReqVO;
 import io.higgus.lab.module.storage.dal.dataobject.CollaborationProjectDO;
 import io.higgus.lab.module.storage.dal.mysql.CollaborationProjectMapper;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import io.higgus.lab.module.storage.service.collab.CollaborationProjectService;
 import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -14,7 +15,7 @@ import java.util.List;
 
 @Slf4j
 @Service
-public class CollaborationItemServiceImpl {
+public class CollaborationProjectServiceImpl implements CollaborationProjectService {
 
     @Resource
     private CollaborationProjectMapper collaborationProjectMapper;

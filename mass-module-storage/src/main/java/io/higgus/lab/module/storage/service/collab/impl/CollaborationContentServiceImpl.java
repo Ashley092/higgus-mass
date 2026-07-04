@@ -1,8 +1,8 @@
-package io.higgus.lab.module.storage.service.impl;
+package io.higgus.lab.module.storage.service.collab.impl;
 
 import io.higgus.lab.module.storage.dal.dataobject.CollaborationContentDO;
 import io.higgus.lab.module.storage.dal.mysql.ContentMetadataMapper;
-import io.higgus.lab.module.storage.service.CollaborationContentService;
+import io.higgus.lab.module.storage.service.collab.CollaborationContentService;
 import io.higgus.lab.module.storage.controller.vo.ContentMetadataCreateReqVO;
 import io.higgus.lab.module.storage.controller.vo.ContentMetadataRespVO;
 import io.higgus.lab.module.storage.controller.vo.ContentMetadataUpdateReqVO;

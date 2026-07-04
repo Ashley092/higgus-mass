@@ -1,4 +1,4 @@
-package io.higgus.lab.module.storage.service;
+package io.higgus.lab.module.storage.service.redis;
 
 
 import io.higgus.lab.module.storage.service.common.CollabRedisKey;

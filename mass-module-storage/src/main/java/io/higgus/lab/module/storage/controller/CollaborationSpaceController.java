@@ -1,7 +1,7 @@
 package io.higgus.lab.module.storage.controller;
 
 import io.higgus.lab.mass.framework.common.pojo.CommonResult;
-import io.higgus.lab.module.storage.service.impl.CollaborationSpaceServiceImpl;
+import io.higgus.lab.module.storage.service.collab.impl.CollaborationSpaceServiceImpl;
 import io.higgus.lab.module.storage.controller.vo.CollaborationSpaceCreateReqVO;
 import io.higgus.lab.module.storage.controller.vo.CollaborationSpaceRespVO;
 import io.higgus.lab.module.storage.controller.vo.CollaborationSpaceUpdateReqVO;

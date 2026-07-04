@@ -1,4 +1,4 @@
-package io.higgus.lab.module.storage.service;
+package io.higgus.lab.module.storage.service.mq;
 
 
 import io.higgus.lab.module.storage.config.RabbitMQConfig;
@@ -7,10 +7,6 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class CollabMessagingService {
-
-    static final String QUEUE_REDIS_EDIT = "q_redis_edit";
-    static final String QUEUE_MYSQL_EDIT = "q_mysql_edit";
-    static final String QUEUE_MINIO_EDIT = "q_minio_edit";
 
     private final RabbitTemplate rabbitTemplate;
 

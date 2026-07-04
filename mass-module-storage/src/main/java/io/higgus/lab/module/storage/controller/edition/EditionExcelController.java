@@ -3,7 +3,7 @@ package io.higgus.lab.module.storage.controller.edition;
 import io.higgus.lab.mass.framework.common.pojo.CommonResult;
 import io.higgus.lab.module.storage.controller.edition.vo.EditionExcelSaveReqVO;
 import io.higgus.lab.module.storage.controller.edition.vo.EditionExcelSaveRespVO;
-import io.higgus.lab.module.storage.service.edition.EditionExcelService;
+import io.higgus.lab.module.storage.service.editionOld.EditionExcelService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.tags.Tag;
