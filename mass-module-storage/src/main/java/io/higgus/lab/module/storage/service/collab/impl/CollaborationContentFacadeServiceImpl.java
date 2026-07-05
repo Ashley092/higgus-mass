@@ -1,13 +1,13 @@
 package io.higgus.lab.module.storage.service.collab.impl;
 
 import cn.hutool.core.util.IdUtil;
-import io.higgus.lab.module.storage.controller.vo.ContentMetadataCreateReqVO;
-import io.higgus.lab.module.storage.dal.dataobject.CollaborationContentDO;
+import io.higgus.lab.module.storage.controller.collab.vo.ContentMetadataCreateReqVO;
+import io.higgus.lab.module.storage.dal.dataobject.collab.CollaborationContentDO;
 import io.higgus.lab.module.storage.service.collab.CollaborationContentFacadeService;
 import io.higgus.lab.module.storage.service.ContentMetadataService;
 import io.higgus.lab.module.storage.service.FileStorageService;
-import io.higgus.lab.module.storage.controller.vo.ContentUploadReqVO;
-import io.higgus.lab.module.storage.controller.vo.UploadResultVO;
+import io.higgus.lab.module.storage.controller.collab.vo.ContentUploadReqVO;
+import io.higgus.lab.module.storage.controller.collab.vo.UploadResultVO;
 import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;

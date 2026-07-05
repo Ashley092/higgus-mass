@@ -1,11 +1,11 @@
 package io.higgus.lab.module.storage.service.collab.impl;
 
-import io.higgus.lab.module.storage.dal.dataobject.CollaborationContentDO;
-import io.higgus.lab.module.storage.dal.mysql.ContentMetadataMapper;
+import io.higgus.lab.module.storage.dal.dataobject.collab.CollaborationContentDO;
+import io.higgus.lab.module.storage.dal.mysql.collab.ContentMetadataMapper;
 import io.higgus.lab.module.storage.service.collab.CollaborationContentService;
-import io.higgus.lab.module.storage.controller.vo.ContentMetadataCreateReqVO;
-import io.higgus.lab.module.storage.controller.vo.ContentMetadataRespVO;
-import io.higgus.lab.module.storage.controller.vo.ContentMetadataUpdateReqVO;
+import io.higgus.lab.module.storage.controller.collab.vo.ContentMetadataCreateReqVO;
+import io.higgus.lab.module.storage.controller.collab.vo.ContentMetadataRespVO;
+import io.higgus.lab.module.storage.controller.collab.vo.collab.content.CollaborationContentUpdateReqVO;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
@@ -47,7 +47,7 @@ public class CollaborationContentServiceImpl implements CollaborationContentServ
     }
 
     @Override
-    public void update(ContentMetadataUpdateReqVO updateReqVO, Long updater) {
+    public void update(CollaborationContentUpdateReqVO updateReqVO, Long updater) {
         CollaborationContentDO content = CollaborationContentDO.builder()
                 .id(updateReqVO.getId())
                 .itemId(updateReqVO.getItemId())

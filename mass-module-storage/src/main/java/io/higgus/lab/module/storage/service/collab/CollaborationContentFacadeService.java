@@ -1,7 +1,7 @@
 package io.higgus.lab.module.storage.service.collab;
 
-import io.higgus.lab.module.storage.controller.vo.ContentUploadReqVO;
-import io.higgus.lab.module.storage.controller.vo.UploadResultVO;
+import io.higgus.lab.module.storage.controller.collab.vo.ContentUploadReqVO;
+import io.higgus.lab.module.storage.controller.collab.vo.UploadResultVO;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;

@@ -1,9 +1,9 @@
 package io.higgus.lab.module.storage.service.collab;
 
-import io.higgus.lab.module.storage.controller.vo.ContentMetadataCreateReqVO;
-import io.higgus.lab.module.storage.controller.vo.ContentMetadataRespVO;
-import io.higgus.lab.module.storage.controller.vo.ContentMetadataUpdateReqVO;
-import io.higgus.lab.module.storage.dal.dataobject.CollaborationContentDO;
+import io.higgus.lab.module.storage.controller.collab.vo.ContentMetadataCreateReqVO;
+import io.higgus.lab.module.storage.controller.collab.vo.ContentMetadataRespVO;
+import io.higgus.lab.module.storage.controller.collab.vo.collab.content.CollaborationContentUpdateReqVO;
+import io.higgus.lab.module.storage.dal.dataobject.collab.CollaborationContentDO;
 
 import java.util.List;
 
@@ -11,7 +11,7 @@ public interface CollaborationContentService {
 
     Long create(ContentMetadataCreateReqVO createReqVO, Long creator);
 
-    void update(ContentMetadataUpdateReqVO updateReqVO, Long updater);
+    void update(CollaborationContentUpdateReqVO updateReqVO, Long updater);
 
     void delete(Long id);
 

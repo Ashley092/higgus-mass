@@ -1,9 +1,9 @@
 package io.higgus.lab.module.storage.service;
 
-import io.higgus.lab.module.storage.dal.dataobject.CollaborationContentDO;
-import io.higgus.lab.module.storage.controller.vo.ContentMetadataCreateReqVO;
-import io.higgus.lab.module.storage.controller.vo.ContentMetadataRespVO;
-import io.higgus.lab.module.storage.controller.vo.ContentMetadataUpdateReqVO;
+import io.higgus.lab.module.storage.dal.dataobject.collab.CollaborationContentDO;
+import io.higgus.lab.module.storage.controller.collab.vo.ContentMetadataCreateReqVO;
+import io.higgus.lab.module.storage.controller.collab.vo.ContentMetadataRespVO;
+import io.higgus.lab.module.storage.controller.collab.vo.collab.content.CollaborationContentUpdateReqVO;
 
 import java.util.List;
 
@@ -21,7 +21,7 @@ public interface ContentMetadataService {
     /**
      * 更新内容元数据
      */
-    void update(ContentMetadataUpdateReqVO updateReqVO, Long updater);
+    void update(CollaborationContentUpdateReqVO updateReqVO, Long updater);
 
     /**
      * 删除内容元数据（仅删除记录，不删除文件）

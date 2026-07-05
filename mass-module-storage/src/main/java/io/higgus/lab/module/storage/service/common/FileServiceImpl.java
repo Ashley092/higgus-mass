@@ -1,8 +1,8 @@
 package io.higgus.lab.module.storage.service.common;
 
 
-import io.higgus.lab.module.storage.dal.dataobject.CollaborationContentDO;
-import io.higgus.lab.module.storage.dal.mysql.ContentMetadataMapper;
+import io.higgus.lab.module.storage.dal.dataobject.collab.CollaborationContentDO;
+import io.higgus.lab.module.storage.dal.mysql.collab.ContentMetadataMapper;
 import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.redis.core.RedisTemplate;

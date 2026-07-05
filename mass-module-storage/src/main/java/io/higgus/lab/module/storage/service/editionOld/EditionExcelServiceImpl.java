@@ -3,8 +3,8 @@ package io.higgus.lab.module.storage.service.editionOld;
 import com.baomidou.mybatisplus.core.conditions.update.LambdaUpdateWrapper;
 import io.higgus.lab.module.storage.controller.edition.vo.EditionExcelSaveReqVO;
 import io.higgus.lab.module.storage.controller.edition.vo.EditionExcelSaveRespVO;
-import io.higgus.lab.module.storage.dal.dataobject.CollaborationContentDO;
-import io.higgus.lab.module.storage.dal.mysql.ContentMetadataMapper;
+import io.higgus.lab.module.storage.dal.dataobject.collab.CollaborationContentDO;
+import io.higgus.lab.module.storage.dal.mysql.collab.ContentMetadataMapper;
 import io.higgus.lab.module.storage.service.FileStorageService;
 import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
@@ -34,7 +34,7 @@ public class EditionExcelServiceImpl implements EditionExcelService {
      */
     @Override
     public EditionExcelSaveRespVO saveExcel(EditionExcelSaveReqVO reqVO) {
-        Long contentId = reqVO.getContentId();
+        Long contentId = Long.valueOf(reqVO.getContentId());
         Integer reqVersion = reqVO.getReversion();
         int rowIndex = reqVO.getRow();
         int colIndex = reqVO.getCol();

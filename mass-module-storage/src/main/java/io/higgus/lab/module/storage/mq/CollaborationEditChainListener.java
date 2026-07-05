@@ -27,13 +27,13 @@ public class CollaborationEditChainListener {
     @RabbitListener(queues = RabbitMQConfig.Q_REDIS)
     public void handleRedisLog(Object logDto) {
         // 调用 编排逻辑服务层 的方法
-        editFacade.handleCellEdit(logDto);
+        editFacade.handleRealtimeEdition(logDto);
 
     }
 
     @RabbitListener(queues = RabbitMQConfig.EX_PERSIST)
-    public void handlePersistLog() {
-
+    public void handlePersistLog(Object logDto) {
+        editFacade.handlePersistEdition(logDto);
     }
 
 }

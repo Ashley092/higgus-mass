@@ -1,10 +1,10 @@
 package io.higgus.lab.module.storage.service.collab.impl;
 
-import io.higgus.lab.module.storage.controller.vo.CollaborationSpaceCreateReqVO;
-import io.higgus.lab.module.storage.controller.vo.CollaborationSpaceRespVO;
-import io.higgus.lab.module.storage.controller.vo.CollaborationSpaceUpdateReqVO;
-import io.higgus.lab.module.storage.dal.dataobject.CollaborationSpaceDO;
-import io.higgus.lab.module.storage.dal.mysql.CollaborationSpaceMapper;
+import io.higgus.lab.module.storage.controller.collab.vo.collab.space.CollaborationSpaceCreateReqVO;
+import io.higgus.lab.module.storage.controller.collab.vo.collab.space.CollaborationSpaceRespVO;
+import io.higgus.lab.module.storage.controller.collab.vo.collab.space.CollaborationSpaceUpdateReqVO;
+import io.higgus.lab.module.storage.dal.dataobject.collab.CollaborationSpaceDO;
+import io.higgus.lab.module.storage.dal.mysql.collab.CollaborationSpaceMapper;
 import io.higgus.lab.module.storage.service.collab.CollaborationSpaceService;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import jakarta.annotation.Resource;

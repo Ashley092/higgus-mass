@@ -14,11 +14,19 @@ public class CollabMessagingService {
         this.rabbitTemplate = rabbitTemplate;
     }
 
-    public void routeCellLogToMq(Object cellDto) {
+    public void routeEditionLogToRealtimeQueue(Object cellDto) {
         // 对于任何一个修改，第一步先进入 Redis 队列等待广播。广播 ACK 后，串行进入下一个交换机
         rabbitTemplate.convertAndSend(
                 RabbitMQConfig.EX_REALTIME,
                 RabbitMQConfig.KEY_REALTIME,
+                cellDto
+        );
+    }
+
+    public void routeEditionLogToPersistQueue(Object cellDto) {
+        // 对于任何一个修改，第一步先进入 Redis 队列等待广播。广播 ACK 后，串行进入下一个交换机
+        rabbitTemplate.convertAndSend(
+                RabbitMQConfig.EX_PERSIST,
                 cellDto
         );
     }

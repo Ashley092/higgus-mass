@@ -38,9 +38,7 @@ public class CollabRedisService {
         }
     }
 
-    public void tryBroadcastToUsers() {
-
-
+    public void tryBroadcastToUsers(Object cellEditionDto) {
         try {
 
 
