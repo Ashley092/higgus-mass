@@ -18,9 +18,13 @@ public class EditionLogDO {
     @TableId(value = "id", type = IdType.AUTO)
     private Long id;
 
+
+    private String idempotentKey;
+
     /**
      * 内容ID（关联content_metadata表）
      */
+
     private Long contentId;
 
     /**

@@ -4,7 +4,7 @@ import io.higgus.lab.module.storage.controller.collab.vo.collab.project.Collabor
 import io.higgus.lab.module.storage.controller.collab.vo.collab.project.CollaborationProjectRespVO;
 import io.higgus.lab.module.storage.controller.collab.vo.collab.project.CollaborationProjectUpdateReqVO;
 import io.higgus.lab.module.storage.dal.dataobject.collab.CollaborationProjectDO;
-import io.higgus.lab.module.storage.dal.mysql.collab.CollaborationProjectMapper;
+import io.higgus.lab.module.storage.dal.mysql.collab.CollaborationProjectMapperX;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import io.higgus.lab.module.storage.service.collab.CollaborationProjectService;
 import jakarta.annotation.Resource;
@@ -18,7 +18,7 @@ import java.util.List;
 public class CollaborationProjectServiceImpl implements CollaborationProjectService {
 
     @Resource
-    private CollaborationProjectMapper collaborationProjectMapper;
+    private CollaborationProjectMapperX collaborationProjectMapperX;
 
     public Long createItem(CollaborationProjectCreateReqVO createReqVO, String creator) {
         CollaborationProjectDO item = CollaborationProjectDO.builder()
@@ -29,7 +29,7 @@ public class CollaborationProjectServiceImpl implements CollaborationProjectServ
                 .updater(creator)
                 .deleted(false)
                 .build();
-        collaborationProjectMapper.insert(item);
+        collaborationProjectMapperX.insert(item);
         log.info("创建项目/渠道成功, id={}, name={}, type={}", item.getId(), item.getName(), item.getType());
         return item.getId();
     }
@@ -42,17 +42,17 @@ public class CollaborationProjectServiceImpl implements CollaborationProjectServ
                 .type(updateReqVO.getType())
                 .updater(updater)
                 .build();
-        collaborationProjectMapper.updateById(item);
+        collaborationProjectMapperX.updateById(item);
         log.info("更新项目/渠道成功, id={}", updateReqVO.getId());
     }
 
     public void deleteItem(Long id) {
-        collaborationProjectMapper.deleteById(id);
+        collaborationProjectMapperX.deleteById(id);
         log.info("删除项目/渠道成功, id={}", id);
     }
 
     public CollaborationProjectRespVO getItem(Long id) {
-        CollaborationProjectDO item = collaborationProjectMapper.selectById(id);
+        CollaborationProjectDO item = collaborationProjectMapperX.selectById(id);
         return convertToRespVO(item);
     }
 
@@ -60,14 +60,14 @@ public class CollaborationProjectServiceImpl implements CollaborationProjectServ
         LambdaQueryWrapper<CollaborationProjectDO> wrapper = new LambdaQueryWrapper<>();
         wrapper.eq(CollaborationProjectDO::getSpaceId, spaceId)
                .eq(CollaborationProjectDO::getDeleted, false);
-        List<CollaborationProjectDO> list = collaborationProjectMapper.selectList(wrapper);
+        List<CollaborationProjectDO> list = collaborationProjectMapperX.selectList(wrapper);
         return list.stream().map(this::convertToRespVO).toList();
     }
 
     public List<CollaborationProjectRespVO> getItemList() {
         LambdaQueryWrapper<CollaborationProjectDO> wrapper = new LambdaQueryWrapper<>();
         wrapper.eq(CollaborationProjectDO::getDeleted, false);
-        List<CollaborationProjectDO> list = collaborationProjectMapper.selectList(wrapper);
+        List<CollaborationProjectDO> list = collaborationProjectMapperX.selectList(wrapper);
         return list.stream().map(this::convertToRespVO).toList();
     }
 

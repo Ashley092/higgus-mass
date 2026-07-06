@@ -1,15 +1,16 @@
-package io.higgus.lab.module.storage.service;
+package io.higgus.lab.module.storage.service.persist;
+
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 import software.amazon.awssdk.services.s3.S3Client;
 import software.amazon.awssdk.services.s3.model.CreateBucketRequest;
 import software.amazon.awssdk.services.s3.model.HeadBucketRequest;
 import software.amazon.awssdk.services.s3.model.NoSuchBucketException;
 
-@Component
-public class MinioBucketService {
+@Service
+public class MinioServiceImpl implements MinioService {
 
     @Autowired
     private S3Client s3Client;
@@ -44,4 +45,5 @@ public class MinioBucketService {
             System.out.println("Bucket '" + bucketName + "' created successfully.");
         }
     }
+
 }

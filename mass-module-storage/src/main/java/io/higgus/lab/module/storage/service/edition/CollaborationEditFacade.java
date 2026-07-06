@@ -1,6 +1,7 @@
 package io.higgus.lab.module.storage.service.edition;
 
 import io.higgus.lab.module.storage.controller.edition.vo.EditionExcelSaveReqVO;
+import io.higgus.lab.module.storage.service.edition.dto.EditionExcelSaveLogDto;
 
 public interface CollaborationEditFacade {
 
@@ -9,7 +10,7 @@ public interface CollaborationEditFacade {
     /*
     * 处理单元格编辑
     * */
-    void handleRealtimeEdition(Object cellEditDTO);
+    void handleRealtimeEdition(EditionExcelSaveLogDto dto);
 
-    void handlePersistEdition(Object logDto);
+    void handlePersistEdition(EditionExcelSaveLogDto dto);
 }

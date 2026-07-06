@@ -9,46 +9,27 @@
     <option name="showLibraryBeans" value="false" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="603d025f-8c40-43ec-8171-0fdb136eec7c" name="更改" comment="fix:  redis &amp; MQ 的组件代码整理分离，引出 CollaborationEditionFacade 整合编排不同模块">
+    <list default="true" id="603d025f-8c40-43ec-8171-0fdb136eec7c" name="更改" comment="feature: Edition 的基础业务逻辑完成。">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/controller/CollaborationContentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/controller/collab/CollaborationContentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/controller/CollaborationProjectController.java" beforeDir="false" afterPath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/controller/collab/CollaborationProjectController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/controller/CollaborationSpaceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/controller/collab/CollaborationSpaceController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/controller/edition/EditionExcelController.java" beforeDir="false" afterPath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/controller/edition/EditionExcelController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/controller/edition/vo/EditionExcelSaveRespVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/controller/edition/vo/EditionExcelSaveRespVO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/controller/vo/CellChangeLog.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/controller/vo/CellUpdateReqVO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/controller/vo/CollaborationItemCreateReqVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/controller/collab/vo/collab/project/CollaborationProjectCreateReqVO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/controller/vo/CollaborationItemRespVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/controller/collab/vo/collab/project/CollaborationProjectRespVO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/controller/vo/CollaborationItemUpdateReqVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/controller/collab/vo/collab/project/CollaborationProjectUpdateReqVO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/controller/vo/CollaborationSpaceCreateReqVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/controller/collab/vo/collab/space/CollaborationSpaceCreateReqVO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/controller/vo/CollaborationSpaceRespVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/controller/collab/vo/collab/space/CollaborationSpaceRespVO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/controller/vo/CollaborationSpaceUpdateReqVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/controller/collab/vo/collab/space/CollaborationSpaceUpdateReqVO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/controller/vo/ContentMetadataCreateReqVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/controller/collab/vo/ContentMetadataCreateReqVO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/controller/vo/ContentMetadataRespVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/controller/collab/vo/ContentMetadataRespVO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/controller/vo/ContentMetadataUpdateReqVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/controller/collab/vo/collab/content/CollaborationContentUpdateReqVO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/controller/vo/ContentUploadReqVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/controller/collab/vo/ContentUploadReqVO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/controller/vo/UploadResultVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/controller/collab/vo/UploadResultVO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/dal/dataobject/CollaborationContentDO.java" beforeDir="false" afterPath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/dal/dataobject/collab/CollaborationContentDO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/dal/dataobject/CollaborationProjectDO.java" beforeDir="false" afterPath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/dal/dataobject/collab/CollaborationProjectDO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/dal/dataobject/CollaborationSpaceDO.java" beforeDir="false" afterPath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/dal/dataobject/collab/CollaborationSpaceDO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/dal/mysql/CollaborationProjectMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/dal/mysql/collab/CollaborationProjectMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/dal/mysql/CollaborationSpaceMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/dal/mysql/collab/CollaborationSpaceMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/dal/mysql/ContentMetadataMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/dal/mysql/collab/ContentMetadataMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/controller/collab/CollaborationContentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/controller/collab/CollaborationContentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/controller/edition/vo/EditionExcelSaveReqVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/controller/edition/vo/EditionExcelSaveReqVO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/convert/edition/EditionExcelSaveLogConvert.java" beforeDir="false" afterPath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/convert/edition/EditionExcelSaveLogConvert.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/dal/dataobject/edition/EditionLogDO.java" beforeDir="false" afterPath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/dal/dataobject/edition/EditionLogDO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/dal/mysql/collab/CollaborationProjectMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/dal/mysql/collab/CollaborationProjectMapperX.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/mq/CollaborationEditChainListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/mq/CollaborationEditChainListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/service/ContentMetadataService.java" beforeDir="false" afterPath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/service/ContentMetadataService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/service/collab/CollaborationContentFacadeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/service/collab/CollaborationContentFacadeService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/service/collab/CollaborationContentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/service/collab/CollaborationContentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/service/ContentMetadataService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/service/GeneralService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/service/MinioBucketService.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/service/collab/impl/CollaborationContentFacadeServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/service/collab/impl/CollaborationContentFacadeServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/service/collab/impl/CollaborationContentServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/service/collab/impl/CollaborationContentServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/service/collab/impl/CollaborationProjectServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/service/collab/impl/CollaborationProjectServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/service/collab/impl/CollaborationSpaceServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/service/collab/impl/CollaborationSpaceServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/service/common/FileServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/service/common/FileServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/service/collab/impl/GeneralServiceImpl.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/service/edition/CollaborationEditFacade.java" beforeDir="false" afterPath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/service/edition/CollaborationEditFacade.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/service/edition/CollaborationEditFacadeImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/service/editionOld/EditionExcelServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/service/editionOld/EditionExcelServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/service/edition/dto/EditionExcelSaveLogDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/service/edition/dto/EditionExcelSaveLogDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/service/edition/impl/CollaborationEditFacadeImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/service/edition/impl/CollaborationEditFacadeImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/service/edition/impl/EditionLogServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/service/edition/impl/EditionLogServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/service/mq/CollabMessagingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/service/mq/CollabMessagingService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/service/redis/CollabRedisService.java" beforeDir="false" afterPath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/service/redis/CollabRedisService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mass-server/src/main/java/io/higgus/lab/MassApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/mass-server/src/main/java/io/higgus/lab/MassApplication.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,8 +41,8 @@
       <list>
         <option value="Exception" />
         <option value="package-info" />
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -322,7 +303,8 @@
       <workItem from="1783000518386" duration="2007000" />
       <workItem from="1783002544480" duration="128000" />
       <workItem from="1783005429786" duration="2091000" />
-      <workItem from="1783151500044" duration="33156000" />
+      <workItem from="1783151500044" duration="44155000" />
+      <workItem from="1783351095081" duration="2254000" />
     </task>
     <task id="LOCAL-00001" summary="fix: 修复了 redisson 配置类的启动问题">
       <option name="closed" value="true" />
@@ -468,7 +450,15 @@
       <option name="project" value="LOCAL" />
       <updated>1783180045885</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="feature: Edition 的基础业务逻辑完成。">
+      <option name="closed" value="true" />
+      <created>1783262508873</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1783262508873</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -514,7 +504,8 @@
     <MESSAGE value="fix:  清理历史遗留代码中. 正在编排一般的文件缓存逻辑" />
     <MESSAGE value="fix:  重命名历史文件，修正命名风格" />
     <MESSAGE value="fix:  redis &amp; MQ 的组件代码整理分离，引出 CollaborationEditionFacade 整合编排不同模块" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix:  redis &amp; MQ 的组件代码整理分离，引出 CollaborationEditionFacade 整合编排不同模块" />
+    <MESSAGE value="feature: Edition 的基础业务逻辑完成。" />
+    <option name="LAST_COMMIT_MESSAGE" value="feature: Edition 的基础业务逻辑完成。" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

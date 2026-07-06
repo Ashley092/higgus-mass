@@ -5,5 +5,5 @@ import io.higgus.lab.module.storage.dal.dataobject.collab.CollaborationProjectDO
 import org.apache.ibatis.annotations.Mapper;
 
 @Mapper
-public interface CollaborationProjectMapper extends BaseMapperX<CollaborationProjectDO> {
+public interface CollaborationProjectMapperX extends BaseMapperX<CollaborationProjectDO> {
 }

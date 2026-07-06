@@ -1,6 +1,7 @@
 package io.higgus.lab.module.storage.convert.edition;
 
 
+import io.higgus.lab.module.storage.controller.edition.vo.EditionExcelSaveReqVO;
 import io.higgus.lab.module.storage.controller.edition.vo.EditionLogRespVO;
 import io.higgus.lab.module.storage.dal.dataobject.edition.EditionLogDO;
 import io.higgus.lab.module.storage.service.edition.dto.EditionExcelSaveLogDto;
@@ -13,6 +14,8 @@ import java.util.List;
 public interface EditionExcelSaveLogConvert {
 
     EditionExcelSaveLogConvert INSTANCE = Mappers.getMapper(EditionExcelSaveLogConvert.class);
+
+    EditionExcelSaveLogDto toEditionLogDto(EditionExcelSaveReqVO reqVO);
 
     EditionLogRespVO toEditionLogRespVO(EditionExcelSaveLogDto dto);
 

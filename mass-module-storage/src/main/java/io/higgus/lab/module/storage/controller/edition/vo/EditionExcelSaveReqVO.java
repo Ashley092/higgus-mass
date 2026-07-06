@@ -24,7 +24,9 @@ public class EditionExcelSaveReqVO {
     /** 新的单元格内容（统一存为字符串） */
     private String newContent;
 
-    /** 当前版本号（乐观锁） */
+    /** 当前版本号（乐观锁）
+     *  不会啊？前端为什么会知道乐观锁呢？？这个是有问题的。
+     * */
     private Integer reversion;
 
     /** 更新人 */

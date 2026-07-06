@@ -1,13 +1,18 @@
 package io.higgus.lab;
+import org.mybatis.spring.annotation.MapperScan;
 import org.redisson.api.RedissonClient;
+import org.springframework.beans.factory.config.BeanDefinition;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.event.ApplicationEnvironmentPreparedEvent;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider;
 import org.springframework.core.env.ConfigurableEnvironment;
+import org.springframework.core.type.filter.AnnotationTypeFilter;
 
 import java.io.IOException;
+import java.util.Set;
 
 
 @SpringBootApplication

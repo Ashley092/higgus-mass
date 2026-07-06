@@ -4,7 +4,7 @@ import cn.hutool.core.util.IdUtil;
 import io.higgus.lab.module.storage.controller.collab.vo.ContentMetadataCreateReqVO;
 import io.higgus.lab.module.storage.dal.dataobject.collab.CollaborationContentDO;
 import io.higgus.lab.module.storage.service.collab.CollaborationContentFacadeService;
-import io.higgus.lab.module.storage.service.ContentMetadataService;
+import io.higgus.lab.module.storage.service.collab.CollaborationContentService;
 import io.higgus.lab.module.storage.service.FileStorageService;
 import io.higgus.lab.module.storage.controller.collab.vo.ContentUploadReqVO;
 import io.higgus.lab.module.storage.controller.collab.vo.UploadResultVO;
@@ -27,7 +27,7 @@ public class CollaborationContentFacadeServiceImpl implements CollaborationConte
     private FileStorageService fileStorageService;
 
     @Resource
-    private ContentMetadataService contentMetadataService;
+    private CollaborationContentService contentMetadataService;
 
     @Override
     public UploadResultVO uploadFile(MultipartFile file, Long creator) throws IOException {
