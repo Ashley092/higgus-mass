@@ -5,7 +5,7 @@ import io.higgus.lab.module.storage.controller.edition.vo.EditionExcelSaveReqVO;
 import io.higgus.lab.module.storage.controller.edition.vo.EditionExcelSaveRespVO;
 import io.higgus.lab.module.storage.dal.dataobject.collab.CollaborationContentDO;
 import io.higgus.lab.module.storage.dal.mysql.collab.ContentMetadataMapper;
-import io.higgus.lab.module.storage.service.FileStorageService;
+import io.higgus.lab.module.storage.service.collab.FileStorageService;
 import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.poi.ss.usermodel.*;

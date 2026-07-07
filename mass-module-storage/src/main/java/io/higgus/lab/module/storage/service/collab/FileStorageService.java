@@ -1,4 +1,4 @@
-package io.higgus.lab.module.storage.service;
+package io.higgus.lab.module.storage.service.collab;
 
 import org.springframework.web.multipart.MultipartFile;
 import software.amazon.awssdk.core.ResponseInputStream;

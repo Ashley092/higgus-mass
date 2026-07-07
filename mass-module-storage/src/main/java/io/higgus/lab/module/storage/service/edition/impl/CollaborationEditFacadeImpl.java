@@ -52,11 +52,20 @@ public class CollaborationEditFacadeImpl implements CollaborationEditFacade {
     }
 
     @Override
-    public void handlePersistEdition(EditionExcelSaveLogDto dto) {
+    public void handleMysqlEdition(EditionExcelSaveLogDto dto) {
         try {
 
             editionLogService.appendLog(dto);
 
+
+        } catch (Exception e) {
+            throw e;
+        }
+    }
+
+    @Override
+    public void handleMinioEdition(EditionExcelSaveLogDto dto) {
+        try {
 
         } catch (Exception e) {
             throw e;

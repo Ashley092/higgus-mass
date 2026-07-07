@@ -1,6 +1,7 @@
-package io.higgus.lab.module.storage.service.persist;
+package io.higgus.lab.module.storage.service.collab.impl;
 
 
+import io.higgus.lab.module.storage.service.collab.MinioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;

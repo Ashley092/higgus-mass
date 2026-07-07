@@ -5,7 +5,7 @@ import io.higgus.lab.module.storage.controller.collab.vo.ContentMetadataCreateRe
 import io.higgus.lab.module.storage.dal.dataobject.collab.CollaborationContentDO;
 import io.higgus.lab.module.storage.service.collab.CollaborationContentFacadeService;
 import io.higgus.lab.module.storage.service.collab.CollaborationContentService;
-import io.higgus.lab.module.storage.service.FileStorageService;
+import io.higgus.lab.module.storage.service.collab.FileStorageService;
 import io.higgus.lab.module.storage.controller.collab.vo.ContentUploadReqVO;
 import io.higgus.lab.module.storage.controller.collab.vo.UploadResultVO;
 import jakarta.annotation.Resource;

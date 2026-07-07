@@ -4,7 +4,7 @@ import io.higgus.lab.mass.framework.common.pojo.CommonResult;
 import io.higgus.lab.module.storage.controller.collab.vo.collab.content.CollaborationContentUpdateReqVO;
 import io.higgus.lab.module.storage.service.collab.CollaborationContentFacadeService;
 import io.higgus.lab.module.storage.service.collab.CollaborationContentService;
-import io.higgus.lab.module.storage.service.FileStorageService;
+import io.higgus.lab.module.storage.service.collab.FileStorageService;
 import io.higgus.lab.module.storage.controller.collab.vo.ContentMetadataRespVO;
 import io.higgus.lab.module.storage.controller.collab.vo.ContentUploadReqVO;
 import io.higgus.lab.module.storage.controller.collab.vo.UploadResultVO;

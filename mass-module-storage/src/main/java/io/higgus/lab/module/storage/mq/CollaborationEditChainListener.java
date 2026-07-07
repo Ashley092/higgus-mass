@@ -27,8 +27,10 @@ public class CollaborationEditChainListener {
     }
 
     @RabbitListener(queues = RabbitMQConfig.Q_MYSQL)
-    public void handlePersistLog(EditionExcelSaveLogDto dto) {
-        editFacade.handlePersistEdition(dto);
+    public void handleMysqlPersistLog(EditionExcelSaveLogDto dto) {
+
+
+        editFacade.handleMysqlEdition(dto);
 
     }
 

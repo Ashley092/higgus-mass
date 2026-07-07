@@ -65,4 +65,8 @@ public interface EditionLogService {
      * @return 编辑历史
      */
     IPage<EditionLogRespVO> getHistory(String contentId, Integer pageNum, Integer pageSize);
+
+
+
+
 }

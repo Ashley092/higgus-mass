@@ -11,7 +11,7 @@ import java.time.LocalDateTime;
 public class EditionExcelSaveLogDto {
 
     /**
-     * 幂等性 ID 生成去重
+     * 幂等性 ID（用于 Redis 缓存检查，不写入数据库）
      */
     private String idempotentKey;
 

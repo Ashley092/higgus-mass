@@ -12,5 +12,7 @@ public interface CollaborationEditFacade {
     * */
     void handleRealtimeEdition(EditionExcelSaveLogDto dto);
 
-    void handlePersistEdition(EditionExcelSaveLogDto dto);
+    void handleMysqlEdition(EditionExcelSaveLogDto dto);
+
+    void handleMinioEdition(EditionExcelSaveLogDto dto);
 }
