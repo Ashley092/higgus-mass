@@ -34,6 +34,12 @@ public class CollaborationContentDO {
 
     private Integer version;
 
+    /** 当前快照版本号（关联 content_snapshot 表） */
+    private Integer currentSnapshotVersion;
+
+    /** 当前快照的 MinIO 地址 */
+    private String currentStorageKey;
+
     private Long creator;
 
     private Long updater;

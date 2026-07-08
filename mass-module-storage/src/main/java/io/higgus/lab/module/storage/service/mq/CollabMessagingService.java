@@ -24,11 +24,20 @@ public class CollabMessagingService {
         );
     }
 
-    public void routeEditionLogToPersistQueue(Object cellDto) {
+    public void routeEditionLogToPersistQueue(EditionExcelSaveLogDto dto) {
         // 递送消息给 Persist 队列
         rabbitTemplate.convertAndSend(
-                RabbitMQConfig.EX_PERSIST,
-                cellDto
+                RabbitMQConfig.EX_PERSIST_MYSQL,
+                RabbitMQConfig.KEY_PERSIST_MYSQL,
+                dto
+        );
+    }
+
+    public void routeEditionLogToSnapshotQueue(EditionExcelSaveLogDto dto) {
+        rabbitTemplate.convertAndSend(
+                RabbitMQConfig.EX_PERSIST_MINIO,
+                RabbitMQConfig.KEY_PERSIST_MINIO,
+                dto
         );
     }
 }

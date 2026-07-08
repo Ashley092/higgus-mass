@@ -3,10 +3,14 @@ package io.higgus.lab.module.storage.service.redis;
 
 import io.higgus.lab.module.storage.service.common.CollabRedisKey;
 import io.higgus.lab.module.storage.service.common.FileServiceImpl;
+import io.higgus.lab.module.storage.service.edition.dto.EditionExcelSaveLogDto;
 import jakarta.annotation.Resource;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 
@@ -15,22 +19,24 @@ import java.io.IOException;
 
 import static com.baomidou.mybatisplus.extension.ddl.DdlScriptErrorHandler.PrintlnLogErrorHandler.log;
 
+@Slf4j
 @Service
 public class CollabRedisService {
 
     @Resource
-    private RedisTemplate<String, Object> redisTemplate;
+    private RedisTemplate<String, EditionExcelSaveLogDto> redisTemplate;
     @Resource
     private FileServiceImpl fileServiceImpl;
 
+    private final Logger logger = LoggerFactory.getLogger(getClass());
 
 
-    public void writeCellEdition(Object cellEdition) {
-        String key = CollabRedisKey.CELL_EDIT_LOG;
+    public void writeCellEdition(EditionExcelSaveLogDto dto) {
+        String key = CollabRedisKey.CELL_EDIT_LOG + dto.getContentId();
 
         try {
 
-            redisTemplate.opsForValue().set(key, cellEdition);
+            redisTemplate.opsForValue().set(key, dto);
 
         } catch (Exception e) {
 
@@ -38,48 +44,20 @@ public class CollabRedisService {
         }
     }
 
-    public void tryBroadcastToUsers(Object cellEditionDto) {
-        try {
+    /**
+     *  后续实现滑动窗口？
+     * @param dto
+     */
+    public void tryBroadcastToUsers(EditionExcelSaveLogDto dto) {
+        String key = CollabRedisKey.CELL_EDIT_LOG + dto.getContentId();
 
+        try {
+            redisTemplate.opsForValue().get(key);
+            logger.info("获得数据 {} ", dto);
 
         } catch (Exception e) {
 
         }
-
-    }
-
-    // 把整个文件解析后的内容加载进 Redis
-    public void trySaveCompleteFile(String fileId) throws IOException {
-        try {
-            String key = CollabRedisKey.FILE_SNAPSHOT + fileId;
-            // 一般来说，就是获取最新的快照
-            // 1. 先检查 Redis 里面有没有这个文件
-            Object value = redisTemplate.opsForValue().get(key);
-            if (value instanceof Sheet) {
-                // 存在这个文件的快照
-                // 这里后续要作新版本 or 旧版本判断
-                return;
-            }
-            // 如果没有该文件
-            // 缓存管理器中有吗？
-            // [默认 Redis 管理对象的情况下] 先加载读取这个文件
-            String storageKey = fileServiceImpl.matchStorageKey(fileId);
-            byte[] excelBytes = fileServiceImpl.downloadAsBytes(storageKey);
-            // 获得了这个 byte 形式的文件
-            try (ByteArrayInputStream bais = new ByteArrayInputStream(excelBytes);
-                 Workbook workbook = WorkbookFactory.create(bais);
-            ) {
-
-            }
-
-
-
-        } catch (Exception e ) {
-
-            log.error("存储进入 Redis 失败");
-            throw e;
-        }
-
 
     }
 

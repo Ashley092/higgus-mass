@@ -33,5 +33,11 @@ public class CollaborationEditChainListener {
         editFacade.handleMysqlEdition(dto);
 
     }
+    @RabbitListener(queues = RabbitMQConfig.Q_MINIO)
+    public void handleMinioPersistLog(EditionExcelSaveLogDto dto) {
 
+
+        editFacade.handleMinioEdition(dto);
+
+    }
 }

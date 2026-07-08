@@ -1,10 +1,12 @@
 package io.higgus.lab.module.storage.service.edition.impl;
 
 import io.higgus.lab.module.storage.dal.dataobject.collab.CollaborationContentDO;
+import io.higgus.lab.module.storage.dal.dataobject.edition.ContentSnapshotDO;
 import io.higgus.lab.module.storage.dal.dataobject.edition.EditionLogDO;
 import io.higgus.lab.module.storage.dal.mysql.EditionLogMapper;
 import io.higgus.lab.module.storage.dal.mysql.collab.ContentMetadataMapper;
 import io.higgus.lab.module.storage.service.collab.FileStorageService;
+import io.higgus.lab.module.storage.service.edition.ContentSnapshotService;
 import io.higgus.lab.module.storage.service.edition.EditionPoiService;
 import io.higgus.lab.module.storage.service.edition.dto.EditionExcelSaveLogDto;
 import org.apache.poi.ss.usermodel.*;
@@ -28,6 +30,8 @@ public class EditionPoiServiceImpl implements EditionPoiService {
     private ContentMetadataMapper contentMetadataMapper;
     @Autowired
     private FileStorageService fileService;
+    @Autowired
+    private ContentSnapshotService snapshotService;
 
     @Override
     public List<EditionLogDO> rewireLog(EditionExcelSaveLogDto dto) {
@@ -49,7 +53,7 @@ public class EditionPoiServiceImpl implements EditionPoiService {
         List<EditionLogDO> logList = rewireLog(dto);
         String storageKey = meta.getStorageKey();
         byte[] excelBytes = fileService.downloadAsBytes(storageKey);
-        byte[] newExcelBytes;
+        byte[] newExcelBytes = null;
         try (ByteArrayInputStream is = new ByteArrayInputStream(excelBytes);
              ByteArrayOutputStream baos = new ByteArrayOutputStream();
              Workbook workbook = WorkbookFactory.create(is)
@@ -77,7 +81,8 @@ public class EditionPoiServiceImpl implements EditionPoiService {
         }
         // 这里发现一个问题。逻辑上有问题。要改一下原本的数据结构字段内容。
         // 一个文件对应多个快照版本的话，不能发生覆盖。
-        fileService.upload();
+        ContentSnapshotDO snapDO = snapshotService.createSnapshotTemp(id, dto.getUpdater());
+        snapshotService.finalizeSnapshot(snapDO.getId(), newExcelBytes);
 
     }
 

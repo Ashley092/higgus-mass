@@ -16,9 +16,13 @@ public class RabbitMQConfig {
     public static final String KEY_REALTIME = "collab.key.realtime";
 
     // 持久化层
-    public static final String EX_PERSIST = "collab.ex.persist";
+    public static final String EX_PERSIST_MYSQL = "collab.ex.persist.mysql";
+    public static final String EX_PERSIST_MINIO = "collab.ex.persist.minio";
     public static final String Q_MYSQL = "collab.q.mysql";
     public static final String Q_MINIO = "collab.q.minio";
+    public static final String KEY_PERSIST_MYSQL = "collab.key.persist.mysql";
+    public static final String KEY_PERSIST_MINIO = "collab.key.persist.minio";
+
 
     // 声明消息序列化及反序列化处理
     @Bean
@@ -42,8 +46,12 @@ public class RabbitMQConfig {
 
     // 声明持久化部分组件
     @Bean
-    public FanoutExchange persistExchange() {
-        return new FanoutExchange(EX_PERSIST, true, false);
+    public DirectExchange persistMysqlExchange() {
+        return new DirectExchange(EX_PERSIST_MYSQL, true, false);
+    }
+    @Bean
+    public DirectExchange persistMinioExchange() {
+        return new DirectExchange(EX_PERSIST_MINIO, true, false);
     }
     @Bean
     public Queue mysqlQueue() {
@@ -54,12 +62,12 @@ public class RabbitMQConfig {
         return new Queue(Q_MINIO, true);
     }
     @Bean
-    public Binding bindMysql(Queue mysqlQueue, FanoutExchange persistExchange) {
-        return BindingBuilder.bind(mysqlQueue).to(persistExchange);
+    public Binding bindMysql(Queue mysqlQueue, DirectExchange persistMysqlExchange) {
+        return BindingBuilder.bind(mysqlQueue).to(persistMysqlExchange).with(KEY_PERSIST_MYSQL);
     }
     @Bean
-    public Binding bindMinio(Queue minioQueue, FanoutExchange persistExchange) {
-        return BindingBuilder.bind(minioQueue).to(persistExchange);
+    public Binding bindMinio(Queue minioQueue, DirectExchange persistMinioExchange) {
+        return BindingBuilder.bind(minioQueue).to(persistMinioExchange).with(KEY_PERSIST_MINIO);
     }
 
 }
