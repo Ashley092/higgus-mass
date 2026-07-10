@@ -1,4 +1,4 @@
-package src.io.higgus.lab.module.storage;
+package io.higgus.lab.module.storage;
 
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;

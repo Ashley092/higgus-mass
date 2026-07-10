@@ -63,6 +63,14 @@ public interface FileStorageService {
     boolean exists(String storageKey);
 
     /**
+     * 获取文件元数据（包含真实文件大小）
+     *
+     * @param storageKey 存储键
+     * @return 文件元数据响应
+     */
+    software.amazon.awssdk.services.s3.model.HeadObjectResponse headObject(String storageKey);
+
+    /**
      * 计算文件的 MD5
      *
      * @param file 文件

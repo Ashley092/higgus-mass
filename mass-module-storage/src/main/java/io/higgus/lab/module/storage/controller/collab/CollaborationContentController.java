@@ -21,6 +21,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import software.amazon.awssdk.core.ResponseInputStream;
 import software.amazon.awssdk.services.s3.model.GetObjectResponse;
+import software.amazon.awssdk.services.s3.model.HeadObjectResponse;
 
 import java.io.IOException;
 import java.net.URLEncoder;
@@ -123,7 +124,7 @@ public class CollaborationContentController {
         }
 
         // 2. 获取文件流
-        ResponseInputStream<GetObjectResponse> fileStream = fileStorageService.download(content.getStorageKey());
+        ResponseInputStream<GetObjectResponse> fileStream = fileStorageService.download(content.getCurrentStorageKey());
         if (fileStream == null) {
             try {
                 response.setStatus(HttpServletResponse.SC_NOT_FOUND);
@@ -135,24 +136,27 @@ public class CollaborationContentController {
         }
 
         try {
-            // 3. 设置响应头
-            String fileName = content.getTitle();
-            // 处理文件名编码
-            String encodedFileName = URLEncoder.encode(fileName, StandardCharsets.UTF_8);
-            // 如果有文件后缀，加上后缀
-            if (content.getFileExtension() != null && !content.getFileExtension().isEmpty()) {
-                fileName = fileName + "." + content.getFileExtension();
-                encodedFileName = URLEncoder.encode(fileName, StandardCharsets.UTF_8);
-            }
+            // 3. 从 MinIO 响应元数据中取真实文件大小（不能信任 DB 中存储的 fileSize）
+        // 使用 HeadObject 查询真实大小，避免 Content-Length 与实际文件不一致导致下载卡住
+        HeadObjectResponse headObject = fileStorageService.headObject(content.getCurrentStorageKey());
+        long actualFileSize = headObject.contentLength();
+        String fileName = content.getTitle();
+        // 处理文件名编码
+        String encodedFileName = URLEncoder.encode(fileName, StandardCharsets.UTF_8);
+        // 如果有文件后缀，加上后缀
+        if (content.getFileExtension() != null && !content.getFileExtension().isEmpty()) {
+            fileName = fileName + "." + content.getFileExtension();
+            encodedFileName = URLEncoder.encode(fileName, StandardCharsets.UTF_8);
+        }
 
-            response.setContentType(MediaType.APPLICATION_OCTET_STREAM_VALUE);
-            response.setHeader(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + encodedFileName + "\"; filename*=UTF-8''" + encodedFileName);
-            response.setHeader("Content-Length", String.valueOf(content.getFileSize()));
+        response.setContentType(MediaType.APPLICATION_OCTET_STREAM_VALUE);
+        response.setHeader(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + encodedFileName + "\"; filename*=UTF-8''" + encodedFileName);
+        response.setHeader("Content-Length", String.valueOf(actualFileSize));
 
-            // 4. 写入响应
-            org.springframework.util.StreamUtils.copy(fileStream, response.getOutputStream());
-            response.flushBuffer();
-            log.info("文件下载成功, id={}, title={}", id, content.getTitle());
+        // 4. 写入响应
+        org.springframework.util.StreamUtils.copy(fileStream, response.getOutputStream());
+        response.flushBuffer();
+        log.info("文件下载成功, id={}, title={}, fileSize={}", id, content.getTitle(), actualFileSize);
         } catch (IOException e) {
             log.error("文件下载失败, id={}", id, e);
             try {

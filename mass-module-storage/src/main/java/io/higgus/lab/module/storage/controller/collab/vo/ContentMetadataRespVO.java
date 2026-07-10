@@ -26,7 +26,7 @@ public class ContentMetadataRespVO {
     private Integer contentType;
 
     @Schema(description = "MinIO中的Object Key", example = "files/2024/abc123.pdf")
-    private String storageKey;
+    private String currentStorageKey;
 
     @Schema(description = "文件大小(Byte)", example = "1024000")
     private Long fileSize;

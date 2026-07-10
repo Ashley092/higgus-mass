@@ -9,15 +9,26 @@
     <option name="showLibraryBeans" value="false" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="603d025f-8c40-43ec-8171-0fdb136eec7c" name="更改" comment="fix: poi service 基础逻辑补充。发现数据结构设计问题。一个文件缺少多版本快照对应字段。">
+    <list default="true" id="603d025f-8c40-43ec-8171-0fdb136eec7c" name="更改" comment="fix: 基本逻辑流程完成。">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/config/RabbitMQConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/config/RabbitMQConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mass-module-storage/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mass-module-storage/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/controller/collab/CollaborationContentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/controller/collab/CollaborationContentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/controller/collab/vo/ContentMetadataRespVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/controller/collab/vo/ContentMetadataRespVO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/controller/edition/EditionExcelController.java" beforeDir="false" afterPath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/controller/edition/EditionExcelController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/controller/edition/vo/EditionExcelSaveReqVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/controller/edition/vo/EditionExcelSaveReqVO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/dal/dataobject/collab/CollaborationContentDO.java" beforeDir="false" afterPath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/dal/dataobject/collab/CollaborationContentDO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/mq/CollaborationEditChainListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/mq/CollaborationEditChainListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/service/collab/FileStorageService.java" beforeDir="false" afterPath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/service/collab/FileStorageService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/service/collab/impl/CollaborationContentFacadeServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/service/collab/impl/CollaborationContentFacadeServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/service/collab/impl/CollaborationContentServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/service/collab/impl/CollaborationContentServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/service/collab/impl/FileStorageServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/service/collab/impl/FileStorageServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/service/common/FileServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/service/common/FileServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/service/edition/impl/CollaborationEditFacadeImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/service/edition/impl/CollaborationEditFacadeImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/service/edition/impl/EditionLogServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/service/edition/impl/EditionLogServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/service/edition/impl/EditionPoiServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/service/edition/impl/EditionPoiServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/service/mq/CollabMessagingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/service/mq/CollabMessagingService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/service/redis/CollabRedisService.java" beforeDir="false" afterPath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/service/redis/CollabRedisService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/service/editionOld/EditionExcelService.java" beforeDir="false" afterPath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/service/editionOld/EditionExcelService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/service/editionOld/EditionExcelServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/service/editionOld/EditionExcelServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mass-module-storage/src/test/java/src/io/higgus/lab/module/storage/SingleTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/mass-module-storage/src/test/java/io/higgus/lab/module/storage/SingleTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,54 +77,57 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_MARK_IGNORED_FILES_AS_EXCLUDED&quot;: &quot;true&quot;,
-    &quot;HTTP 请求.主启动类 | #1.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.FileSpaceServiceImplTest.calculateMd5_shouldReturnConsistentHash.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.FileSpaceServiceImplTest.executor&quot;: &quot;Debug&quot;,
-    &quot;JUnit.FileUploadFacadeImplTest.executor&quot;: &quot;Run&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
-    &quot;Spring Boot.MassApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.主启动类.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.未命名.executor&quot;: &quot;Run&quot;,
-    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
-    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Users/86135/workspace/Mine/higgus-mass/sql/mysql&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.stylelint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.stylelint&quot;: &quot;D:\\Users\\86135\\workspace\\Mine\\higgus-mass\\mass-ui\\node_modules\\stylelint&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;onboarding.tips.debug.path&quot;: &quot;D:/Users/86135/workspace/Mine/higgus-mass/mass-module-data/src/main/java/io/higgus/lab/Main.java&quot;,
-    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;D:\\Users\\86135\\workspace\\Mine\\higgus-mass\\mass-ui\\node_modules\\prettier&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;模块&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.21343146&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.project.grazie&quot;,
-    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
+    "HTTP 请求.主启动类 | #1.executor": "Run",
+    "JUnit.CollaborationEditFacadeImplTest.executor": "Run",
+    "JUnit.CollaborationEditFacadeImplTest.generateIdempotentKey_differentMinute_shouldDiffer.executor": "Run",
+    "JUnit.CollaborationEditFacadeImplTest.generateIdempotentKey_sameMinute_shouldBeStable.executor": "Run",
+    "JUnit.FileSpaceServiceImplTest.calculateMd5_shouldReturnConsistentHash.executor": "Run",
+    "JUnit.FileSpaceServiceImplTest.executor": "Debug",
+    "JUnit.FileUploadFacadeImplTest.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "Spring Boot.MassApplication.executor": "Run",
+    "Spring Boot.主启动类.executor": "Run",
+    "Spring Boot.未命名.executor": "Run",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "junie.onboarding.icon.badge.shown": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "D:/Users/86135/workspace/Mine/higgus-mass/sql/mysql",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.stylelint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.stylelint": "D:\\Users\\86135\\workspace\\Mine\\higgus-mass\\mass-ui\\node_modules\\stylelint",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "onboarding.tips.debug.path": "D:/Users/86135/workspace/Mine/higgus-mass/mass-module-data/src/main/java/io/higgus/lab/Main.java",
+    "prettierjs.PrettierConfiguration.Package": "D:\\Users\\86135\\workspace\\Mine\\higgus-mass\\mass-ui\\node_modules\\prettier",
+    "project.structure.last.edited": "模块",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.21343146",
+    "settings.editor.selected.configurable": "reference.settingsdialog.project.grazie",
+    "to.speed.mode.migration.done": "true",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;mysql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
     ]
   }
-}</component>
+}]]></component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
   </component>
@@ -129,27 +143,58 @@
       <recent name="io.higgus.lab.module.storage.controller.vo" />
     </key>
   </component>
-  <component name="RunDashboard">
-    <option name="configurationStatuses">
-      <map>
-        <entry key="HttpClient.HttpRequestRunConfigurationType">
-          <value>
-            <map>
-              <entry key="主启动类 | #1" value="STOPPED" />
-            </map>
-          </value>
-        </entry>
-      </map>
-    </option>
-  </component>
   <component name="RunManager" selected="Spring Boot.主启动类">
     <configuration name="fileSpace.sql" type="DatabaseScript" editBeforeRun="true" temporary="true" nameIsGenerated="true">
       <script-file value="$PROJECT_DIR$/sql/mysql/fileSpace.sql" />
       <script-mode>FILE</script-mode>
       <method v="2" />
     </configuration>
-    <configuration name="主启动类 | #1" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/主启动类.http" executionIdentifier="#1" runType="运行单个请求">
-      <method v="2" />
+    <configuration name="CollaborationEditFacadeImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="mass-module-storage" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.higgus.lab.module.storage.service.edition.impl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="io.higgus.lab.module.storage.service.edition.impl" />
+      <option name="MAIN_CLASS_NAME" value="io.higgus.lab.module.storage.service.edition.impl.CollaborationEditFacadeImplTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CollaborationEditFacadeImplTest.generateIdempotentKey_differentMinute_shouldDiffer" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="mass-module-storage" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.higgus.lab.module.storage.service.edition.impl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="io.higgus.lab.module.storage.service.edition.impl" />
+      <option name="MAIN_CLASS_NAME" value="io.higgus.lab.module.storage.service.edition.impl.CollaborationEditFacadeImplTest" />
+      <option name="METHOD_NAME" value="generateIdempotentKey_differentMinute_shouldDiffer" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CollaborationEditFacadeImplTest.generateIdempotentKey_sameMinute_shouldBeStable" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="mass-module-storage" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.higgus.lab.module.storage.service.edition.impl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="io.higgus.lab.module.storage.service.edition.impl" />
+      <option name="MAIN_CLASS_NAME" value="io.higgus.lab.module.storage.service.edition.impl.CollaborationEditFacadeImplTest" />
+      <option name="METHOD_NAME" value="generateIdempotentKey_sameMinute_shouldBeStable" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration name="FileSpaceServiceImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="mass-module-infra" />
@@ -166,37 +211,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FileSpaceServiceImplTest.calculateMd5_shouldReturnConsistentHash" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="mass-module-infra" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="io.higgus.lab.module.infra.service.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="io.higgus.lab.module.infra.service" />
-      <option name="MAIN_CLASS_NAME" value="io.higgus.lab.module.infra.service.FileSpaceServiceImplTest" />
-      <option name="METHOD_NAME" value="calculateMd5_shouldReturnConsistentHash" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="FileUploadFacadeImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="mass-module-infra" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="io.higgus.lab.module.infra.service.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="io.higgus.lab.module.infra.service" />
-      <option name="MAIN_CLASS_NAME" value="io.higgus.lab.module.infra.service.FileUploadFacadeImplTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="主启动类" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <option name="ALTERNATIVE_JRE_PATH" value="21" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -207,20 +221,20 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="HTTP 请求.主启动类 | #1" />
+      <item itemvalue="JUnit.CollaborationEditFacadeImplTest" />
+      <item itemvalue="JUnit.CollaborationEditFacadeImplTest.generateIdempotentKey_differentMinute_shouldDiffer" />
+      <item itemvalue="JUnit.CollaborationEditFacadeImplTest.generateIdempotentKey_sameMinute_shouldBeStable" />
       <item itemvalue="JUnit.FileSpaceServiceImplTest" />
-      <item itemvalue="JUnit.FileSpaceServiceImplTest.calculateMd5_shouldReturnConsistentHash" />
-      <item itemvalue="JUnit.FileUploadFacadeImplTest" />
       <item itemvalue="Spring Boot.主启动类" />
       <item itemvalue="数据库脚本.fileSpace.sql" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.CollaborationEditFacadeImplTest" />
+        <item itemvalue="JUnit.CollaborationEditFacadeImplTest.generateIdempotentKey_differentMinute_shouldDiffer" />
+        <item itemvalue="JUnit.CollaborationEditFacadeImplTest.generateIdempotentKey_sameMinute_shouldBeStable" />
         <item itemvalue="数据库脚本.fileSpace.sql" />
         <item itemvalue="JUnit.FileSpaceServiceImplTest" />
-        <item itemvalue="JUnit.FileUploadFacadeImplTest" />
-        <item itemvalue="JUnit.FileSpaceServiceImplTest.calculateMd5_shouldReturnConsistentHash" />
-        <item itemvalue="HTTP 请求.主启动类 | #1" />
       </list>
     </recent_temporary>
   </component>
@@ -292,7 +306,7 @@
       <workItem from="1783002544480" duration="128000" />
       <workItem from="1783005429786" duration="2091000" />
       <workItem from="1783151500044" duration="44155000" />
-      <workItem from="1783351095081" duration="20921000" />
+      <workItem from="1783351095081" duration="42847000" />
     </task>
     <task id="LOCAL-00001" summary="fix: 修复了 redisson 配置类的启动问题">
       <option name="closed" value="true" />
@@ -462,7 +476,15 @@
       <option name="project" value="LOCAL" />
       <updated>1783439738584</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="fix: 基本逻辑流程完成。">
+      <option name="closed" value="true" />
+      <created>1783510432629</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1783510432629</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -511,7 +533,8 @@
     <MESSAGE value="feature: Edition 的基础业务逻辑完成。" />
     <MESSAGE value="feat: 简单更新完善昨天的工作。下一步是建设延时队列和幂等性控制设计。" />
     <MESSAGE value="fix: poi service 基础逻辑补充。发现数据结构设计问题。一个文件缺少多版本快照对应字段。" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: poi service 基础逻辑补充。发现数据结构设计问题。一个文件缺少多版本快照对应字段。" />
+    <MESSAGE value="fix: 基本逻辑流程完成。" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: 基本逻辑流程完成。" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -535,8 +558,43 @@
           <line>94</line>
           <option name="timeStamp" value="19" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/service/edition/impl/ContentSnapshotServiceImpl.java</url>
+          <line>38</line>
+          <option name="timeStamp" value="24" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/service/edition/impl/ContentSnapshotServiceImpl.java</url>
+          <line>42</line>
+          <option name="timeStamp" value="25" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/service/edition/impl/ContentSnapshotServiceImpl.java</url>
+          <line>57</line>
+          <option name="timeStamp" value="26" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/service/edition/impl/ContentSnapshotServiceImpl.java</url>
+          <line>63</line>
+          <option name="timeStamp" value="27" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/service/edition/impl/ContentSnapshotServiceImpl.java</url>
+          <line>53</line>
+          <option name="timeStamp" value="28" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/mass-module-storage/src/main/java/io/higgus/lab/module/storage/controller/collab/CollaborationContentController.java</url>
+          <line>156</line>
+          <option name="timeStamp" value="32" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <watches-manager>
+      <configuration name="SpringBootApplicationConfigurationType">
+        <watch expression="fileStream" />
+      </configuration>
+    </watches-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

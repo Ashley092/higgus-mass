@@ -9,7 +9,10 @@ import io.higgus.lab.module.storage.service.collab.FileStorageService;
 import io.higgus.lab.module.storage.service.edition.ContentSnapshotService;
 import io.higgus.lab.module.storage.service.edition.EditionPoiService;
 import io.higgus.lab.module.storage.service.edition.dto.EditionExcelSaveLogDto;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.poi.ss.usermodel.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -20,9 +23,10 @@ import java.io.IOException;
 import java.util.Comparator;
 import java.util.List;
 
+@Slf4j
 @Service
 public class EditionPoiServiceImpl implements EditionPoiService {
-
+    private final Logger logger = LoggerFactory.getLogger(getClass());
 
     @Autowired
     private EditionLogMapper logMapper;
@@ -44,14 +48,19 @@ public class EditionPoiServiceImpl implements EditionPoiService {
 
     @Override
     public void tryGenerateNewSnapshotFile(EditionExcelSaveLogDto dto) {
+        logger.info("[4.1] 对象 {}", dto);
         String contentId = dto.getContentId();
         Long id = toLongType(contentId);
         CollaborationContentDO meta = contentMetadataMapper.selectById(id);
         if (meta == null) {
             return;
         }
+        String storageKey = meta.getCurrentStorageKey();
+        if (storageKey == null || storageKey.isEmpty()) {
+            logger.warn("[4.1] contentId={} 的 currentStorageKey 为空，跳过快照生成", contentId);
+            return;
+        }
         List<EditionLogDO> logList = rewireLog(dto);
-        String storageKey = meta.getStorageKey();
         byte[] excelBytes = fileService.downloadAsBytes(storageKey);
         byte[] newExcelBytes = null;
         try (ByteArrayInputStream is = new ByteArrayInputStream(excelBytes);

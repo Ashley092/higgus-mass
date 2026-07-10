@@ -16,18 +16,18 @@ public class EditionExcelSaveReqVO {
     private String contentId;
 
     /** 行号（数组索引，从 0 开始） */
-    private Integer row;
+    private Integer rowIndex;
 
     /** 列号（数组索引，从 0 开始） */
-    private Integer col;
+    private Integer colIndex;
 
     /** 新的单元格内容（统一存为字符串） */
-    private String newContent;
+    private String newValue;
 
-    /** 当前版本号（乐观锁）
-     *  不会啊？前端为什么会知道乐观锁呢？？这个是有问题的。
-     * */
-    private Integer reversion;
+//    /** 当前版本号（乐观锁）
+//     *  不会啊？前端为什么会知道乐观锁呢？？这个是有问题的。
+//     * */
+//    private Integer version;
 
     /** 更新人 */
     private Long updater;

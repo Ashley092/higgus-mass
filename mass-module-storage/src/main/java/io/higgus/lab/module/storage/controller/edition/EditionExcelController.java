@@ -31,7 +31,7 @@ public class EditionExcelController {
             @Parameter(description = "变更请求")
             @Valid @RequestBody EditionExcelSaveReqVO reqVO) {
         log.info("收到 Excel 保存请求, contentId={}, row={}, col={}",
-                reqVO.getContentId(), reqVO.getRow(), reqVO.getCol());
+                reqVO.getContentId(), reqVO.getRowIndex(), reqVO.getColIndex());
         facadeService.saveEdition(reqVO);
         return CommonResult.success(null);
     }

@@ -24,8 +24,6 @@ public class CollaborationContentDO {
 
     private Integer contentType;
 
-    private String storageKey;
-
     private Long fileSize;
 
     private String fileExtension;

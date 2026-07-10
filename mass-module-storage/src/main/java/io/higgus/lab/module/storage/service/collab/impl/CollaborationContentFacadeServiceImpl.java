@@ -44,7 +44,7 @@ public class CollaborationContentFacadeServiceImpl implements CollaborationConte
         CollaborationContentDO existing = contentMetadataService.findByMd5(md5);
         if (existing != null) {
             log.info("秒传成功，直接返回已有记录");
-            return UploadResultVO.skip(String.valueOf(existing.getId()), existing.getStorageKey(), md5);
+            return UploadResultVO.skip(String.valueOf(existing.getId()), existing.getCurrentStorageKey(), md5);
         }
 
         // 3. 使用 synchronized 关键字（JVM 级别锁，最简单）
@@ -54,7 +54,7 @@ public class CollaborationContentFacadeServiceImpl implements CollaborationConte
             CollaborationContentDO existingInLock = contentMetadataService.findByMd5(md5);
             if (existingInLock != null) {
                 log.info("双重检查命中秒传");
-                return UploadResultVO.skip(String.valueOf(existingInLock.getId()), existingInLock.getStorageKey(), md5);
+                return UploadResultVO.skip(String.valueOf(existingInLock.getId()), existingInLock.getCurrentStorageKey(), md5);
             }
 
             // 5. 上传到 MinIO（现在只有获得锁的线程会执行）
@@ -90,8 +90,8 @@ public class CollaborationContentFacadeServiceImpl implements CollaborationConte
         }
 
         // 2. 删除 MinIO 文件
-        if (content.getStorageKey() != null) {
-            fileStorageService.delete(content.getStorageKey());
+        if (content.getCurrentStorageKey() != null) {
+            fileStorageService.delete(content.getCurrentStorageKey());
         }
 
         // 3. 删除元数据

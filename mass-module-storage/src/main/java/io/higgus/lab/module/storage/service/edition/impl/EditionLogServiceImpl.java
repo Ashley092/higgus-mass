@@ -5,15 +5,19 @@ import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import io.higgus.lab.module.storage.controller.edition.vo.EditionLogRespVO;
 import io.higgus.lab.module.storage.convert.edition.EditionExcelSaveLogConvert;
+import io.higgus.lab.module.storage.dal.dataobject.collab.CollaborationContentDO;
 import io.higgus.lab.module.storage.dal.dataobject.edition.EditionLogDO;
 import io.higgus.lab.module.storage.dal.mysql.EditionLogMapper;
+import io.higgus.lab.module.storage.dal.mysql.collab.ContentMetadataMapper;
 import io.higgus.lab.module.storage.service.edition.EditionLogService;
 import io.higgus.lab.module.storage.service.edition.dto.EditionExcelSaveLogDto;
 import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
+import java.util.Collection;
 import java.util.List;
 
 /**
@@ -28,15 +32,24 @@ public class EditionLogServiceImpl implements EditionLogService {
     @Resource
     private EditionLogMapper editionLogMapper;
 
+    @Autowired
+    private ContentMetadataMapper contentMapper;
+
     // 转换器
     private static final EditionExcelSaveLogConvert editionConvert = EditionExcelSaveLogConvert.INSTANCE;
 
     @Override
     public EditionLogRespVO appendLog(EditionExcelSaveLogDto dto) {
+        // 未来的乐观锁
+//        dto.setVersion(dto.getVersion()+1);
         // 1. 映射转换对象
         EditionLogDO logDO = editionConvert.toEditionLogDO(dto);
+        logDO.setVersion(logDO.getVersion() + 1);
         // 2. 插入数据库
         editionLogMapper.insert(logDO);
+        CollaborationContentDO contentDO = contentMapper.selectById(toLongType(dto.getContentId()));
+        contentDO.setVersion(contentDO.getVersion() + 1);
+        contentMapper.updateById(contentDO);
         // 3. 返回 RespVO
         return editionConvert.toEditionLogRespVO(logDO);
     }

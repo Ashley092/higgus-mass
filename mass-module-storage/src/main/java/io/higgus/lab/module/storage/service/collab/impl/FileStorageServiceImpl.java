@@ -102,15 +102,20 @@ public class FileStorageServiceImpl implements FileStorageService {
     @Override
     public boolean exists(String storageKey) {
         try {
-            HeadObjectRequest request = HeadObjectRequest.builder()
-                    .bucket(bucketName)
-                    .key(storageKey)
-                    .build();
-            s3Client.headObject(request);
+            headObject(storageKey);
             return true;
         } catch (NoSuchKeyException e) {
             return false;
         }
+    }
+
+    @Override
+    public software.amazon.awssdk.services.s3.model.HeadObjectResponse headObject(String storageKey) {
+        HeadObjectRequest request = HeadObjectRequest.builder()
+                .bucket(bucketName)
+                .key(storageKey)
+                .build();
+        return s3Client.headObject(request);
     }
 
     @Override

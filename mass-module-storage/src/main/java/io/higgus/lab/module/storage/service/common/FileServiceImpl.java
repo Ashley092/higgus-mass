@@ -33,30 +33,30 @@ public class FileServiceImpl implements FileService{
 
     // 映射 fileId 和 StorageKey 的。
     // 但是其实大热点的 fileId 频繁使用的后续可以优化进入 Redis
-    public String matchStorageKey(String fileId) {
-        String key = CollabRedisKey.getFileMetadataById(fileId);
-        try {
-        // 有缓存的情况下直接返回
-        Object value = redisTemplate.opsForValue().get(fileId);
-        if (value instanceof CollaborationContentDO) {
-            CollaborationContentDO value1 = (CollaborationContentDO) value;
-            return value1.getStorageKey();
-        }
-
-        // 没有缓存的情况下
-        CollaborationContentDO file = fileMateMapper.selectById(fileId);
-        if (file != null ) {
-            // 先写入缓存
-            redisTemplate.opsForValue().set(key, file);
-            return file.getStorageKey();
-        }
-        } catch (Exception e) {
-
-            throw e;
-        }
-        return null;
-    }
-
+//    public String matchStorageKey(String fileId) {
+//        String key = CollabRedisKey.getFileMetadataById(fileId);
+//        try {
+//        // 有缓存的情况下直接返回
+//        Object value = redisTemplate.opsForValue().get(fileId);
+//        if (value instanceof CollaborationContentDO) {
+//            CollaborationContentDO value1 = (CollaborationContentDO) value;
+//            return value1.getStorageKey();
+//        }
+//
+//        // 没有缓存的情况下
+//        CollaborationContentDO file = fileMateMapper.selectById(fileId);
+//        if (file != null ) {
+//            // 先写入缓存
+//            redisTemplate.opsForValue().set(key, file);
+//            return file.getStorageKey();
+//        }
+//        } catch (Exception e) {
+//
+//            throw e;
+//        }
+//        return null;
+//    }
+//
 
     // 不是面向 MySQL 的
     public byte[] downloadAsBytes(String storageKey) {
